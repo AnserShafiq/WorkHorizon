@@ -9,10 +9,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+        headerBackground: "var(--header-bg)",
+        'sidemenu-bg': 'var(--sidemenu-bg)',
+        'transparent-one': 'var(--transparent-one)',
+      },backgroundImage:{
+        'transparent-bg-one': 'linear-gradient(0deg, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.35) 30%);'
+      }
+      ,fontSize:{
+        '5xl': '2.5rem',
+      }
     },
+    container: {
+      center:true,
+      screens: {
+        xl: '1350px',
+        lg: '800px'
+      }
+    }
   },
   plugins: [],
 } satisfies Config;
