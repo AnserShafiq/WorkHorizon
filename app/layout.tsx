@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-// import MainHeader from "./ui/header";
+import MainHeader from "./ui/header";
 import {Noto_Sans} from 'next/font/google'
 
 const notosans = Noto_Sans({
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${notosans.variable} antialiased`}>
-        {/* <MainHeader /> */}
+        <MainHeader />
         <div className=" container">
           {children}
         </div>

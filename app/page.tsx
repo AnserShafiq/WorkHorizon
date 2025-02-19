@@ -1,12 +1,12 @@
 'use client';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-// import HomeHead from './ui/home/section1';
+import HomeHead from './ui/home/section1';
 // import { useEffect, useState } from 'react';
 import { useEffect } from 'react';
-// import  AboutSection  from './ui/home/about';
-// import  WhyChooseUs  from './ui/home/choose';
-import UnderDevelopment from './ui/underdevelopment';
+import  AboutSection  from './ui/home/about';
+import  WhyChooseUs  from './ui/home/choose';
+// import UnderDevelopment from './ui/underdevelopment';
 export default function Home() {
   useEffect(() => {
     Aos.init({
@@ -46,10 +46,10 @@ export default function Home() {
 
   return (
     <>
-      <UnderDevelopment />
-      {/* <HomeHead /> */}
-      {/* <AboutSection /> */}
-      {/* <WhyChooseUs /> */}
+      {/* <UnderDevelopment /> */}
+      <HomeHead />
+      <AboutSection />
+      <WhyChooseUs />
       {/* <div>
         {loading ? (
           <p>Loading data...</p>
