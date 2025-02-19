@@ -2,10 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation"; // Import Next.js pathname hook
 import '../globals.css'
-import MobileMenu from "./home/mobileMenu";
+import MobileMenu from "./mobileMenu";
+
 export default function MainHeader() {
-    
+    const pathname = usePathname(); // Get current path
+
     const [menuItems, setMenuItems] = useState([
         { link: '/', name: 'Home', active: false },
         { link: '/about-us', name: 'About Us', active: false },
@@ -13,15 +16,14 @@ export default function MainHeader() {
         { link: '/contact-us', name: 'Contact Us', active: false },
     ]);
 
-    // Fix: Run only once on mount
     useEffect(() => {
         setMenuItems((prevItems) =>
             prevItems.map(item => ({
                 ...item,
-                active: window.location.pathname === item.link,
+                active: pathname === item.link || (pathname === '' && item.link === '/'), // Check for empty path
             }))
         );
-    }, []);
+    }, [pathname]); // Re-run effect when pathname changes
 
     return (
         <div className="w-full bg-headerBackground py-2 shadow-sm shadow-gray-300">
@@ -37,7 +39,7 @@ export default function MainHeader() {
                 <div className="hidden xl:flex justify-center items-center gap-4">
                     {menuItems.map((Item, index) => (
                         <Link
-                            className={`text-lg ${Item.active ? 'text-[#F7801E]' : 'text-sky-900'} hover:text-sky-800`}
+                            className={`text-lg xl:text-xl font-semibold tracking-wide transitive-underline ${Item.active ? 'text-[#F7801E]' : 'text-sky-900'} hover:text-sky-800`}
                             href={Item.link}
                             key={index}
                         >
@@ -49,7 +51,7 @@ export default function MainHeader() {
                     000-000-0000
                 </div>
                 <div className="flex xl:hidden items-center justify-end">
-                    <MobileMenu/>
+                    <MobileMenu />
                 </div>
             </div>
         </div>

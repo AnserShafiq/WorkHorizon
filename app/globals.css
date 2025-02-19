@@ -8,10 +8,13 @@
     --transparent-one: #00000067;
 }
 
-.transitive-underline{
+.transitive-underline {
     position: relative;
+    display: inline-block; /* Ensures the effect only spans the text */
+    cursor: pointer;
 }
-.transitive-underline::after{
+
+.transitive-underline::after {
     content: '';
     position: absolute;
     left: 0;
@@ -24,7 +27,12 @@
     transition: transform 0.4s ease-in-out;
 }
 
-.transitive-underline:hover::after,.transitive-underline.active::after{
+.transitive-underline:hover::after {
     transform: scaleX(1);
     transform-origin: bottom right;
+}
+
+/* Optional: Keep underline when active */
+.transitive-underline:active::after {
+    transform: scaleX(1);
 }

@@ -2,8 +2,9 @@
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import HomeHead from './ui/home/section1';
-// import { useEffect, useState } from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+// import { useEffect } from 'react';
+import { AboutSection } from './ui/home/about';
 export default function Home() {
   useEffect(() => {
     Aos.init({
@@ -11,40 +12,41 @@ export default function Home() {
       easing: 'ease-in-out',
     });
   }, []);
+ //eslint-disable-next-line 
+  const [userData, setUserData] = useState<any[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
-  // const [userData, setUserData] = useState<any[]>([]);
-  // const [error, setError] = useState<string | null>(null);
-  // const [loading, setLoading] = useState<boolean>(true);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/createTable', { method: 'GET' });
+        const data = await response.json();
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch('/api/createTable', { method: 'GET' });
-  //       const data = await response.json();
+        if (data.error || data.message) {
+          setError(data.error || data.message);
+          setUserData([]);
+        } else if (Array.isArray(data)) {
+          setUserData(data);
+          setError(null);
+        } else {
+          setError('Unexpected API response');
+        }
+      } catch {
+        setError('Failed to fetch data');
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  //       if (data.error || data.message) {
-  //         setError(data.error || data.message);
-  //         setUserData([]);
-  //       } else if (Array.isArray(data)) {
-  //         setUserData(data);
-  //         setError(null);
-  //       } else {
-  //         setError('Unexpected API response');
-  //       }
-  //     } catch {
-  //       setError('Failed to fetch data');
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
   return (
     <>
       <HomeHead />
-      {/* <div>
+      <AboutSection />
+      <div>
         {loading ? (
           <p>Loading data...</p>
         ) : error ? (
@@ -62,7 +64,7 @@ export default function Home() {
         ) : (
           <p>No data available.</p>
         )}
-      </div> */}
+      </div>
     </>
   );
 }

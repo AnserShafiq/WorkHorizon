@@ -29,7 +29,7 @@ function SlideShow(){
       });
     
     return(
-        <div className="relative w-full h-[600px] lg:h-[750px] overflow-hidden lg:rounded-2xl transition-transform duration-300 delay-100 translate-x-0 ease-in">
+        <div className="relative w-full h-[600px] lg:h-[750px] overflow-hidden lg:rounded-2xl transition-transform duration-300 delay-100 translate-x-0 ease-in shadow-lg shadow-transparent-one">
             {Slides.map((slide, index) => (
                 <div
                 key={index}
