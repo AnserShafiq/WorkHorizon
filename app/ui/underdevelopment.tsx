@@ -14,7 +14,7 @@ export default function UnderDevelopment () {
                         <input className="pl-4 py-2 bg-[#eaeff3c9] placeholder:text-gray-500 rounded-l-[20px]" type="email" id='email' name="email" placeholder="Leave your email..." /><button className="bg-sky-900 rounded-r-[19px] text-gray-200 font-semibold uppercase tracking-wide" type="submit">Send</button>
                     </form>
                 </div>
-                <Image className="" src={'/ud.png'} alt='Work Horizon Under Development' width={800} height={700}/>
+                <Image className="w-[25vw] h-auto" src={'/ud.png'} alt='Work Horizon Under Development' width={800} height={700}/>
             </div>
         </div>
     )
