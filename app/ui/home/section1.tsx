@@ -87,7 +87,7 @@ export default function HomeHead(){
         </div>
         <div className="w-full relative mx-auto ">
             <SlideShow />
-            <Image data-aos='fade-down' data-aos-duration='1000' className="w-auto h-auto hidden lg:block relative lg:absolute lg:-right-12 xl:-top-24 xl:-right-24 rotate-6 z-40" width={width === 'D' ? 200:150} height={width === 'D' ? 200:150} src={'/assets/borderedLogo.png'} alt="Work Horizon Logo - Bordered" />
+            <Image data-aos='fade-down' data-aos-duration='1000' className="w-[8vw] h-[8vw] hidden lg:block relative lg:absolute lg:-right-12 xl:-top-16 xl:-right-16 rotate-6 z-40" width={width === 'D' ? 200:150} height={width === 'D' ? 200:150} src={'/assets/borderedLogo.png'} alt="Work Horizon Logo - Bordered" />
         </div>
         </>
     )

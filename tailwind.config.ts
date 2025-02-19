@@ -12,6 +12,7 @@ export default {
         headerBackground: "var(--header-bg)",
         'sidemenu-bg': 'var(--sidemenu-bg)',
         'transparent-one': 'var(--transparent-one)',
+        'transparent-two':'var(--transparent-two)',
       },backgroundImage:{
         'transparent-bg-one': 'linear-gradient(0deg, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.35) 30%);'
       }
