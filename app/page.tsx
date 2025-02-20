@@ -9,6 +9,7 @@ import  WhyChooseUs  from './ui/home/choose';
 import JoinGlobalTeam from './ui/home/joinglobalteam';
 import CareerOpportunities from './ui/home/career';
 import HiringProcess from './ui/home/hiringprocess';
+import LetsTalk from './ui/home/letstalk';
 // import UnderDevelopment from './ui/underdevelopment';
 export default function Home() {
   useEffect(() => {
@@ -56,6 +57,7 @@ export default function Home() {
       <JoinGlobalTeam />
       <CareerOpportunities />
       <HiringProcess />
+      <LetsTalk />
       {/* <div>
         {loading ? (
           <p>Loading data...</p>

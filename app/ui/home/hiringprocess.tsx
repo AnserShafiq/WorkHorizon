@@ -32,7 +32,7 @@ export default function HiringProcess() {
             {`We believe in a transparent and efficient hiring process to bring the best talent on board. Here’s how it works:`}
             </p>
             {/* Steps 1 to 3 */}
-            <div className="relative grid grid-cols-[27%,9.5%,27%,9.5%,27%] items-start mt-14" data-aos='fade-up'>
+            <div className="relative grid grid-cols-[27%,9.5%,27%,9.5%,27%] items-start mt-14" data-aos='fade-right'>
                 <div className="relative flex flex-row">
                     <div className="bg-dullWhite grid grid-cols-[25%,75%] shadow-md z-10 relative rounded-2xl">
                         <div className="p-4 bg-sky-900 flex items-center justify-center rounded-l-2xl">
@@ -70,7 +70,7 @@ export default function HiringProcess() {
                 </div>    
             </div>
             
-            <div className="relative grid grid-cols-[27%,9.5%,27%,9.5%,27%] justify-start items-center mt-2">
+            <div className="relative grid grid-cols-[27%,9.5%,27%,9.5%,27%] justify-start items-center mt-2" data-aos='fade-left'>
                 <div/>
                 <div/>
                 <div />
@@ -81,7 +81,7 @@ export default function HiringProcess() {
             </div>
 
             {/* Steps 4 to 5 */}
-            <div className="relative grid grid-cols-[18.25%,27%,9.5%,27%,18.25%] justify-start items-center">
+            <div className="relative grid grid-cols-[18.25%,27%,9.5%,27%,18.25%] justify-start items-center" data-aos='fade-left'>
                 <div/>
                 <div className="flex flex-row">
                     <div className="bg-dullWhite grid grid-cols-[25%,75%] shadow-md z-10 relative rounded-2xl">
