@@ -15,7 +15,9 @@ export default {
         'transparent-two':'var(--transparent-two)',
         dullWhite: '#FFFBF6',
       },backgroundImage:{
-        'transparent-bg-one': 'linear-gradient(0deg, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.35) 30%);'
+        'transparent-bg-one': 'linear-gradient(0deg, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.35) 30%);',
+        'blue-white': 'linear-gradient(to right,rgb(7, 44, 67) 43.5%, #ffffff 43.5% );',
+        'half-light-blue': 'linear-gradient(to bottom,rgb(7, 44, 67) 50%, #ffffff 50% );',
       }
       ,fontSize:{
         '5xl': '2.5rem',

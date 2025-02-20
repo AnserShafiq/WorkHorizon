@@ -6,6 +6,9 @@ import HomeHead from './ui/home/section1';
 import { useEffect } from 'react';
 import  AboutSection  from './ui/home/about';
 import  WhyChooseUs  from './ui/home/choose';
+import JoinGlobalTeam from './ui/home/joinglobalteam';
+import CareerOpportunities from './ui/home/career';
+import HiringProcess from './ui/home/hiringprocess';
 // import UnderDevelopment from './ui/underdevelopment';
 export default function Home() {
   useEffect(() => {
@@ -50,6 +53,9 @@ export default function Home() {
       <HomeHead />
       <AboutSection />
       <WhyChooseUs />
+      <JoinGlobalTeam />
+      <CareerOpportunities />
+      <HiringProcess />
       {/* <div>
         {loading ? (
           <p>Loading data...</p>

@@ -71,7 +71,7 @@ function SlideShow(){
 export default function HomeHead(){
     const width:string = TargetWindowCheck();
     return(
-        <>
+        <div className="container">
         <div className="w-[94%] mx-auto lg:w-full mt-6 xl:mt-32 mb-16 lg:mb-20 xl:mb-40 grid xl:grid-cols-[50%,50%]">
             <div className="xl:pr-10">
                 <h3 className="text-sm font-normal capitalize leading-1"> <span className="font-bold uppercase ">Work Horizon</span> - Driving Sales, Expanding Horizons</h3>
@@ -89,6 +89,6 @@ export default function HomeHead(){
             <SlideShow />
             <Image data-aos='fade-down' data-aos-duration='1000' className="w-[8vw] h-[8vw] hidden lg:block relative lg:absolute lg:-right-12 xl:-top-16 xl:-right-16 rotate-6 z-40" width={width === 'D' ? 200:150} height={width === 'D' ? 200:150} src={'/assets/borderedLogo.png'} alt="Work Horizon Logo - Bordered" />
         </div>
-        </>
+        </ div>
     )
 }
