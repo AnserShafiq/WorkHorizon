@@ -26,7 +26,7 @@ export default function HiringProcess() {
         },
     ]
     return(
-        <div className="container flex flex-col my-28">
+        <div className="container flex flex-col my-28 overflow-hidden">
             <h3 className="text-3xl xl:text-4xl capitalize text-sky-900 font-bold xl:mb-3 text-center" data-aos='fade-up'>Our Hiring Process</h3>
             <p className="text-md lg:text-xl capitalize font-normal tracking-wide text-center" data-aos='fade-up'>
             {`We believe in a transparent and efficient hiring process to bring the best talent on board. Here’s how it works:`}
