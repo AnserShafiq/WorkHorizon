@@ -72,7 +72,7 @@ export default function HomeHead(){
     const width:string = TargetWindowCheck();
     return(
         <div className="container">
-        <div className="w-[94%] mx-auto lg:w-full mt-6 xl:mt-32 mb-16 lg:mb-20 xl:mb-40 grid xl:grid-cols-[50%,50%]">
+        <div className="w-[94%] mx-auto lg:w-full pt-6 xl:pt-32 pb-16 lg:pb-20 xl:pb-40 grid xl:grid-cols-[50%,50%]">
             <div className="xl:pr-10">
                 <h3 className="text-sm font-normal capitalize leading-1"> <span className="font-bold uppercase ">Work Horizon</span> - Driving Sales, Expanding Horizons</h3>
                 <h3 className='text-3xl lg:text-5xl font-bold text-sky-900 uppercase lg:leading-tight mb-3'>Take your career to new heights with Work Horizon<span className="text-5xl text-orange-500 leading-none">.</span></h3>

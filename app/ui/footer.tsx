@@ -16,7 +16,7 @@ export default function Footer(){
         { link: '/contact-us', name: 'Finance & Accounting' },
     ];
     return(
-        <div className="mt-[500px]">
+        <div className="mt-[500px] bg-red-900">
             <div className="bg-gray-300 fixed bottom-0 -z-10 w-full min-h-[450px]">
                 <div className='container pt-20 pb-16'>
                     <h3 className="text-2xl xl:text-5xl font-bold tracking-wide text-sky-900 leading-tight">Next-Level Customer Experiences <br/>For Leading Brands<span className="text-[4rem] text-orange-500 leading-[0px]">.</span></h3>
@@ -24,7 +24,7 @@ export default function Footer(){
                         <div>
                             <h3 className="text-sm xl:text-lg text-gray-900 font-normal border-b border-orange-500 w-fit capitalize leading-1"> Achieve success with Work Horizon</h3>
                             <h3 className='text-3xl xl:text-5xl font-bold text-sky-900 capitalize tracking-wider lg:leading-tight my-3'>{`What sets us apart?`}</h3>
-                            <h4 className="text-sm xl:text-lg capitalize text-gray-900">We serve diverse sectors such as real estate, staffing, logistics, and more, offering a wide range of services and dynamic career growth opportunities.</h4>
+                            <h4 className="text-sm xl:text-lg capitalize text-gray-900">We serve diverse sectors such as real estate, staffing, security, and more, offering a wide range of services and dynamic career growth opportunities.</h4>
                         </div>
                         <div />
                         <div >

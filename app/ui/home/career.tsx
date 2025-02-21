@@ -11,8 +11,8 @@ export default function CareerOpportunities() {
             link: '/',
         },{
             icon: '/assets/icons/customersupport.png',
-            head: 'Customer support & operations',
-            desc: 'Deliver exceptional customer service and operational excellence. Join our team to assist businesses in providing top-tier customer experiences and seamless administrative support.',
+            head: 'Digital marketing & I.T',
+            desc: 'Deliver exceptional I.T services and digital marketing excellence. Join our team to assist businesses in providing top-tier digital marketing and information technology facilities.',
             link: '/',
         },{
             icon: '/assets/icons/humanresources.png',
