@@ -13,6 +13,7 @@ export default {
         'sidemenu-bg': 'var(--sidemenu-bg)',
         'transparent-one': 'var(--transparent-one)',
         'transparent-two':'var(--transparent-two)',
+        'transparent-three':'var(--transparent-three)',
         dullWhite: '#FFFBF6',
         'special-blue': 'rgb(7, 44, 67)',
 
