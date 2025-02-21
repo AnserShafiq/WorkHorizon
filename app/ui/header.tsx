@@ -9,12 +9,34 @@ import MobileMenu from "./mobileMenu";
 export default function MainHeader() {
     const pathname = usePathname(); // Get current path
 
+    const [headerDisplay, setHeaderDisplay] = useState<boolean>(true);
+    const [lastScrollY, setLastScroll] = useState<number>(0)
+
     const [menuItems, setMenuItems] = useState([
         { link: '/', name: 'Home', active: false },
         { link: '/about-us', name: 'About Us', active: false },
         { link: '/careers', name: 'Careers', active: false },
         { link: '/contact-us', name: 'Contact Us', active: false },
     ]);
+
+    const HandleScroll = () => {
+        console.log('==> ', window.scrollY)
+        if(window.scrollY > lastScrollY && lastScrollY > 100){
+            console.log('false')
+            setHeaderDisplay(false)
+        }else{
+            console.log('true')
+            setHeaderDisplay(true)
+        }
+        setLastScroll(window.scrollY)
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', HandleScroll)
+        return(() => {
+            window.removeEventListener('scroll', HandleScroll)
+        })
+    })
 
     useEffect(() => {
         setMenuItems((prevItems) =>
@@ -26,7 +48,7 @@ export default function MainHeader() {
     }, [pathname]); // Re-run effect when pathname changes
 
     return (
-        <div className="w-full bg-headerBackground py-2 shadow-sm shadow-gray-300">
+        <div className={`w-full bg-headerBackground py-2 shadow-sm shadow-gray-300 sticky top-0 z-50 transition-transform ease-in-out duration-500 transform ${headerDisplay ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="flex justify-between px-2 xl:px-0 xl:grid xl:grid-cols-[20%,60%,20%] container">
                 <div className="flex">
                     <Link className="hidden xl:block" href={'/'}>

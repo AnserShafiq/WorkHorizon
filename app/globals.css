@@ -7,7 +7,19 @@
     --sidemenu-bg: #ece5dd;
     --transparent-one: #00000067;
     --transparent-two: #00000093;
+    --transparent-three: #39393948;
     --footer-contact: #a3a7c0;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--sidemenu-bg);
+}
+::-webkit-scrollbar-thumb{
+    background-color: #0C4A6E;
+    border-radius: 10px;
 }
 
 .transitive-underline {

@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function LetsTalk(){
-    const [selectCountry, setSelectedCountry] = useState<string|undefined>('');
+    const [selectCountry, setSelectedCountry] = useState<string|undefined>('+92');
     const [contactNumber, setContactNumber] = useState<string|undefined> ('');
     const handleCountry = (e:React.ChangeEvent<HTMLSelectElement>) => {
         e.preventDefault()
@@ -75,6 +75,7 @@ export default function LetsTalk(){
                             <label className='text-md xl:text-md font-[500] tracking-wide'>Contact Number <span className="text-red-500">*</span></label>
                             <div className='grid grid-cols-[22%,78%]'>
                                 <select className="border pl-2 rounded-l-xl bg-gray-200 cursor-pointer" name="country" id='country' value={selectCountry} onChange={handleCountry} required>
+                                    <option value=''></option>
                                     {
                                         countries.map((country, index) => 
                                             <option value={country.code} key={index}> {selectCountry === country.code ? null : country.name} {country.flag}</option>
