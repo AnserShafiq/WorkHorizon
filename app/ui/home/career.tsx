@@ -27,8 +27,8 @@ export default function CareerOpportunities() {
         },
     ]
     return (
-        <div className="w-full min-h-[500px] relative left-0 bg-blue-white">
-            <div className="container grid grid-cols-[42%,58%] py-10">
+        <div className="w-full min-h-[500px] relative xl:left-0 bg-blue-white-two xl:bg-blue-white">
+            <div className="container grid grid-cols-1 xl:grid-cols-[42%,58%] py-10">
                 <div className="flex flex-col justify-center pr-16" data-aos='fade-in'>
                     <h3 className="text-3xl xl:text-4xl capitalize text-neutral-100 font-bold xl:mb-8 pb-2 border-b border-orange-500 w-fit">Explore Career Opportunities</h3>  
                     <h4 className="text-xl xl:text-2xl capitalize text-neutral-100 font-semibold xl:mb-3">Apply with Confidence</h4> 

@@ -23,10 +23,10 @@ export default function WhyChooseUs(){
         },
     ]
     return(
-        <div className="flex flex-col items-center my-20 w-full container">
+        <div className="flex flex-col items-center my-8 xl:my-20 w-[92%] xl:w-full container">
             <h3 className="text-3xl xl:text-4xl capitalize text-sky-900 font-bold xl:mb-3" data-aos='fade-up'>Why Choose Us?</h3>
-            <p className='text-md lg:text-xl capitalize font-normal tracking-wide text-center mx-24 mb-6' data-aos='fade-up'>Driving Your Business Forward with Unmatched Expertise, Customized Strategies, a Strong Focus on Quality and Innovation, Scalable Solutions, and a Global Perspective to Help You Succeed</p>
-            <div className="grid grid-cols-5 gap-10">
+            <p className='text-md lg:text-xl capitalize font-normal tracking-wide text-center xl:mx-24 mb-6' data-aos='fade-up'>Driving Your Business Forward with Unmatched Expertise, Customized Strategies, a Strong Focus on Quality and Innovation, Scalable Solutions, and a Global Perspective to Help You Succeed</p>
+            <div className=" mx-14 xl:mx-0 grid grid-cols-1 lg:grid-cols-5 gap-4 justify-center xl:gap-10">
                 {
                     points.map((item, index) => 
                         <div className="flex flex-col items-center border text-center py-10 rounded-2xl bg-dullWhite shadow-sm px-3" key={index} data-aos='fade-up'>
@@ -36,7 +36,7 @@ export default function WhyChooseUs(){
                     )
                 }
             </div>  
-            <Link data-aos='fade-up' className="text-sky-900 hover:text-gray-100 hover:bg-sky-900 text-md xl:text-lg font-semibold tracking-wide rounded-xl border-2 border-sky-900 px-5 py-2 mt-8" href={'/about-us'}>Explore Us</Link>
+            <Link data-aos='xl:fade-up' className="text-sky-900 hover:text-gray-100 hover:bg-sky-900 text-md xl:text-lg font-semibold tracking-wide rounded-xl border-2 border-sky-900 px-5 py-2 mt-8" href={'/about-us'}>Explore Us</Link>
         </div>
     )
 }

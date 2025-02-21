@@ -31,7 +31,7 @@ export default function LetsTalk(){
         e.preventDefault()
     }
     return(
-        <div className='w-full bg-special-blue mt-[13rem]'>
+        <div className='w-full hidden lg:block bg-special-blue mt-[13rem]'>
             <div className="container relative grid grid-cols-[50%,50%]">
                 <div className="py-20">
                     <h3 className="text-sm xl:text-lg text-gray-300 font-normal border-b border-orange-500 w-fit capitalize leading-1"> Achieve success with Work Horizon</h3>

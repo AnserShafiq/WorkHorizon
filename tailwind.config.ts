@@ -20,6 +20,7 @@ export default {
       },backgroundImage:{
         'transparent-bg-one': 'linear-gradient(0deg, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.35) 30%);',
         'blue-white': 'linear-gradient(to right,rgb(7, 44, 67) 43.5%, #ffffff 43.5% );',
+        'blue-white-two': 'linear-gradient(to bottom,rgb(7, 44, 67) 43.5%, #ffffff 43.5% );',
         'half-light-blue': 'linear-gradient(to bottom,rgb(7, 44, 67) 50%, #ffffff 50% );',
       }
       ,fontSize:{
@@ -29,8 +30,11 @@ export default {
     container: {
       center:true,
       screens: {
-        xl: '1350px',
-        lg: '800px'
+        '5xl':'1350px',
+
+        '4xl': '1300px',
+        xl: '1260px',
+        lg: '1200px',
       }
     }
   },
