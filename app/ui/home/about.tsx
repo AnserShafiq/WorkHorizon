@@ -6,14 +6,14 @@ import Link from "next/link";
 
 export default function AboutSection () {
     return(
-        <div className="my-28 overflow-hidden container">
+        <div className="my-28 overflow-x-hidden container">
             <h3 className="text-3xl xl:text-4xl capitalize text-sky-900 font-bold xl:mb-3" data-aos='fade-up'>Beyond a Call Center – Your Growth Partner in Success</h3>
             <p className="text-md lg:text-xl capitalize font-normal tracking-wide" data-aos='fade-up'>
                 At <span className="text-orange-500 font-semibold uppercase">Work Horizon</span>, we are more than just a call center—we are a trusted partner in business growth. With a team of skilled professionals and cutting-edge technology, we provide exceptional services in sales, administration, HR, and accounting. Our mission is to help businesses optimize their operations, improve customer interactions, and achieve sustainable success.
             </p>
-            <div className="flex flex-row xl:grid xl:grid-cols-[45%,55%] mt-5 w-full">
-                <div className="pr-8" data-aos='fade-right'>
-                    <Image src={'/assets/h7.jpg'} alt="About - Work Horizon" className="rounded-xl object-cover object-center w-full h-[500px]" width={500} height={500} />
+            <div className="flex flex-row xl:grid xl:grid-cols-[45%,55%] my-5 w-full">
+                <div className="pr-5 pl-3" data-aos='fade-right'>
+                    <Image src={'/assets/h7.jpg'} alt="About - Work Horizon" className="rounded-xl object-cover shadow-md shadow-transparent-one object-center w-full h-[500px]" width={500} height={500} />
                 </div>
                 <div className="pl-8 pr-3 flex flex-col justify-start py-16" data-aos='fade-left' data-aos-duration='700'>
                     <h3 className="text-sky-900 font-[600] uppercase xl:text-3xl mb-1">We believe in a customer-first approach,</h3> 
