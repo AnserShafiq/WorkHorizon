@@ -2,7 +2,7 @@
 import { Grip, MailIcon, MapPin, PhoneCall, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function MobileMenu() {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -12,6 +12,16 @@ export default function MobileMenu() {
         { link: '/careers', name: 'Careers', active: false },
         { link: '/contact-us', name: 'Contact Us', active: false },
     ]
+    useEffect(() => {
+        if(openMenu){
+            document.body.style.overflow = 'hidden'
+        }else{
+            document.body.style.overflow = 'auto'
+        }
+        return () => {
+            document.body.style.overflow = 'auto'
+        }
+    })
 
     return (
         <>
