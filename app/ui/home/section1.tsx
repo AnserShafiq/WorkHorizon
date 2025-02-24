@@ -29,7 +29,7 @@ function SlideShow(){
       });
     
     return(
-        <div className="relative w-full h-[600px] lg:h-[750px] overflow-hidden lg:rounded-2xl transition-transform duration-300 delay-100 translate-x-0 ease-in shadow-lg shadow-transparent-one">
+        <div className="relative w-full h-[600px] lg:h-[650px] xl:h-[750px] overflow-hidden lg:rounded-2xl transition-transform duration-300 delay-100 translate-x-0 ease-in shadow-lg shadow-transparent-one">
             {Slides.map((slide, index) => (
                 <div
                 key={index}
@@ -72,13 +72,13 @@ export default function HomeHead(){
     const width:string = TargetWindowCheck();
     return(
         <div className="container">
-            <div className="w-[92%] mx-auto lg:w-full pt-6 xl:pt-32 pb-16 lg:pb-20 xl:pb-40 grid xl:grid-cols-[50%,50%]">
-                <div className="xl:pr-10">
+            <div className="w-[92%] mx-auto lg:w-full pt-6 xl:pt-32 pb-16 lg:pb-20 xl:pb-40 grid lg:grid-cols-[50%,50%]">
+                <div className="lg:pr-10">
                     <h3 className="text-sm font-normal capitalize leading-1"> <span className="font-bold uppercase ">Work Horizon</span> - Driving Sales, Expanding Horizons</h3>
                     <h3 className='text-3xl lg:text-5xl font-bold text-sky-900 uppercase lg:leading-tight mb-3'>Take your career to new heights with Work Horizon<span className="text-5xl text-orange-500 leading-none">.</span></h3>
                     <p className="text-md lg:text-xl capitalize font-normal tracking-wide">We empower businesses & professionals through innovative call center solutions, ensuring growth & success in a competitive world.</p>
                 </div>
-                <div className="xl:pl-12 pt-5">
+                <div className="lg:pl-12 pt-5">
                     <p className="text-md lg:text-xl capitalize font-normal tracking-wide">Join us on a journey of <span className='font-semibold italic text-orange-500'>excellence</span>, where <span className='font-semibold italic text-orange-500'>expertise</span> meets opportunity, & <span className='font-semibold italic text-orange-500'>innovation</span> drives success. 
                         With a commitment to Professionalism & Customer Satisfaction, we provide Top-Tier Sales, Administration, HR, & Accounting 
                         services to help <span className="font-semibold uppercase text-orange-500">BUSINESSES THRIVE</span>.</p>
@@ -87,7 +87,7 @@ export default function HomeHead(){
             </div>
             <div className="w-full relative mx-auto">
                 <SlideShow />
-                <Image data-aos='fade-down' data-aos-duration='1000' className="w-[8vw] h-[8vw] hidden lg:block relative lg:absolute lg:-right-12 xl:relative 2xl:-top-16 2xl:-right-16 rotate-6 z-40" width={width === 'D' ? 200:150} height={width === 'D' ? 200:150} src={'/assets/borderedLogo.png'} alt="Work Horizon Logo - Bordered" />
+                <Image className="w-[10vw] h-[10vw] hidden lg:block relative lg:absolute lg:-right-12 lg:-top-16 2xl:-right-16 rotate-6 z-40" width={width === 'D' ? 200:150} height={width === 'D' ? 200:150} src={'/assets/borderedLogo.png'} alt="Work Horizon Logo - Bordered" />
             </div>
         </ div>
     )

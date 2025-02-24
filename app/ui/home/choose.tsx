@@ -23,10 +23,10 @@ export default function WhyChooseUs(){
         },
     ]
     return(
-        <div className="flex flex-col items-center my-8 xl:my-20 w-[92%] xl:w-full container">
-            <h3 className="text-3xl xl:text-4xl capitalize text-sky-900 font-bold xl:mb-3" data-aos='fade-up'>Why Choose Us?</h3>
+        <div className="flex flex-col items-center my-8 lg:my-20 w-[92%] lg:w-full container">
+            <h3 className="text-3xl lg:text-4xl capitalize text-sky-900 font-bold lg:mb-3" data-aos='fade-up'>Why Choose Us?</h3>
             <p className='text-md lg:text-xl capitalize font-normal tracking-wide text-center xl:mx-24 mb-6' data-aos='fade-up'>Driving Your Business Forward with Unmatched Expertise, Customized Strategies, a Strong Focus on Quality and Innovation, Scalable Solutions, and a Global Perspective to Help You Succeed</p>
-            <div className=" mx-14 xl:mx-0 grid grid-cols-1 lg:grid-cols-5 gap-4 justify-center xl:gap-10">
+            <div className=" mx-14 lg:mx-0 grid grid-cols-1 lg:grid-cols-5 gap-4 justify-center xl:gap-10">
                 {
                     points.map((item, index) => 
                         <div className="flex flex-col items-center border text-center py-10 rounded-2xl bg-dullWhite shadow-sm px-3" key={index} data-aos='fade-up'>

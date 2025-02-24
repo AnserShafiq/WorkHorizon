@@ -49,16 +49,16 @@ export default function MainHeader() {
 
     return (
         <div className={`w-full bg-headerBackground py-2 shadow-sm shadow-gray-300 sticky top-0 z-50 transition-transform ease-in-out duration-500 transform ${headerDisplay ? 'translate-y-0' : '-translate-y-full'}`}>
-            <div className="flex justify-between px-2 xl:px-0 xl:grid xl:grid-cols-[20%,60%,20%] container">
-                <div className="flex">
-                    <Link className="hidden xl:block" href={'/'}>
-                        <Image src={'/assets/Logo.png'} className="w-auto h-auto" alt='Work Horizon' width={250} height={100} />
+            <div className="flex justify-between px-2 lg:px-0 lg:grid lg:grid-cols-[20%,60%,20%] container">
+                <div className="flex border">
+                    <Link className="hidden lg:block" href={'/'}>
+                        <Image src={'/assets/Logo.png'} className="w-[400px] h-auto" alt='Work Horizon' width={400} height={200} />
                     </Link>
-                    <Link className="block xl:hidden" href={'/'}>
+                    <Link className="block lg:hidden" href={'/'}>
                         <Image src={'/assets/Logo.png'} className="h-auto w-auto" alt='Work Horizon' width={175} height={100} />
                     </Link>
                 </div>
-                <div className="hidden xl:flex justify-center items-center gap-4">
+                <div className="hidden lg:flex justify-center items-center gap-4">
                     {menuItems.map((Item, index) => (
                         <Link
                             className={`text-lg xl:text-xl font-semibold tracking-wide transitive-underline ${Item.active ? 'text-[#F7801E]' : 'text-sky-900'} hover:text-sky-800`}
@@ -69,10 +69,10 @@ export default function MainHeader() {
                         </Link>
                     ))}
                 </div>
-                <div className="hidden xl:flex items-center justify-end">
+                <div className="hidden lg:flex items-center justify-end">
                     000-000-0000
                 </div>
-                <div className="flex xl:hidden items-center justify-end">
+                <div className="flex lg:hidden items-center justify-end">
                     <MobileMenu />
                 </div>
             </div>

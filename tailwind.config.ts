@@ -30,11 +30,10 @@ export default {
     container: {
       center:true,
       screens: {
-        '5xl':'1350px',
-
-        '4xl': '1300px',
-        xl: '1260px',
-        lg: '1200px',
+        '5xl':'80vw',
+        '4xl': '80vw',
+        xl: '90vw',
+        lg: '90vw',
       }
     }
   },
