@@ -3,7 +3,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import HomeHead from './ui/home/section1';
 // import { useEffect, useState } from 'react';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import  AboutSection  from './ui/home/about';
 import  WhyChooseUs  from './ui/home/choose';
 import JoinGlobalTeam from './ui/home/joinglobalteam';
@@ -49,7 +49,7 @@ export default function Home() {
   // }, []);
 
   return (
-    <>
+    <Suspense >
       {/* <UnderDevelopment /> */}
       <HomeHead />
       <AboutSection />
@@ -77,6 +77,6 @@ export default function Home() {
           <p>No data available.</p>
         )}
       </div> */}
-    </>
+    </Suspense>
   );
 }

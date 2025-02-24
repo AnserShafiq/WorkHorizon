@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@types/aos':
+        specifier: ^3.0.7
+        version: 3.0.7
       '@types/react-icons':
         specifier: ^3.0.0
         version: 3.0.0(react@19.0.0)
@@ -32,13 +35,13 @@ importers:
       react-icons:
         specifier: ^5.5.0
         version: 5.5.0(react@19.0.0)
+      react-loading:
+        specifier: ^2.0.3
+        version: 2.0.3(prop-types@15.8.1)(react@19.0.0)
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3
         version: 3.2.0
-      '@types/aos':
-        specifier: ^3.0.7
-        version: 3.0.7
       '@types/node':
         specifier: ^20
         version: 20.17.19
@@ -1460,6 +1463,12 @@ packages:
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+
+  react-loading@2.0.3:
+    resolution: {integrity: sha512-Vdqy79zq+bpeWJqC+xjltUjuGApyoItPgL0vgVfcJHhqwU7bAMKzysfGW/ADu6i0z0JiOCRJjo+IkFNkRNbA3A==}
+    peerDependencies:
+      prop-types: ^15.6.0
+      react: '>=0.14.0'
 
   react@19.0.0:
     resolution: {integrity: sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==}
@@ -3324,6 +3333,11 @@ snapshots:
       react: 19.0.0
 
   react-is@16.13.1: {}
+
+  react-loading@2.0.3(prop-types@15.8.1)(react@19.0.0):
+    dependencies:
+      prop-types: 15.8.1
+      react: 19.0.0
 
   react@19.0.0: {}
 
