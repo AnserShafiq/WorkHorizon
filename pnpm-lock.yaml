@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@types/aos':
-        specifier: ^3.0.7
-        version: 3.0.7
       '@types/react-icons':
         specifier: ^3.0.0
         version: 3.0.0(react@19.0.0)
@@ -42,6 +39,9 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3
         version: 3.2.0
+      '@types/aos':
+        specifier: ^3.0.7
+        version: 3.0.7
       '@types/node':
         specifier: ^20
         version: 20.17.19
