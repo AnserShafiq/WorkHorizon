@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function JoinGlobalTeam(){
     return(
-        <div className="my-14 lg::my-28 overflow-x-hidden container w-[92%] xl:w-full">
+        <div className="my-14 lg::my-28 overflow-x-hidden container w-[88%] xl:w-full">
             <div className="flex flex-col-reverse lg:grid lg:grid-cols-[55%,45%] my-5 w-full">
                 <div className="lg:pr-8 lg:pl-2 flex flex-col relative justify-start pt-8 lg:pt-12" data-aos='fade-right' data-aos-duration='700'>
                     <h3 className="text-3xl xl:text-4xl capitalize text-sky-900 font-bold xl:mb-3">Join a global team</h3> 

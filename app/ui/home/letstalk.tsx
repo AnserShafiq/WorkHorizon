@@ -31,27 +31,27 @@ export default function LetsTalk(){
         e.preventDefault()
     }
     return(
-        <div className='w-full hidden lg:block bg-special-blue mt-[13rem]'>
-            <div className="container relative grid grid-cols-[50%,50%]">
-                <div className="py-20">
+        <div className='w-full bg-special-blue py-10 lg:py-0 lg:mt-[13rem]'>
+            <div className="container relative grid grid-cols-1 lg:grid-cols-[50%,50%]">
+                <div className=" py-10 lg:py-20">
                     <h3 className="text-sm lg:text-lg text-gray-300 font-normal border-b border-orange-500 w-fit capitalize leading-1"> Achieve success with Work Horizon</h3>
                     <h3 className='text-3xl lg:text-5xl font-bold text-gray-100 capitalize tracking-wider lg:leading-tight my-3'>{`Let's Talk`}</h3>
-                    <h4 className="text-sm lg:text-lg capitalize text-gray-300">Work horizon empowers you to unlock new opportunities and embrace innovation.</h4>
-                    <div className="flex mt-24">
-                        <PhoneCall className="w-[3.3rem] h-auto text-orange-500"/>
+                    <h4 className="text-md lg:text-lg capitalize text-gray-300">Work horizon empowers you to unlock new opportunities and embrace innovation.</h4>
+                    <div className="flex mt-10 lg:mt-24">
+                        <PhoneCall className="w-10 lg:w-[3.3rem] h-auto text-orange-500"/>
                         <div className="flex flex-col ml-2 py-0 pl-2 border-l border-gray-500">
                             <h4 className="text-md text-gray-300">For Inquiries</h4>
                             <Link className="text-lg xl:text-xl text-gray-100" href={'/'}>92 (300) 000 0000</Link>
                         </div>
                     </div>
                     <div className="flex mt-6">
-                        <MailIcon className="w-[3.3rem] h-auto text-orange-500"/>
+                        <MailIcon className="w-10 lg:w-[3.3rem] h-auto text-orange-500"/>
                         <div className="flex flex-col ml-2 py-0 pl-2 border-l border-gray-500">
                             <h4 className="text-md text-gray-300">To Mail</h4>
                             <Link className="text-lg xl:text-xl text-gray-100" href={'/'}>info@workhorizon.pk</Link>
                         </div>
                     </div>
-                    <div className="flex flex-col mt-20">
+                    <div className="flex flex-col mt-10 lg:mt-20">
                         <h4 className="text-lg capitalize text-gray-100 tracking-wider">Social just you connected us!</h4>
                         <div className="flex justify-start mt-3 gap-4">
                             <Link className="text-sm text-gray-300 flex flex-col items-center gap-1" href={'/'}><FaFacebook className="w-6 h-auto" /> Facebook</Link>
@@ -60,7 +60,7 @@ export default function LetsTalk(){
                         </div>
                     </div>
                 </div>
-                <div className='relative -top-28 rounded-xl px-10 py-16 lg:ml-6 xl:ml-16 bg-gray-300'>
+                <div className='relative lg:-top-28 rounded-xl px-6 lg:px-10 py-8 lg:py-16 lg:ml-6 xl:ml-16 bg-gray-300'>
                     <h2 className="text-xl lg:text-2xl xl:text-3xl tracking-wide font-semibold border-b border-gray-400 pb-4">{`Let's Engage In Conversation...`}</h2>
                     <form onSubmit={handleSubmission} className="flex flex-wrap justify-between mt-6">
                         <div className="w-[48%] flex flex-col gap-1 mt-4">
