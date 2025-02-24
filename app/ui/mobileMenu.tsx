@@ -33,8 +33,8 @@ export default function MobileMenu() {
                     <X className="absolute w-6 h-auto text-white top-4 right-5 z-50 cursor-pointer" onClick={() => setOpenMenu(false)} />
 
                     {/* Sidebar */}
-                    <div className={`w-[88%] flex flex-col justify-between h-screen bg-sidemenu-bg px-5 py-10 fixed top-0 left-0 transform transition-transform ease-in-out duration-[0.7s] ${openMenu ? 'translate-x-0':'-translate-x-full'} `}>
-                        <Image src={'/assets/logo.png'} alt='Work horizon mobile logo' width={200} height={100} className='w-[15rem] h-auto' />
+                    <div className={`w-[88%] grid grid-rows-3 gap-5 h-screen bg-sidemenu-bg px-5 py-10 fixed top-0 left-0 transform transition-transform ease-in-out duration-[0.7s] ${openMenu ? 'translate-x-0':'-translate-x-full'} `}>
+                        <Image src={'/assets/mobile-logo-2.png'} alt='Work horizon mobile logo' width={200} height={100} className='w-[14rem] h-auto' />
                         <div className='flex flex-col mt-14 pr-8'>
                             {
                                 menu.map((item, idx) => 
