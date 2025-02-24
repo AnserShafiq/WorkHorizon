@@ -52,7 +52,7 @@ export default function MainHeader() {
             <div className="flex justify-between px-0 lg:grid lg:grid-cols-[20%,60%,20%] container">
                 <div className="flex">
                     <Link className="hidden lg:block" href={'/'}>
-                        <Image src={'/assets/Logo.png'} className="w-auto h-auto" alt='Work Horizon' width={300} height={200} />
+                        <Image src={'/assets/Logo.png'} className="w-[15rem] h-auto" alt='Work Horizon' width={300} height={200} />
                     </Link>
                     <Link className="block lg:hidden" href={'/'}>
                         <Image src={'/assets/Logo.png'} className="h-auto w-[13rem]" alt='Work Horizon' width={175} height={100} />
