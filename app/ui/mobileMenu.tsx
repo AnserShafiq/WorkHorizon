@@ -18,12 +18,12 @@ export default function MobileMenu() {
             {!openMenu ? (
                 <Grip onClick={() => setOpenMenu(true)} className="cursor-pointer" />
             ) : (
-                <div className="w-full h-screen fixed top-0 left-0 z-40 bg-black/50" data-aos='slide-right'>
+                <div className="w-full h-screen fixed top-0 left-0 z-40 bg-black/50">
                     {/* Close Icon */}
                     <X className="absolute w-6 h-auto text-white top-4 right-5 z-50 cursor-pointer" onClick={() => setOpenMenu(false)} />
 
                     {/* Sidebar */}
-                    <div className={`w-[88%] flex flex-col justify-between h-screen bg-sidemenu-bg px-5 py-10 fixed top-0 left-0 `} data-aos='slide-right' data-aos-duration='1000'>
+                    <div className={`w-[88%] flex flex-col justify-between h-screen bg-sidemenu-bg px-5 py-10 fixed top-0 left-0 transform transition-transform ease-in-out duration-[0.7s] ${openMenu ? 'translate-x-0':'-translate-x-full'} `}>
                         <Image src={'/assets/logo.png'} alt='Work horizon mobile logo' width={200} height={100} className='w-[15rem] h-auto' />
                         <div className='flex flex-col mt-14 pr-8'>
                             {
