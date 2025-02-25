@@ -20,12 +20,9 @@ export default function MainHeader() {
     ]);
 
     const HandleScroll = () => {
-        console.log('==> ', window.scrollY)
         if(window.scrollY > lastScrollY && lastScrollY > 100){
-            console.log('false')
             setHeaderDisplay(false)
         }else{
-            console.log('true')
             setHeaderDisplay(true)
         }
         setLastScroll(window.scrollY)
