@@ -1,3 +1,4 @@
+'use client'
 import { countries } from "@/lib/countries";
 import { MailIcon, PhoneCall } from "lucide-react";
 import Link from "next/link";

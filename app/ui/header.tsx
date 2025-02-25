@@ -48,11 +48,8 @@ export default function MainHeader() {
         <div className={`w-full bg-headerBackground py-2 shadow-sm shadow-gray-300 sticky top-0 z-50 transition-transform ease-in-out duration-500 transform ${headerDisplay ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="flex justify-between px-0 lg:grid lg:grid-cols-[20%,60%,20%] container">
                 <div className="flex">
-                    <Link className="hidden lg:block" href={'/'}>
-                        <Image src={'/assets/Logo.png'} className="w-[15rem] h-auto" alt='Work Horizon' width={300} height={200} />
-                    </Link>
-                    <Link className="block lg:hidden" href={'/'}>
-                        <Image src={'/assets/Logo.png'} className="h-auto w-[13rem]" alt='Work Horizon' width={175} height={100} />
+                    <Link className="block" href={'/'}>
+                        <Image src={'/assets/Logo.png'} className="w-[13rem] lg:w-[15rem] h-auto" alt='Work Horizon' width={300} height={200} />
                     </Link>
                 </div>
                 <div className="hidden lg:flex justify-center items-center gap-4">

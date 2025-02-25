@@ -32,17 +32,16 @@ export default {
       }
       ,fontSize:{
         '5xl': '2.5rem',
+      },container:{
+        center:true,
+        screens: {
+          '2xl':'80vw',
+          xl: '90vw',
+          lg: '90vw',
+        }
       }
     },
-    container: {
-      center:true,
-      screens: {
-
-        '2xl':'80vw',
-        xl: '90vw',
-        lg: '90vw',
-      }
-    }
+    
   },
   plugins: [],
 } satisfies Config;
