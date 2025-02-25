@@ -38,7 +38,7 @@ export default function MobileMenu() {
                         <div className='flex flex-col pr-8'>
                             {
                                 menu.map((item, idx) => 
-                                    <Link href={item.link} key={idx} className='text-xl text-sky-900 font-semibold border-b border-gray-100 mb-5 '>{item.name}</Link>
+                                    <Link href={item.link} key={idx} className='text-xl text-sky-900 font-semibold border-b border-gray-100 mb-5' onClick={() => setOpenMenu(!openMenu)}>{item.name}</Link>
                                 )
                             }
                         </div>

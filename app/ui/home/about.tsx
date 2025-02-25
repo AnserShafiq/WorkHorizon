@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function AboutSection () {
     return(
         <div className="my-14 xl:my-28 mx-auto w-[88%] lg:w-full overflow-x-hidden container">
-            <h3 className="text-3xl xl:text-4xl capitalize text-sky-900 font-bold xl:mb-3" data-aos='fade-up'>Beyond a Call Center – Your Growth Partner in Success</h3>
+            <h3 className="text-3xl xl:text-4xl capitalize text-sky-900 font-bold mb-3" data-aos='fade-up'>Beyond a Call Center – Your Growth Partner in Success</h3>
             <p className="text-md lg:text-xl capitalize font-normal tracking-wide" data-aos='fade-up'>
                 At <span className="text-orange-500 font-semibold uppercase">Work Horizon</span>, we are more than just a call center—we are a trusted partner in business growth. With a team of skilled professionals and cutting-edge technology, we provide exceptional services in sales, administration, HR, and accounting. Our mission is to help businesses optimize their operations, improve customer interactions, and achieve sustainable success.
             </p>
