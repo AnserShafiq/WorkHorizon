@@ -20,7 +20,7 @@ export default function Footer(){
             <div className="bg-gray-300 relative lg:fixed bottom-0 -z-10 w-full lg:min-h-[500px]">
                 <div className='container pb-6 pt-10 lg:pt-20 lg:pb-16'>
                     <h3 className="text-3xl lg:text-5xl font-bold tracking-wide text-sky-900 leading-tight">Next-Level Customer Experiences <br className="hidden lg:block"/>For Leading Brands<span className="text-[4rem] text-orange-500 leading-[0px]">.</span></h3>
-                    <div className="grid lg:grid-cols-[40%,13%,20%,27%] 2xl:grid-cols-[32%,25%,20%,23%] gap-2 mt-6">
+                    <div className="grid lg:grid-cols-[40%,13%,20%,27%] gap-2 mt-6">
                         <div>
                             <h3 className="text-md lg:text-lg text-gray-900 font-normal border-b border-orange-500 w-fit capitalize leading-1"> Achieve success with Work Horizon</h3>
                             <h3 className='text-2xl lg:text-5xl font-bold text-sky-900 capitalize tracking-wider lg:leading-tight my-3'>{`What sets us apart?`}</h3>
