@@ -15,7 +15,7 @@ export default function ContactForm(){
                 <div className='block mb-8 lg:m-0'>
                     <h3 className="text-2xl xl:text-3xl font-bold tracking-wide text-sky-900 mb-3">Contact Us.</h3>
                     <h4 className="text-md 2xl:text-xl font-semibold tracking-wide mb-3">For employment related queries, try to visit our <Link className="font-bold text-orange-500 capitalize" href={'/careers'}>Careers page.</Link></h4>
-                    <h3 className="text-xl xl:text-2xl font-semibold tracking-wide text-sky-900 mb-3">Share your details. We'll get back to you, ASAP.</h3>
+                    <h3 className="text-xl xl:text-2xl font-semibold tracking-wide text-sky-900 mb-3">{`Share your details. We'll get back to you, ASAP.`}</h3>
                     <form className="flex flex-col w-full lg:w-[75%] 2xl:w-[70%]">
                         <div className='flex flex-col mb-2'>
                             <label className="text-md lg:text-lg font-[500] tracking-wide mb-1">{`I'm contacting for:`}</label>
