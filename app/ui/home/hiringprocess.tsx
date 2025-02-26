@@ -44,7 +44,7 @@ export default function HiringProcess() {
                         </div>
                     </div> 
                 </div>
-                <Image className="my-5 mx-auto w-auto h-auto lg:-rotate-90 object-contain" src={'/assets/icons/down.png'} alt="Arrow to next step" width={50} height={100}/>
+                <Image className="my-5 mx-auto w-auto h-auto lg:-rotate-90 object-contain" src={'/assets/icons/home/down.png'} alt="Arrow to next step" width={50} height={100}/>
                 <div className="relative flex flex-row">
                     <div className="bg-dullWhite grid grid-cols-[25%,75%] shadow-md z-10 relative rounded-2xl">
                         <div className="p-4 bg-sky-900 flex items-center justify-center rounded-l-2xl">
@@ -56,7 +56,7 @@ export default function HiringProcess() {
                         </div>
                     </div> 
                 </div>    
-                <Image className="my-5 mx-auto w-auto h-auto lg:-rotate-90 object-contain" src={'/assets/icons/down.png'} alt="Arrow to next step" width={50} height={100}/>
+                <Image className="my-5 mx-auto w-auto h-auto lg:-rotate-90 object-contain" src={'/assets/icons/home/down.png'} alt="Arrow to next step" width={50} height={100}/>
                 <div className="relative flex flex-row">
                     <div className="bg-dullWhite grid grid-cols-[25%,75%] shadow-md z-10 relative rounded-2xl">
                         <div className="p-4 bg-sky-900 flex items-center justify-center rounded-l-2xl">
@@ -76,7 +76,7 @@ export default function HiringProcess() {
                 <div />
                 <div />
                 <div>
-                <Image className="my-5 mx-auto w-auto h-auto lg:rotate-[50deg] object-contain" src={'/assets/icons/down.png'} alt="Arrow to next step" width={50} height={100}/>
+                <Image className="my-5 mx-auto w-auto h-auto lg:rotate-[50deg] object-contain" src={'/assets/icons/home/down.png'} alt="Arrow to next step" width={50} height={100}/>
                 </div>
             </div>
 
@@ -94,7 +94,7 @@ export default function HiringProcess() {
                         </div>
                     </div> 
                 </div>
-                <Image className="my-5 mx-auto w-auto h-auto lg:rotate-90 object-contain" src={'/assets/icons/down.png'} alt="Arrow to next step" width={50} height={100}/>
+                <Image className="my-5 mx-auto w-auto h-auto lg:rotate-90 object-contain" src={'/assets/icons/home/down.png'} alt="Arrow to next step" width={50} height={100}/>
                 <div className="flex flex-row">
                     <div className="bg-dullWhite grid grid-cols-[25%,75%] shadow-md z-10 relative rounded-2xl">
                         <div className="p-4 bg-sky-900 flex items-center justify-center rounded-l-2xl">

@@ -7,19 +7,19 @@ export default function WhyChooseUs(){
     const points = [
         {
             point: 'Industry leading expertise',
-            icon: '/assets/icons/expertise.png',
+            icon: '/assets/icons/home/expertise.png',
         },{
             point: 'Tailored business solutions',
-            icon: '/assets/icons/business.png',
+            icon: '/assets/icons/home/business.png',
         },{
             point: 'Commitment to quality and innovation',
-            icon: '/assets/icons/solutions.png',
+            icon: '/assets/icons/home/solutions.png',
         },{
             point: 'Cost-effective and scalable services',
-            icon: '/assets/icons/scalable.png',
+            icon: '/assets/icons/home/scalable.png',
         },{
             point: 'Global reach and international expertise',
-            icon: '/assets/icons/global.png',
+            icon: '/assets/icons/home/global.png',
         },
     ]
     return(

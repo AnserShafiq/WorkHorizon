@@ -13,7 +13,7 @@ export default function PageIntro(){
     }
     return(
         <div className='container w-[88%] lg:w-full'>
-            <div className="grid grid-cols-1 py-10 lg:py-20 2xl:py-32 lg:grid-cols-[50%,50%] w-full" data-aos="fade-up">
+            <div className="grid grid-cols-1 py-10 lg:py-20 2xl:py-18 lg:grid-cols-[50%,50%] w-full" data-aos="fade-up">
                 <div className="flex flex-col w-full lg:pr-5 xl:pr-10">
                     <div className='flex flex-col-reverse relative w-full lg:grid lg:grid-cols-[48%,48%] gap-[4%]'>
                         <Image src={'/assets/about-left-one.jpg'} className="ml-[25%] -mt-[8vh] lg:m-0 h-[28vh] lg:h-[37vh] 2xl:h-[32vh] w-[75%] lg:w-full object-cover object-[20%] 2xl:object-left-top rounded-2xl shadow-xl shadow-gray-300" alt="About - Work Horizon - Left" width={500} height={300} />

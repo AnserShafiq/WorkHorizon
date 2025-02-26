@@ -5,22 +5,22 @@ import Link from "next/link";
 export default function CareerOpportunities() {
     const Oppos = [
         {
-            icon: '/assets/icons/salesandmarketing.png',
+            icon: '/assets/icons/home/salesandmarketing.png',
             head: 'Sales and marketing',
             desc: 'Be part of a high-performing sales and marketing team, helping businesses drive revenue and growth. We offer opportunities for professionals with strong communication and negotiation skills to thrive in a competitive environment.',
             link: '/',
         },{
-            icon: '/assets/icons/customersupport.png',
+            icon: '/assets/icons/home/customersupport.png',
             head: 'Digital marketing & I.T',
             desc: 'Deliver exceptional I.T services and digital marketing excellence. Join our team to assist businesses in providing top-tier digital marketing and information technology facilities.',
             link: '/',
         },{
-            icon: '/assets/icons/humanresources.png',
+            icon: '/assets/icons/home/humanresources.png',
             head: 'Human Resources & Recruitment',
             desc: 'Play a crucial role in talent acquisition and people management. Help businesses build strong teams by recruiting, training, and retaining top talent.',
             link: '/',
         },{
-            icon: '/assets/icons/financeandaccounting.png',
+            icon: '/assets/icons/home/financeandaccounting.png',
             head: 'Finance & Accounting',
             desc: 'Support businesses in managing their financial operations with precision and accuracy. Work in a fast-paced environment, ensuring compliance and strategic financial planning.',
             link: '/',
