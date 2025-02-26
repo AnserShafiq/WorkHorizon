@@ -18,7 +18,7 @@ export default function ContactForm(){
                     <h3 className="text-xl xl:text-2xl font-semibold tracking-wide text-sky-900 mb-3">Share your details. We'll get back to you, ASAP.</h3>
                     <form className="flex flex-col w-full lg:w-[75%] 2xl:w-[70%]">
                         <div className='flex flex-col mb-2'>
-                            <label className="text-md lg:text-lg font-[500] tracking-wide mb-1">I'm contacting for:</label>
+                            <label className="text-md lg:text-lg font-[500] tracking-wide mb-1">{`I'm contacting for:`}</label>
                             <select className="bg-gray-100 px-2 py-1 lg:px-4 lg:py-2 border-2 border-gray-200 rounded-lg" name='reason' id='reason' onChange={(e) => setContactReason(e.target.value)} required>
                                 <option className="text-gray-400" defaultChecked>Select the contact option</option>
                                 {
