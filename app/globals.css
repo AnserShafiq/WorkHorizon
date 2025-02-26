@@ -50,12 +50,12 @@
 .transitive-underline:active::after {
     transform: scaleX(1);
 }
-@media (min-width: 1550px){
+@media (min-width: 1500px){
     .container{
         max-width: 1340px;
     }
 }
-@media (max-width: 1549px) {
+@media (max-width: 1499px) {
     .container{
         max-width: 83vw;
     }
