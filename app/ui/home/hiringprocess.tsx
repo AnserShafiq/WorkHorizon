@@ -36,7 +36,7 @@ export default function HiringProcess() {
                 <div className="relative flex flex-row">
                     <div className="bg-dullWhite grid grid-cols-[25%,75%] shadow-md z-10 relative rounded-2xl">
                         <div className="p-4 bg-sky-900 flex items-center justify-center rounded-l-2xl">
-                            <h3 className="text-xl xl:text-3xl font-bold uppercase text-gray-100 tracking-wider text-center">Step 01</h3>
+                            <h3 className="text-xl lg:text-2xl 2xl:text-3xl font-bold uppercase text-gray-100 tracking-wider text-center">Step 01</h3>
                         </div>
                         <div className="py-4 pl-2 pr-6 rounded-r-2xl border-2 border-sky-900">
                             <h3 className="font-bold text-lg">{HP[0].head}</h3>
@@ -48,7 +48,7 @@ export default function HiringProcess() {
                 <div className="relative flex flex-row">
                     <div className="bg-dullWhite grid grid-cols-[25%,75%] shadow-md z-10 relative rounded-2xl">
                         <div className="p-4 bg-sky-900 flex items-center justify-center rounded-l-2xl">
-                            <h3 className="text-xl xl:text-3xl font-bold uppercase text-gray-100 tracking-wider text-center">Step 02</h3>
+                            <h3 className="text-xl lg:text-2xl 2xl:text-3xl font-bold uppercase text-gray-100 tracking-wider text-center">Step 02</h3>
                         </div>
                         <div className="py-4 px-2 rounded-r-2xl border-2 border-sky-900">
                             <h3 className="font-bold text-lg">{HP[1].head}</h3>
@@ -60,7 +60,7 @@ export default function HiringProcess() {
                 <div className="relative flex flex-row">
                     <div className="bg-dullWhite grid grid-cols-[25%,75%] shadow-md z-10 relative rounded-2xl">
                         <div className="p-4 bg-sky-900 flex items-center justify-center rounded-l-2xl">
-                            <h3 className="text-xl xl:text-3xl font-bold uppercase text-gray-100 tracking-wider text-center">Step 03</h3>
+                            <h3 className="text-xl lg:text-2xl 2xl:text-3xl font-bold uppercase text-gray-100 tracking-wider text-center">Step 03</h3>
                         </div>
                         <div className="py-4 px-2 rounded-r-2xl border-2 border-sky-900">
                             <h3 className="font-bold text-lg">{HP[2].head}</h3>
@@ -86,7 +86,7 @@ export default function HiringProcess() {
                 <div className="flex flex-row">
                     <div className="bg-dullWhite grid grid-cols-[25%,75%] shadow-md z-10 relative rounded-2xl">
                         <div className="p-4 bg-sky-900 flex items-center justify-center rounded-l-2xl">
-                            <h3 className="text-xl xl:text-3xl font-bold uppercase text-gray-100 tracking-wider text-center">Step 05</h3>
+                            <h3 className="text-xl lg:text-2xl 2xl:text-3xl font-bold uppercase text-gray-100 tracking-wider text-center">Step 05</h3>
                         </div>
                         <div className="py-4 px-2 rounded-r-2xl border-2 border-sky-900">
                             <h3 className="font-bold text-lg">{HP[4].head}</h3>
@@ -98,7 +98,7 @@ export default function HiringProcess() {
                 <div className="flex flex-row">
                     <div className="bg-dullWhite grid grid-cols-[25%,75%] shadow-md z-10 relative rounded-2xl">
                         <div className="p-4 bg-sky-900 flex items-center justify-center rounded-l-2xl">
-                            <h3 className="text-xl xl:text-3xl font-bold uppercase text-gray-100 tracking-wider text-center">Step 04</h3>
+                            <h3 className="text-xl lg:text-2xl 2xl:text-3xl font-bold uppercase text-gray-100 tracking-wider text-center">Step 04</h3>
                         </div>
                         <div className="py-4 px-2 rounded-r-2xl border-2 border-sky-900">
                             <h3 className="font-bold text-lg">{HP[3].head}</h3>
