@@ -7,13 +7,6 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens:{
-      'sm': '450px',
-      'md':'700px',
-      'lg':'1024px',
-      'xl':'1250px',
-      '2xl': '1400px'
-    },
     extend: {
       colors: {
         headerBackground: "var(--header-bg)",
@@ -34,15 +27,10 @@ export default {
       ,fontSize:{
         '5xl': '2.5rem',
       },
-      container:{
-        center:true,
-        screens: {
-          '2xl':'1350px',
-          xl: '1000px',
-          lg: '900',
-        }
-      }
     },
+    container:{
+      center:true,
+    }
     
   },
   plugins: [],

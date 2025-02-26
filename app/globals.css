@@ -50,3 +50,18 @@
 .transitive-underline:active::after {
     transform: scaleX(1);
 }
+@media (min-width: 1361px){
+    .container{
+        max-width: 80vw;
+    }
+}
+@media (max-width: 1360px) {
+    .container{
+        max-width: 85vw;
+    }
+}
+@media (max-width: 1200px) {
+    .container{
+        max-width: 88vw;
+    }
+}
