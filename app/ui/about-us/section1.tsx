@@ -16,15 +16,15 @@ export default function PageIntro(){
             <div className="grid grid-cols-1 py-10 lg:py-20 2xl:py-18 lg:grid-cols-[50%,50%] w-full" data-aos="fade-up">
                 <div className="flex flex-col w-full lg:pr-5 xl:pr-10">
                     <div className='flex flex-col-reverse relative w-full lg:grid lg:grid-cols-[48%,48%] gap-[4%]'>
-                        <Image src={'/assets/about-left-one.jpg'} className="ml-[25%] -mt-[8vh] lg:m-0 h-[28vh] lg:h-[37vh] 2xl:h-[32vh] w-[75%] lg:w-full object-cover object-[20%] 2xl:object-left-top rounded-2xl shadow-xl shadow-gray-300" alt="About - Work Horizon - Left" width={500} height={300} />
-                        <Image src={'/assets/hs3.jpg'} className="h-[28vh] lg:h-[33vh] 2xl:h-[29vh] w-[75%] lg:w-full object-cover object-center-bottom lg:object-end rounded-2xl shadow-xl shadow-gray-300" alt="About - Work Horizon - Right" width={500} height={300} />
+                        <Image src={'/assets/about-left-one.jpg'} className="ml-[25%] -mt-[8vh] lg:m-0 h-[28vh] lg:h-[37vh] 2xl:h-[29vh] w-[75%] lg:w-full object-cover object-[20%] 2xl:object-left-top rounded-2xl shadow-xl shadow-gray-300" alt="About - Work Horizon - Left" width={500} height={300} />
+                        <Image src={'/assets/hs3.jpg'} className="h-[28vh] lg:h-[33vh] 2xl:h-[26vh] w-[75%] lg:w-full object-cover object-center-bottom lg:object-end rounded-2xl shadow-xl shadow-gray-300" alt="About - Work Horizon - Right" width={500} height={300} />
                         <button onClick={handleScroll} className="absolute bottom-10 left-5 flex lg:hidden flex-col items-center text-sky-900 px-1 pt-3 pb-2 rounded-3xl text-[0.7rem] border border-sky-900 w-fit animate-pulse text-center leading-tight">
                             Scroll<br/>More
                             <ArrowDown />
                         </button>        
                     </div>
                     <div className='hidden lg:flex items-center mt-8 mx-4'>
-                        <Image src={'/assets/about-center-one.jpg'} className="h-[50vh]  2xl:h-[45vh] w-full object-cover object-center rounded-2xl shadow-xl shadow-gray-300" alt="About - Work Horizon - Center" width={1000} height={1000}  />
+                        <Image src={'/assets/about-center-one.jpg'} className="h-[50vh] 2xl:h-[40vh] w-full object-cover object-center rounded-2xl shadow-xl shadow-gray-300" alt="About - Work Horizon - Center" width={1000} height={1000}  />
                     </div>
                 </div>
                 <div className='flex flex-col justify-center mt-6 lg:mt-0 lg:pr-8' data-aos='fade-up'>

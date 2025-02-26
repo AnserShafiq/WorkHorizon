@@ -52,7 +52,7 @@ export default function MainHeader() {
                         <Image src={'/assets/Logo.png'} className="w-[13rem] lg:w-[15rem] h-auto" alt='Work Horizon' width={300} height={200} />
                     </Link>
                 </div>
-                <div className="hidden lg:flex justify-center items-center gap-4">
+                <div className="hidden lg:flex justify-center items-center gap-8">
                     {menuItems.map((Item, index) => (
                         <Link
                             className={`text-lg xl:text-xl font-semibold tracking-wide transitive-underline ${Item.active ? 'text-[#F7801E]' : 'text-sky-900'} hover:text-sky-800`}
