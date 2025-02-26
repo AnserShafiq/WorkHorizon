@@ -9,9 +9,10 @@ export default function ContactForm(){
     const contactOptions = [
         'Option one', 'Option two', 'Option three'
     ]
+    console.log('Reasons of contacting us=> ', contactReason)
     return(
         <div className='container w-[88%] lg:w-full min-h-[92vh] flex items-center'>
-            <div className="grid lg:grid-cols-[70%,30%] 2xl:grid-cols-[75%,25%] w-full mb-10 lg:mb-1">
+            <div className="grid lg:grid-cols-[70%,30%] 2xl:grid-cols-[75%,25%] w-full mb-10 py-10 lg:py-20 lg:mb-1">
                 <div className='block mb-8 lg:m-0'>
                     <h3 className="text-2xl xl:text-3xl font-bold tracking-wide text-sky-900 mb-3">Contact Us.</h3>
                     <h4 className="text-md 2xl:text-xl font-semibold tracking-wide mb-3">For employment related queries, try to visit our <Link className="font-bold text-orange-500 capitalize" href={'/careers'}>Careers page.</Link></h4>
