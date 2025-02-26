@@ -3,6 +3,7 @@ import "./globals.css";
 import MainHeader from "@/app/ui/header";
 import Footer from '@/app/ui/footer'
 import {Noto_Sans} from 'next/font/google'
+// import { SessionProvider } from "next-auth/react";
 
 const notosans = Noto_Sans({
   variable: '--font-noto-sans',
@@ -19,6 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    // <SessionProvider>
     <html lang="en">
       <body className={`${notosans.variable} antialiased`}>
         <MainHeader />
@@ -28,5 +30,6 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
+    // </SessionProvider> 
   );
 }
