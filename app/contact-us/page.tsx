@@ -1,9 +1,20 @@
+'use client'
 
+import Aos from "aos"
+import 'aos/dist/aos.css'
+import { useEffect } from "react"
+import ContactForm from "../ui/contact-us/contactForm"
 
 export default function ContactUs(){
+    useEffect(() => {
+        Aos.init({
+            duration: 500,
+            easing:'ease-in-out',
+        })
+    },[])
     return(
-        <div className="container w-[88%] lg:w-full">
-            Contact Us Page
-        </div>
+        <>
+            <ContactForm/>
+        </>
     )
 }

@@ -8,7 +8,6 @@ const notosans = Noto_Sans({
   variable: '--font-noto-sans',
   subsets:['latin']
 })
-
 export const metadata: Metadata = {
   title: "Work Horizon",
   description: "Driving Sale, Expanding Horizons",

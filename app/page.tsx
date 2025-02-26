@@ -3,14 +3,13 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import HomeHead from './ui/home/section1';
 // import { useEffect, useState } from 'react';
-import { Suspense, useEffect } from 'react';
+import { useEffect } from 'react';
 import  AboutSection  from './ui/home/about';
 import  WhyChooseUs  from './ui/home/choose';
 import JoinGlobalTeam from './ui/home/joinglobalteam';
 import CareerOpportunities from './ui/home/career';
 import HiringProcess from './ui/home/hiringprocess';
 import LetsTalk from './ui/home/letstalk';
-import Loading from './loading';
 // import Loading from './ui/loading';
 // import UnderDevelopment from './ui/underdevelopment';
 export default function Home() {
@@ -51,7 +50,7 @@ export default function Home() {
   // }, []);
 
   return (
-    <Suspense fallback={<Loading />}>
+    <>
       <HomeHead />
       <AboutSection />
       <WhyChooseUs />
@@ -78,6 +77,6 @@ export default function Home() {
           <p>No data available.</p>
         )}
       </div> */}
-    </Suspense>
+    </>
   );
 }
