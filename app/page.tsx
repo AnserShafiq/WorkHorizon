@@ -10,6 +10,7 @@ import JoinGlobalTeam from './ui/home/joinglobalteam';
 import CareerOpportunities from './ui/home/career';
 import HiringProcess from './ui/home/hiringprocess';
 import LetsTalk from './ui/home/letstalk';
+// import Loading from './ui/loading';
 // import UnderDevelopment from './ui/underdevelopment';
 export default function Home() {
   useEffect(() => {
@@ -50,7 +51,6 @@ export default function Home() {
 
   return (
     <>
-      {/* <UnderDevelopment /> */}
       <HomeHead />
       <AboutSection />
       <WhyChooseUs />
