@@ -14,7 +14,7 @@ export default function PageIntro(){
     return(
         <div className='container w-[88%] lg:w-full'>
             <div className="grid grid-cols-1 py-10 lg:py-24 xl:py-32 lg:grid-cols-[50%,50%] w-full" data-aos="fade-up">
-                <div className="flex flex-col w-full lg:px-5 xl:px-24">
+                <div className="flex flex-col w-full lg:pr-5 xl:pr-10">
                     <div className='flex flex-col-reverse relative w-full lg:grid lg:grid-cols-[48%,48%] gap-[4%]'>
                         <Image src={'/assets/about-left-one.jpg'} className="ml-[25%] -mt-[8vh] lg:m-0 h-[28vh] lg:h-[29vh] w-[75%] lg:w-full object-cover object-left-top rounded-2xl shadow-xl shadow-gray-300" alt="About - Work Horizon - Left" width={500} height={300} />
                         <Image src={'/assets/hs3.jpg'} className="h-[28vh] lg:h-[26vh] w-[75%] lg:w-full object-cover object-center-bottom lg:object-end rounded-2xl shadow-xl shadow-gray-300" alt="About - Work Horizon - Right" width={500} height={300} />
@@ -27,7 +27,7 @@ export default function PageIntro(){
                         <Image src={'/assets/about-center-one.jpg'} className="h-[35vh] w-full object-cover object-center rounded-2xl shadow-xl shadow-gray-300" alt="About - Work Horizon - Center" width={1000} height={600}  />
                     </div>
                 </div>
-                <div className='flex flex-col justify-center lg:pr-8' data-aos='fade-up'>
+                <div className='flex flex-col justify-center mt-6 lg:mt-0 lg:pr-8' data-aos='fade-up'>
                     <h3 className="text-md 2xl:text-lg leading-1 uppercase tracking-wider font-bold text-orange-500">Who we are?</h3>
                     <h2 className="text-3xl 2xl:text-4xl capitalize text-sky-900 font-bold mb-3">Empowering Careers and Driving Business Success Globally</h2>
                     <p className="text-md lg:text-lg 2xl:text-xl capitalize font-normal tracking-wide mb-5">

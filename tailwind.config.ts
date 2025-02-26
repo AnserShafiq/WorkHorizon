@@ -8,6 +8,7 @@ export default {
   ],
   theme: {
     screens:{
+      'sm': '450px',
       'md':'700px',
       'lg':'1024px',
       'xl':'1250px',
@@ -32,12 +33,13 @@ export default {
       }
       ,fontSize:{
         '5xl': '2.5rem',
-      },container:{
+      },
+      container:{
         center:true,
         screens: {
-          '2xl':'80vw',
-          xl: '90vw',
-          lg: '90vw',
+          '2xl':'1350px',
+          xl: '1000px',
+          lg: '900',
         }
       }
     },

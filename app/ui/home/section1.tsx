@@ -85,7 +85,7 @@ export default function HomeHead(){
                     <p className="text-md lg:text-xl capitalize font-normal mt-3 tracking-wide">We operate on a global scale, serving clients across multiple industries & regions, ensuring seamless business solutions worldwide.</p>
                 </div>
             </div>
-            <div className="w-full relative mx-auto">
+            <div className="w-full lg:w-[95%] 2xl:w-full relative mx-auto">
                 <SlideShow />
                 <Image className="w-[10vw] h-[10vw] hidden lg:block relative lg:absolute lg:-right-12 lg:-top-16 2xl:-right-16 rotate-6 z-40" width={width === 'D' ? 200:150} height={width === 'D' ? 200:150} src={'/assets/borderedLogo.png'} alt="Work Horizon Logo - Bordered" />
             </div>

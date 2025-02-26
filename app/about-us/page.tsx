@@ -17,10 +17,10 @@ export default function AboutUs(){
       }, []);
     return(
     <Suspense fallback={<Loading/>}>
-            <PageIntro />
-            <Vision_Mission />
-            <Values />
-            <LetsTalk />
+      <PageIntro />
+      <Vision_Mission />
+      <Values />
+      <LetsTalk />
     </Suspense>
     )
 }
