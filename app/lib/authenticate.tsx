@@ -1,18 +1,34 @@
+'use server'
+import { signIn } from "@/auth";
 
 
+export async function authentication( formData: FormData) {
+  try {
+    const data: Record<string, any> = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+    // console.log('Data from Login Form => ', data);
 
-export async function authentication(prevState: string|undefined , formData: FormData) {
-    try{
-        const data:Record<string, any> = {};
-        formData.forEach((value,key) => {
-            data[key] = value;
-        })
-        console.log('Data from Login Form => ',data)
+    const result = await signIn('credentials', {
+      redirect: false,
+      ...data,
+    });
 
-        // const user 
-
-        return({success: true})
-    }catch(error:any){
-        return ({error:'Error Message'})
+    // console.log('SignIn result:', result);
+    if(result?.error)
+    {
+        if (result?.error === 'Invalid password') {
+            return { error: 'From Auth Invalid password' };
+        }else if(result?.error === 'User not found'){
+            return { error: 'From Auth User not found' };  
+        }
+        return { error: "Authentication failed" }; // Generic error
     }
+    
+    return { success: true};
+  } catch (error: any) {
+    console.error('Authentication error On Authentication.tsx');
+    return { error: error.message || 'Authentication failed' };
+  }
 }

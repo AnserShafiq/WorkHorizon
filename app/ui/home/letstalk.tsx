@@ -1,5 +1,5 @@
 'use client'
-import { countries } from "@/lib/countries";
+import { countries } from "@/app/lib/countries";
 import { MailIcon, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";

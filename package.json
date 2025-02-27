@@ -11,8 +11,10 @@
   "dependencies": {
     "@types/react-icons": "^3.0.0",
     "aos": "^2.3.4",
+    "fs": "0.0.1-security",
     "gsap": "^3.12.7",
     "lucide-react": "^0.475.0",
+    "multer": "1.4.5-lts.1",
     "mysql2": "^3.12.0",
     "next": "15.1.7",
     "next-auth": "5.0.0-beta.25",

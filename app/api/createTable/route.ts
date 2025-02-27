@@ -1,4 +1,4 @@
-import { createConnection } from "@/lib/db";
+import { createConnection } from "@/app/lib/db";
 import { NextResponse } from "next/server";
 
 
