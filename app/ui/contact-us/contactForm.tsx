@@ -56,17 +56,17 @@ export default function ContactForm(){
                     <div className='flex flex-col items-center lg:items-start px-8 py-10 border-b-2'>
                         <PhoneCallIcon className="h-[4rem] w-auto text-orange-500 mb-3" />
                         <h3 className="text-xl 2xl:text-xl font-[500] tracking-wide text-sky-900 capitalize">To Call Us:</h3>
-                        <Link href={'tel:+92000000000'} className="text-xl 2xl:text-2xl font-bold tracking-wide text-sky-900 border-b border-orange-500">+92 300 1234556</Link>
+                        <Link href={'tel:+923206460085'} className="text-xl 2xl:text-2xl font-bold tracking-wide text-sky-900 border-b border-orange-500">+92 320 6460085</Link>
                     </div>
                     <div className='flex flex-col items-center lg:items-start px-8 py-10 border-b-2'>
                         <MailOpen className="h-[4rem] w-auto text-orange-500 mb-3" />
                         <h3 className="text-xl 2xl:text-xl font-[500] tracking-wide text-sky-900 capitalize">To Mail Us:</h3>
-                        <Link href={'mailto:info@workhorizon.pk'} className="text-xl 2xl:text-2xl font-bold tracking-wide text-sky-900 border-b border-orange-500">info@workhorizon.pk</Link>
+                        <Link href={'mailto:hr@workhorizon.pk'} className="text-xl 2xl:text-2xl font-bold tracking-wide text-sky-900 border-b border-orange-500">hr@workhorizon.pk</Link>
                     </div>
                     <div className='flex flex-col items-center lg:items-start px-8 py-10'>
                         <MapPin className="h-[4rem] w-auto text-orange-500 mb-3" />
                         <h3 className="text-xl 2xl:text-xl font-[500] tracking-wide text-sky-900 capitalize">Located At:</h3>
-                        <Link href={'tel:+92000000000'} className="text-xl 2xl:text-2xl font-bold tracking-wide text-sky-900 border-b border-orange-500">DHA Phase 8, Lahore, Pk</Link>
+                        <Link href={'https://maps.app.goo.gl/8wxyANfpWtUkDN878'} className="text-xl 2xl:text-2xl font-bold tracking-wide text-sky-900 w-fit border-b border-orange-500">Sunny Plaza, Eden City,<br/> DHA Phase 8, Lahore, PK.</Link>
                     </div>
                 </div>
             </div>

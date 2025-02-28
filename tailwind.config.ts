@@ -15,7 +15,7 @@ export default {
         'transparent-two':'var(--transparent-two)',
         'transparent-three':'var(--transparent-three)',
         dullWhite: '#FFFBF6',
-        'special-blue': 'rgb(7, 44, 67)',
+        'special-blue': '#072c43',
 
       },backgroundImage:{
         'transparent-bg-one': 'linear-gradient(0deg, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.35) 30%);',

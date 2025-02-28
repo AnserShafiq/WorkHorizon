@@ -42,8 +42,8 @@ export const authConfig: NextAuthConfig = {
             if (isOnDashboard) {
               if (isLoggedIn) return true;
               return false; // Redirect unauthenticated users to the login page
-            } else if (isLoggedIn) {
-                // console.log('Redirecting to dashboard')
+            }
+            if (isLoggedIn) {
               return Response.redirect(new URL('/portal/dashboard', nextUrl));
             }
             return true;

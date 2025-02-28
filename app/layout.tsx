@@ -3,6 +3,7 @@ import "./globals.css";
 import MainHeader from "@/app/ui/header";
 import Footer from '@/app/ui/footer'
 import {Noto_Sans} from 'next/font/google'
+import AOSProvider from "./aosinitializer";
 // import { SessionProvider } from "next-auth/react";
 
 const notosans = Noto_Sans({
@@ -23,6 +24,7 @@ export default function RootLayout({
     // <SessionProvider>
     <html lang="en">
       <body className={`${notosans.variable} antialiased`}>
+        <AOSProvider />
         <MainHeader />
         <div className="bg-white">
           {children}

@@ -5,10 +5,11 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation"; // Import Next.js pathname hook
 import '../globals.css'
 import MobileMenu from "./mobileMenu";
+import { signOut } from "next-auth/react";
 
 export default function MainHeader() {
     const pathname = usePathname(); // Get current path
-
+    const [adminMenu, setAdminMenu] = useState<boolean>(false);
     const [headerDisplay, setHeaderDisplay] = useState<boolean>(true);
     const [lastScrollY, setLastScroll] = useState<number>(0)
 
@@ -35,6 +36,14 @@ export default function MainHeader() {
         })
     })
 
+    useEffect(() =>{
+        if(pathname.includes('/portal')){
+            setAdminMenu(true)
+        }else{
+            setAdminMenu(false)
+        }
+    },[pathname])
+
     useEffect(() => {
         setMenuItems((prevItems) =>
             prevItems.map(item => ({
@@ -53,18 +62,35 @@ export default function MainHeader() {
                     </Link>
                 </div>
                 <div className="hidden lg:flex justify-center items-center gap-8">
-                    {menuItems.map((Item, index) => (
-                        <Link
-                            className={`text-lg xl:text-xl font-semibold tracking-wide transitive-underline ${Item.active ? 'text-[#F7801E]' : 'text-sky-900'} hover:text-sky-800`}
-                            href={Item.link}
-                            key={index}
-                        >
-                            {Item.name}
-                        </Link>
-                    ))}
+                    {
+                    !adminMenu ? 
+                        menuItems.map((Item, index) => (
+                            <Link
+                                className={`text-lg xl:text-xl font-semibold tracking-wide transitive-underline ${Item.active ? 'text-[#F7801E]' : 'text-sky-900'} hover:text-sky-800`}
+                                href={Item.link}
+                                key={index}
+                            >
+                                {Item.name}
+                            </Link>
+                        )):(
+                            <h3>Admin Menu</h3>
+                        )
+                    }
                 </div>
                 <div className="hidden lg:flex items-center justify-end">
-                    000-000-0000
+                    {
+                        adminMenu ? 
+                            <button 
+                                onClick={() => signOut({callbackUrl: '/portal'})} 
+                                className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded transition-colors"
+                                >
+                                Sign Out
+                                </button>
+                        :
+                            <Link href={'tel:+923206460085'} className="relative text-md font-semibold text-orange-500 border-2 border-orange-500 transition-all ease-in-out duration-500 hover:scale-[1.05] hover:-top-[2px]  px-5 py-1 rounded-xl">
+                                +92 320 6460085
+                            </Link>
+                    }
                 </div>
                 <div className="flex lg:hidden items-center justify-end">
                     <MobileMenu />
