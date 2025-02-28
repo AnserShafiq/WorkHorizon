@@ -1,12 +1,14 @@
 import { executeQuery } from "@/app/lib/db";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
-  request: Request,
+  request: NextRequest,
   context: { params: { admin_id: string } }
 ) {
   try {
-    const { admin_id } = context.params; // Correctly destructuring params
+    const params = await context.params; // Await the params object
+    const { admin_id } = params; // Now safely destructure admin_id
+
     console.log('Admin ID =>', admin_id);
 
     const admin = await executeQuery(`SELECT * FROM USERS WHERE ID = ?`, [admin_id]);
