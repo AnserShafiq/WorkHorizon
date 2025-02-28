@@ -6,7 +6,7 @@ export async function GET(
   {params}: { params: { admin_id: string } }
 ) {
   try {
-    const { admin_id } = await params; // Correctly destructuring params
+    const { admin_id } = params; // Correctly destructuring params
     console.log('Admin ID =>', admin_id);
 
     const admin = await executeQuery(`SELECT * FROM USERS WHERE ID = ?`, [admin_id]);
