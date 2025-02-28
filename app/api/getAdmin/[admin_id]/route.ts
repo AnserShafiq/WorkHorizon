@@ -1,13 +1,9 @@
 import { executeQuery } from "@/app/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(
-  request: NextRequest,
-  context: { params: { admin_id: string } }
-) {
+export async function GET(request: NextRequest, context: any) {
   try {
-    const params = await context.params; // Await the params object
-    const { admin_id } = params; // Now safely destructure admin_id
+    const { admin_id } = await context.params; // No need to explicitly define the type
 
     console.log('Admin ID =>', admin_id);
 
