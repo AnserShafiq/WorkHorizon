@@ -20,6 +20,7 @@ export async function createConnection() {
 }
 
 // Function to check connection and reconnect if needed
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function executeQuery(query: string, params: any[] = []) {
     const db = await createConnection();
     try {

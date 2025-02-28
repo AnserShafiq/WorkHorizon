@@ -3,6 +3,7 @@ import { signOut } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 
 export default function Dashboard() {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [user, setUser] = useState<any>({});
     useEffect(() => {
         const fetchUser = async () => {
