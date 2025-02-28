@@ -1,6 +1,6 @@
 import { executeQuery } from "@/app/lib/db";
 import { NextRequest, NextResponse } from "next/server";
-
+// eslint-disable-next-line
 export async function GET(request: NextRequest, context: any) {
   try {
     const { admin_id } = await context.params; // No need to explicitly define the type
