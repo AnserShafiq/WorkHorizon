@@ -9,7 +9,6 @@ export async function GET(
     const { admin_id } = await context.params; // Correctly destructuring params
     console.log('Admin ID =>', admin_id);
 
-    const db = await createConnection();
     const admin = await executeQuery(`SELECT * FROM USERS WHERE ID = ?`, [admin_id]);
 
     if (!admin) {

@@ -4,6 +4,7 @@ import { signIn } from "@/auth";
 
 export async function authentication( formData: FormData) {
   try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const data: Record<string, any> = {};
     formData.forEach((value, key) => {
       data[key] = value;
@@ -27,7 +28,9 @@ export async function authentication( formData: FormData) {
     }
     
     return { success: true};
-  } catch (error: any) {
+  } 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  catch (error: any) {
     console.error('Authentication error On Authentication.tsx');
     return { error: error.message || 'Authentication failed' };
   }
