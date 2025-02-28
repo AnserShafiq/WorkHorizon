@@ -3,10 +3,10 @@ import { NextResponse } from "next/server";
 
 export async function GET(
   request: Request,
-  {params}: { params: { admin_id: string } }
+  context: { params: { admin_id: string } }
 ) {
   try {
-    const { admin_id } = params; // Correctly destructuring params
+    const { admin_id } = context.params; // Correctly destructuring params
     console.log('Admin ID =>', admin_id);
 
     const admin = await executeQuery(`SELECT * FROM USERS WHERE ID = ?`, [admin_id]);
