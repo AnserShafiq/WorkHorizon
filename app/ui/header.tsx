@@ -12,7 +12,7 @@ export default function MainHeader() {
     const [adminMenu, setAdminMenu] = useState<boolean>(false);
     const [headerDisplay, setHeaderDisplay] = useState<boolean>(true);
     const [lastScrollY, setLastScroll] = useState<number>(0)
-
+    const [hideHeader, setHideHeader] =  useState<boolean>(false)
     const [menuItems, setMenuItems] = useState([
         { link: '/', name: 'Home', active: false },
         { link: '/about-us', name: 'About Us', active: false },
@@ -28,6 +28,15 @@ export default function MainHeader() {
         }
         setLastScroll(window.scrollY)
     }
+
+
+    useEffect(() => {
+        if(pathname.includes('/jobs')){
+            setHideHeader(true)
+        }else{
+            setHideHeader(false)
+        }
+    })
 
     useEffect(() => {
         window.addEventListener('scroll', HandleScroll)
@@ -54,7 +63,7 @@ export default function MainHeader() {
     }, [pathname]); // Re-run effect when pathname changes
 
     return (
-        <div className={`w-full bg-headerBackground py-2 shadow-sm shadow-gray-300 sticky top-0 z-50 transition-transform ease-in-out duration-500 transform ${headerDisplay ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className={`${hideHeader ? 'hidden':""} w-full bg-headerBackground py-2 shadow-sm shadow-gray-300 sticky top-0 z-50 transition-transform ease-in-out duration-500 transform ${headerDisplay ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="flex justify-between px-0 lg:grid lg:grid-cols-[20%,60%,20%] container">
                 <div className="flex">
                     <Link className="block" href={'/'}>
