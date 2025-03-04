@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignoring form
+/app/ui/careers/jobs/jobpostingform.tsx
