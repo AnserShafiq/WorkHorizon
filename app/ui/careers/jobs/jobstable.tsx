@@ -1,7 +1,7 @@
 import { JobOptions } from "@/app/lib/joboptions";
 import Link from "next/link";
 
-export default function JobsTable({worktype,jobtype}:any) {
+export default function JobsTable() {
     const toSearch = ''
     const toDisplay = JobOptions.filter((job) => job.title.toLowerCase().includes(toSearch.toLowerCase()))
     return (

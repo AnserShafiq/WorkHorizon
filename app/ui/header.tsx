@@ -36,7 +36,7 @@ export default function MainHeader() {
         }else{
             setHideHeader(false)
         }
-    })
+    },[pathname])
 
     useEffect(() => {
         window.addEventListener('scroll', HandleScroll)
