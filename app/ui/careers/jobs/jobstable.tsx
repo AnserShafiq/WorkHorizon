@@ -3,7 +3,6 @@ import Link from "next/link";
 
 export default function JobsTable({query}:{query:string}) {
 
-    // const toSearch = ''
     const toDisplay = JobOptions.filter((job) => job.title.toLowerCase().includes(query.toLowerCase()))
     return (
         <div className="container w-[88%] lg:w-full min-h-[80vh] py-14">

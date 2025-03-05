@@ -1,5 +1,4 @@
 import { JobOptions } from "@/app/lib/joboptions";
-import { Dot } from "lucide-react";
 
 // eslint-disable-next-line
 export default async function Page({ params }: any) {

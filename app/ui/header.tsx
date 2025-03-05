@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation"; // Import Next.js pathname hook
 import '../globals.css'
 import MobileMenu from "./mobileMenu";
 import { signOut } from "next-auth/react";
-import { ChevronDown } from "lucide-react";
 import DropDown from "./dropdown";
 
 export default function MainHeader() {

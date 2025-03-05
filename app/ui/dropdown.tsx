@@ -24,8 +24,6 @@ export default function DropDown({ mainMenu }: DropDownProps) {
   const [isOpen, setIsOpen] = useState(false); 
   const subMenu = mainMenu.dropdown;
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
-
   return (
     <div className="relative"
     onMouseOver={() => setIsOpen(true)}
