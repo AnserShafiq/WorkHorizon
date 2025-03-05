@@ -1,17 +1,12 @@
 import { JobOptions } from "@/app/lib/joboptions";
 
-// interface Type{
-//     jobid: string
-// }
-
-export default async function Page({ params }:{ params : {jobid: string} } ) {
-    const jobid = await params.jobid;
+export default function Page({ params }: { params: { jobid: string } }) {
+    const { jobid } = params;
 
     const matchedJobs = JobOptions.filter((job) => job.jobid === jobid);
 
     return (
         <div className="container w-[88%] lg:w-full">
-            {/* <h4>{jobid}</h4> */}
             {matchedJobs.length > 0 ? (
                 matchedJobs.map((job, index) => (
                     <div key={index} className="flex flex-col">
