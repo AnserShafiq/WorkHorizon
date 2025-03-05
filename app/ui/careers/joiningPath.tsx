@@ -49,7 +49,7 @@ export default function JoiningPath() {
     return (
         <div className='container w-[88%] lg:w-full py-10 2xl:py-20 flex flex-col'>
             <h3 className="text-3xl 2xl:text-4xl capitalize text-sky-900 font-bold mb-3 mx-auto border-b border-orange-500 pb-1">
-                <span className="hidden lg:block">Path To Link With Work Horizon</span>
+                <span className="hidden lg:block">Gate way to work horizon</span>
                 <span className="block lg:hidden">Our Hiring Process</span>
             </h3>
             <div className="grid grid-cols-1 lg:grid-cols-[25%,25%,25%] gap-5 lg:gap-[12.5%] w-[90%] mx-auto mt-6">

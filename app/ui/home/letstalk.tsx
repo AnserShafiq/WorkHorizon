@@ -90,10 +90,10 @@ export default function LetsTalk(){
                             <label className='text-md xl:text-md font-[500] tracking-wide'>Email <span className="text-red-500">*</span></label>
                             <input type="email" className="border pl-2 py-2 rounded-xl w-full bg-gray-200 cursor-pointer" name="email" id='email' placeholder="Email" required/>
                         </div>
-                        <div className="w-full flex flex-col gap-1 mt-4">
+                        {/* <div className="w-full flex flex-col gap-1 mt-4">
                             <label className='text-md xl:text-md font-[500] tracking-wide'>Subject <span className="text-red-500">*</span></label>
                             <input type="text" className="border pl-2 py-2 rounded-xl w-full bg-gray-200 cursor-pointer" name="subject" id='subject' placeholder="Conversation's subject" required/>
-                        </div>
+                        </div> */}
                         <div className="w-full flex flex-col gap-1 mt-4">
                             <label className='text-md xl:text-md font-[500] tracking-wide'>Message <span className="text-red-500">*</span></label>
                             <textarea rows={3} className="border pl-2 py-2 rounded-xl w-full bg-gray-200 cursor-pointer" name="message" id='message' placeholder="Message..." required/>

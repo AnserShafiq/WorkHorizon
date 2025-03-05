@@ -1,4 +1,5 @@
 import { JobOptions } from "@/app/lib/joboptions";
+import Link from "next/link";
 
 // eslint-disable-next-line
 export default async function Page({ params }: any) {
@@ -89,7 +90,7 @@ export default async function Page({ params }: any) {
                     )
                 }
             </ul>
-            
+            <Link href={`/careers/jobs/${jobid}`} className='text-lg xl:text-xl px-5 py-2 rounded-lg bg-sky-900 text-gray-100'>Apply Now</Link>
           </div>
         ))
       ) : (

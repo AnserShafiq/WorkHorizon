@@ -4,11 +4,13 @@ import { useState } from "react";
 import { TbPoint, TbPointFilled } from 'react-icons/tb';
 export default function WhyWorkWithUs() {
     const [points, setPoints] = useState([
-        { image:'/assets/careers-w-1.jpg',title: 'Growth Opportunities', desc: 'We promote from within and provide career advancement.', active: true },
-        { image:'/assets/careers-w-2.jpg',title: 'Competitive Salaries & Incentives', desc: 'Earn rewards for your hard work and performance.', active: false },
-        { image:'/assets/careers-w-5.jpg',title: 'Training & Development', desc: 'We invest in your professional growth.', active: false },
-        { image:'/assets/careers-w-4.jpg',title: 'Supportive Work Culture', desc: 'Be part of a collaborative and diverse team.', active: false },
-        { image:'/assets/careers-w-3.jpg',title: 'Global Exposure', desc: 'Work on international campaigns and enhance your skills.', active: false }
+        { image:'/assets/careers-w-2.jpg',title: 'Competitive Salaries & Incentives', desc: 'Earn rewards for your hard work and performance.', active: true },
+        { image:'/assets/careers-w-2.jpg',title: 'Fuel allowance & shuttle services', desc: 'Earn rewards for your hard work and performance.', active: false },
+        { image:'/assets/careers-w-1.jpg',title: 'Growth Opportunities', desc: 'We promote from within and provide career advancement.', active: false },
+        // { image:'/assets/careers-w-5.jpg',title: 'Training & Development', desc: 'We invest in your professional growth.', active: false },
+        { image:'/assets/careers-w-3.jpg',title: 'Global Exposure', desc: 'Work on international campaigns and enhance your skills.', active: false },
+        { image:'/assets/careers-w-4.jpg',title: 'Gazetted and Paid Leaves', desc: 'Be part of a collaborative and diverse team.', active: false },
+
     ]);
 
     const changeActive = (index: number) => {
@@ -25,7 +27,7 @@ export default function WhyWorkWithUs() {
                     Why Work With Us
                 </h3>
                 <h3 className="text-md lg:text-lg 2xl:text-xl text-gray-100 mb-2 capitalize">
-                    What makes Work Horizon an exciting place to work? Here’s why:
+                    What makes Work Horizon an exciting place to work?
                 </h3>
                 {points.map((point, index) => (
                     <div 
@@ -44,9 +46,9 @@ export default function WhyWorkWithUs() {
                     </div>
                 ))}
             </div>
-            <div>
+            <div className="h-[400px] lg:h-[600px]">
                 <Image 
-                    className="h-[400px] lg:h-[600] w-full object-center object-cover" 
+                    className="h-[400px] lg:h-full w-full object-center object-cover" 
                     src={`${points.find((point) => point.active)?.image}`} 
                     width={1000} 
                     height={800} 

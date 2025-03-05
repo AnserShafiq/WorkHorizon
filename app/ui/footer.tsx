@@ -28,7 +28,7 @@ export default function Footer(){
                         </div>
                         <div />
                         <div >
-                            <h3 className="text-xl xl:text-2xl font-bold text-sky-900 tracking-wide mb-3">Explore W.H</h3>
+                            <h3 className="text-xl xl:text-2xl font-bold text-sky-900 tracking-wide mb-3">Explore More</h3>
                             <div className="flex flex-col">
                                 {
                                     menuItems.map((item,index) => 

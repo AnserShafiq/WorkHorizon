@@ -18,9 +18,9 @@ export default function Careers_Start() {
     },[])
     
     return(
-        <div className="container w-[88%] lg:w-full shadow-lg shadow-gray-300 rounded-2xl my-10">
-            <div className="flex flex-col relative items-center"> 
-                <Image src={image} className=" relative w-full h-[800px] lg:h-[700px] 2xl:h-[850px] object-cover object-center rounded-2xl" alt="Work Horizon - Careers" width={1300} height={800}/>
+        <div className="container w-[88%] lg:w-full py-10">
+            <div className="flex flex-col relative items-center shadow-lg shadow-gray-300 rounded-2xl"> 
+                <Image src={image} className="relative w-full h-[800px] lg:h-[700px] 2xl:h-[850px] object-cover object-center rounded-2xl" alt="Work Horizon - Careers" width={1300} height={800}/>
                 <div className='absolute bottom-0 lg:bottom-[6%] w-full lg:w-[87%] h-auto flex flex-col backdrop-blur rounded-b-2xl lg:rounded-2xl py-6 lg:py-12 px-4 bg-transparent-one'>
                     <h5 className="text-md 2xl:text-lg leading-1 uppercase tracking-wider font-bold text-gray-100 mb-2 lg:mb-3">Careers at Work Horizon</h5>
                     <h3 className="text-3xl 2xl:text-4xl capitalize text-gray-100 font-bold mb-3">Join Our Team & Shape the Future of with Excellence</h3>

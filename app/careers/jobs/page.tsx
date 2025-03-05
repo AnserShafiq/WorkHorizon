@@ -15,7 +15,7 @@ export default async function Page(props:{
     const query = searchParams?.query || searchParams?.worktype || searchParams?.contracttype || searchParams?.department || ''
     return(
         <>
-            <SearchJob placeholder="Enter job to search"/>
+            <SearchJob placeholder="Search job title"/>
             <JobFilters />
             <JobsTable query={query} />
         </>

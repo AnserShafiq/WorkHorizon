@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ForJobEnquiries(){
     return(
-        <div className='container w-[88%] flex flex-col-reverse lg:w-full lg:grid lg:grid-cols-2 py-10'>
+        <div className='container w-[88%] flex flex-col-reverse lg:w-full lg:grid lg:gap-6 lg:grid-cols-2 py-10'>
             <div className='flex flex-col items-start justify-center mt-6'>
                 <h3 className="text-md font-semibold tracking-wide text-orange-500">Get In Touch</h3>
                 <h3 className="text-xl lg:text-3xl font-bold text-sky-900 capitalize">For job inquiries, reach out to us at:</h3>
