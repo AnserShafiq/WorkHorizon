@@ -1,12 +1,10 @@
 import { JobOptions } from "@/app/lib/joboptions";
 
-interface PageProps {
-  params: {
-    jobid: string;
-  };
-}
+// interface PageProps {
+//     jobid: string;
+// }
 
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: any) {
   const { jobid } = await params;
     console.log('===> ', jobid)
   const matchedJobs = JobOptions.filter((job) => job.jobid === jobid);
