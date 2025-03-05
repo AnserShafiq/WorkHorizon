@@ -6,9 +6,9 @@ interface PageProps {
   };
 }
 
-export default function Page({ params }: PageProps) {
-  const { jobid } = params;
-
+export default async function Page({ params }: PageProps) {
+  const { jobid } = await params;
+    console.log('===> ', jobid)
   const matchedJobs = JobOptions.filter((job) => job.jobid === jobid);
 
   return (
