@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation"; // Import Next.js pathname hook
 import '../globals.css'
 import MobileMenu from "./mobileMenu";
 import { signOut } from "next-auth/react";
+import { ChevronDown } from "lucide-react";
+import DropDown from "./dropdown";
 
 export default function MainHeader() {
     const pathname = usePathname(); // Get current path
@@ -16,7 +18,7 @@ export default function MainHeader() {
     const [menuItems, setMenuItems] = useState([
         { link: '/', name: 'Home', active: false },
         { link: '/about-us', name: 'About Us', active: false },
-        { link: '/careers', name: 'Careers', active: false },
+        { link: '/careers', name: 'Careers', active: false, dropdown:[ {link: '/careers', name: 'Careers'},{link:'/careers/jobs', name: 'Explore Jobs'}] },
         { link: '/contact-us', name: 'Contact Us', active: false },
     ]);
 
@@ -63,7 +65,7 @@ export default function MainHeader() {
     }, [pathname]); // Re-run effect when pathname changes
 
     return (
-        <div className={`${hideHeader ? 'hidden':""} w-full bg-headerBackground py-2 shadow-sm shadow-gray-300 sticky top-0 z-50 transition-transform ease-in-out duration-500 transform ${headerDisplay ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className={`${hideHeader ? 'hidden':""} w-full bg-headerBackground py-3 shadow-sm shadow-gray-300 sticky top-0 z-50 transition-transform ease-in-out duration-500 transform ${headerDisplay ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="flex justify-between px-0 lg:grid lg:grid-cols-[20%,60%,20%] container">
                 <div className="flex">
                     <Link className="block" href={'/'}>
@@ -73,15 +75,17 @@ export default function MainHeader() {
                 <div className="hidden lg:flex justify-center items-center gap-8">
                     {
                     !adminMenu ? 
-                        menuItems.map((Item, index) => (
-                            <Link
-                                className={`text-lg xl:text-xl font-semibold tracking-wide transitive-underline ${Item.active ? 'text-[#F7801E]' : 'text-sky-900'} hover:text-sky-800`}
-                                href={Item.link}
-                                key={index}
-                            >
-                                {Item.name}
-                            </Link>
-                        )):(
+                        menuItems.map((Item, index) => 
+                            Item.dropdown ? 
+                                <DropDown mainMenu={Item} key={index}/>
+                                :
+                                <Link
+                                    className={`relative text-lg xl:text-xl font-semibold tracking-wide transitive-underline ${Item.active ? 'text-[#F7801E]' : 'text-sky-900'} hover:text-sky-800`}
+                                    href={Item.link}
+                                    key={index}>
+                                {Item.name} </Link>
+                            
+                        ):(
                             <h3>Admin Menu</h3>
                         )
                     }
