@@ -42,14 +42,14 @@ export default function LetsTalk(){
                         <PhoneCall className="w-10 lg:w-[3.3rem] h-auto text-orange-500"/>
                         <div className="flex flex-col ml-2 py-0 pl-2 border-l border-gray-500">
                             <h4 className="text-md text-gray-300">For Inquiries</h4>
-                            <Link className="text-lg xl:text-xl text-gray-100" href={'/'}>92 (300) 000 0000</Link>
+                            <Link className="text-lg xl:text-xl text-gray-100" href={'tel:+923206460085'}>92 (320) 646 0085</Link>
                         </div>
                     </div>
                     <div className="flex mt-6">
                         <MailIcon className="w-10 lg:w-[3.3rem] h-auto text-orange-500"/>
                         <div className="flex flex-col ml-2 py-0 pl-2 border-l border-gray-500">
                             <h4 className="text-md text-gray-300">To Mail</h4>
-                            <Link className="text-lg xl:text-xl text-gray-100" href={'/'}>info@workhorizon.pk</Link>
+                            <Link className="text-lg xl:text-xl text-gray-100" href={'mailto:hr@workhorizon.pk'}>hr@workhorizon.pk</Link>
                         </div>
                     </div>
                     <div className="flex flex-col mt-10 lg:mt-20">
@@ -62,7 +62,7 @@ export default function LetsTalk(){
                     </div>
                 </div>
                 <div className='relative lg:-top-28 rounded-xl px-6 lg:px-10 py-8 lg:py-16 lg:ml-6 xl:ml-16 bg-gray-300'>
-                    <h2 className="text-xl lg:text-2xl xl:text-3xl tracking-wide font-semibold border-b border-gray-400 pb-4">{`Let's Engage In Conversation...`}</h2>
+                    <h2 className="text-xl lg:text-2xl xl:text-3xl tracking-wide font-semibold border-b border-gray-400 pb-4">{`Chat with us`}</h2>
                     <form onSubmit={handleSubmission} className="flex flex-wrap justify-between mt-6">
                         <div className="w-[48%] flex flex-col gap-1 mt-4">
                             <label className='text-md xl:text-md font-[500] tracking-wide'>First Name <span className="text-red-500">*</span></label>
@@ -96,7 +96,7 @@ export default function LetsTalk(){
                         </div> */}
                         <div className="w-full flex flex-col gap-1 mt-4">
                             <label className='text-md xl:text-md font-[500] tracking-wide'>Message <span className="text-red-500">*</span></label>
-                            <textarea rows={3} className="border pl-2 py-2 rounded-xl w-full bg-gray-200 cursor-pointer" name="message" id='message' placeholder="Message..." required/>
+                            <textarea rows={4} className="border pl-2 py-2 rounded-xl w-full bg-gray-200 cursor-pointer" name="message" id='message' placeholder="Message..." required/>
                         </div>
                         <button className="text-lg font-semibold px-6 py-2 mt-6 bg-sky-900 text-gray-100 tracking-wider rounded-xl transition ease-in-out duration-300 hover:scale-[1.075] hover:bg-transparent hover:text-sky-900 hover:border-2 hover:border-sky-900 " type='submit'>Submit</button>
                     </form>
