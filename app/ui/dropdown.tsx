@@ -1,3 +1,4 @@
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -31,8 +32,8 @@ export default function DropDown({ mainMenu }: DropDownProps) {
     onMouseLeave={() => setIsOpen(false)}
     >
       {/* Main Menu Link */}
-      <Link href={mainMenu.link} className={`relative text-lg xl:text-xl font-semibold tracking-wide transitive-underline ${isOpen ? 'transitive-underline' : ''} ${mainMenu.active ? "text-[#F7801E]" : "text-sky-900"} hover:text-sky-800`}>
-        {mainMenu.name}
+      <Link href={mainMenu.link} className={`relative text-lg xl:text-xl !flex items-center font-semibold tracking-wide transitive-underline ${isOpen ? 'transitive-underline' : ''} ${mainMenu.active ? "text-[#F7801E]" : "text-sky-900"} hover:text-sky-800`}>
+        {mainMenu.name} <ChevronDown className="w-5 h-5 ml-2 mt-1 stroke-[2.5px]"/>
       </Link>
 
       {/* Dropdown Menu */}
