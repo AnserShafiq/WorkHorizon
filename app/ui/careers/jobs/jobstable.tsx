@@ -1,9 +1,10 @@
 import { JobOptions } from "@/app/lib/joboptions";
 import Link from "next/link";
 
-export default function JobsTable() {
-    const toSearch = ''
-    const toDisplay = JobOptions.filter((job) => job.title.toLowerCase().includes(toSearch.toLowerCase()))
+export default function JobsTable({query}:{query:string}) {
+
+    // const toSearch = ''
+    const toDisplay = JobOptions.filter((job) => job.title.toLowerCase().includes(query.toLowerCase()))
     return (
         <div className="container w-[88%] lg:w-full min-h-[80vh] py-14">
             <h3 className='text-2xl lg:text-3xl font-bold text-sky-900 my-2 text-center tracking-wide'>Jobs Available</h3>
