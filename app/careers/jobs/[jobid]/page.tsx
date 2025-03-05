@@ -4,6 +4,7 @@ import { JobOptions } from "@/app/lib/joboptions";
 //     jobid: string;
 // }
 
+// eslint-disable-next-line
 export default async function Page({ params }: any) {
   const { jobid } = await params;
     console.log('===> ', jobid)
