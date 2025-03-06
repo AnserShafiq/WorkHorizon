@@ -1,6 +1,8 @@
 import { JobOptions } from "@/app/lib/joboptions";
 
-export default function JobDescription({jobid,setActiveSection}:{jobid:string, setActiveSection: Function}) {
+type SetActiveSection = (section: string) => void
+
+export default function JobDescription({jobid,setActiveSection}:{jobid:string, setActiveSection: SetActiveSection}) {
         const matchedJobs = JobOptions.filter((job) => job.jobid === jobid);
     return(
         <div className="container w-[88%] lg:w-[50%] mx-auto py-10">

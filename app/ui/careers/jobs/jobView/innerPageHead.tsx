@@ -6,7 +6,9 @@ import ActiveSectionMenu from "./activeSection";
 import { JobOptions } from "@/app/lib/joboptions";
 import { Dot } from "lucide-react";
 
-export default function SingleJobHead({jobid, activeSection, setActiveSection}:{jobid:string, activeSection:string, setActiveSection: Function}){
+type SetActiveSection = (section: string) => void
+
+export default function SingleJobHead({jobid, activeSection, setActiveSection}:{jobid:string, activeSection:string, setActiveSection: SetActiveSection}){
 
     const matchedJob = JobOptions.filter((job) => job.jobid === jobid)
     const Job = matchedJob[0]

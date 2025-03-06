@@ -1,8 +1,9 @@
 
 
 
+type SetActiveSection = (section: string) => void
 
-export default function ActiveSectionMenu({activeSection, setActiveSection}: {activeSection: string, setActiveSection: Function}){
+export default function ActiveSectionMenu({activeSection, setActiveSection}: {activeSection: string, setActiveSection: SetActiveSection}){
 
     return(
         <div className='container w-[88%] lg:w-[50%] flex flex-col items-center border-t border-dashed border-gray-300'>
