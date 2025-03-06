@@ -19,8 +19,8 @@ export default function Vision_Mission(){
             <div className='flex flex-row flex-wrap justify-between'>
                 {
                     content.map((target, idx) => 
-                        <div className={`flex flex-col lg:w-[50%] border-gray-[400] py-5 lg:pt-10 lg:pb-20 ${idx === 0 ? 'lg:border-r lg:pr-8 2xl:pr-14': 'lg:border-l lg:pl-8 2xl:pl-14'}`} key={idx}>
-                            <Image className="h-[40vh] 2xl:h-[45vh] object-cover w-full rounded-xl" quality={100} src={target?.image} alt={target.title} width={500} height={350}  data-aos='fade-up'/>
+                        <div className={`flex flex-col md:w-[50%] border-gray-[400] py-5 lg:pt-10 lg:pb-20 ${idx === 0 ? 'lg:border-r md:pr-8 2xl:pr-14': 'md:border-l md:pl-8 2xl:pl-14'}`} key={idx}>
+                            <Image className="h-[40vh] 2xl:h-[45vh] object-cover w-full rounded-xl" quality={100} src={target?.image} alt={target.title} width={1000} height={800}  data-aos='fade-up'/>
                             <div className='lg:px-4 xl:px-7 py-5 flex flex-col' data-aos='fade-up'>
                                 <h3 className="text-sky-900 font-bold capitalize border-b border-orange-500 w-fit text-2xl lg:text-3xl mb-3">{target.title}</h3>
                                 <p className="text-md 2xl:text-lg font-normal tracking-wide mb-5"> {target.description} </p>
