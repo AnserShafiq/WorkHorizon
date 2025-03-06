@@ -6,7 +6,7 @@ interface JobsTableProps {
 }
 
 export default function JobsTable({ query }: JobsTableProps) {
-    console.log('Query => ', query);
+    // console.log('Query => ', query);
 
     // Filter jobs based on the query
     const toDisplay = JobOptions.filter((job) => 

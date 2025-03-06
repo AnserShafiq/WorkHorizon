@@ -4,7 +4,7 @@ export const JobOptions = [
     {
         jobid:'wh_job_0001',
         title: 'Business development manager',
-        salary: '85,000pkr to 90,000pkr',
+        salary: '85,000PKR to 90,000PKR',
         timing: 'Monday to Friday, 6pm to 3am',
         worktype: 'On-site',
         department: 'Digital marketing & I.T',
@@ -50,7 +50,7 @@ export const JobOptions = [
     {
         jobid:'wh_job_0002',
         title: 'International tele sales associate',
-        salary: '85,000pkr to 90,000pkr',
+        salary: '85,000PKR to 90,000PKR',
         timing: 'Monday to Friday, 6pm to 3am',
         worktype: 'On-site',
         department: 'Sales & marketing',
