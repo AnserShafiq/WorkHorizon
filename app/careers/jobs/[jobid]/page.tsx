@@ -4,8 +4,8 @@ import JobOverview from "@/app/ui/careers/jobs/jobView/jobOverview";
 export default async function Page({ params }: any) {
     const { jobid } = await params;
     console.log('===> ', jobid)
-    // console.log('===> ', Job)
-  return (
+ 
+    return (
         <>
             <JobOverview jobid={jobid} />
         </>

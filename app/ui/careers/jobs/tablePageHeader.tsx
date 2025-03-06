@@ -29,7 +29,7 @@ export default function JobsHead(){
                 </div>
             <div className='container w-[88%] flex flex-col bg-neutral-100 items-center justify-center lg:w-full py-10 lg:pt-8 lg:pb-12'>
                 
-                <Link href={'/careers/jobs'}><Image className="mb-3 lg:w-[300px] lg:h-auto object-cover" src={'/assets/logo.png'} width={300} height={200} alt="Work Horizon"/></Link>
+                <Link href={'/careers/jobs'}><Image className="mb-3 lg:w-[300px] lg:h-auto object-cover" src={'/assets/Logo.png'} width={300} height={200} alt="Work Horizon"/></Link>
                 {
                     !singleJob ?
                     <>

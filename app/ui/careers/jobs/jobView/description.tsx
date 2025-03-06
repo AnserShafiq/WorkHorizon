@@ -8,7 +8,7 @@ export default function JobDescription({jobid,setActiveSection}:{jobid:string, s
             matchedJobs.map((job, index) => (
             <div key={index} className="flex flex-col">
                 {/* Title */}
-                <h3 className="text-xl lg:text-2xl 2xl:text-3xl capitalize"><span>Job Title: </span>{job.title}</h3>
+                {/* <h3 className="text-xl lg:text-2xl 2xl:text-3xl capitalize"><span>Job Title: </span>{job.title}</h3> */}
 
                 {/* Salary Range */}
                 <div className="inline-flex w-full mt-4">
@@ -17,16 +17,16 @@ export default function JobDescription({jobid,setActiveSection}:{jobid:string, s
                 </div>
 
                 {/* Job Type */}
-                <div className="inline-flex w-full mt-4">
+                {/* <div className="inline-flex w-full mt-4">
                     <h4 className='text-md lg:text-lg font-semibold'>Job Type:</h4>
                     <h4 className='text-md lg:text-lg ml-3'>{job.jobtype === 'p' ? 'Permanent' : job.jobtype==='c' ? 'Contractual' : ''}</h4>
-                </div>
+                </div> */}
 
                 {/* Work Type */}
-                <div className="inline-flex w-full mt-4">
+                {/* <div className="inline-flex w-full mt-4">
                     <h4 className='text-md lg:text-lg font-semibold'>Placement:</h4>
                     <h4 className='text-md lg:text-lg ml-3'>{job.worktype}</h4>
-                </div>
+                </div> */}
 
                 {/* Timing */}
                 <div className="inline-flex w-full mt-4">
