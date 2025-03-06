@@ -5,11 +5,10 @@ import { TbPoint, TbPointFilled } from 'react-icons/tb';
 export default function WhyWorkWithUs() {
     const [points, setPoints] = useState([
         { image:'/assets/careers-w-2.jpg',title: 'Competitive Salaries & Incentives', desc: 'Earn rewards for your hard work and performance.', active: true },
-        { image:'/assets/careers-w-2.jpg',title: 'Fuel allowance & shuttle services', desc: 'Earn rewards for your hard work and performance.', active: false },
-        { image:'/assets/careers-w-1.jpg',title: 'Growth Opportunities', desc: 'We promote from within and provide career advancement.', active: false },
-        // { image:'/assets/careers-w-5.jpg',title: 'Training & Development', desc: 'We invest in your professional growth.', active: false },
-        { image:'/assets/careers-w-3.jpg',title: 'Global Exposure', desc: 'Work on international campaigns and enhance your skills.', active: false },
-        { image:'/assets/careers-w-4.jpg',title: 'Gazetted and Paid Leaves', desc: 'Be part of a collaborative and diverse team.', active: false },
+        { image:'/assets/careers-w-6.jpg',title: 'Fuel allowance & shuttle services', desc: 'Enjoy convenient transportation support with fuel allowances and shuttle services.', active: false },
+        { image:'/assets/careers-w-1.jpg',title: 'Growth Opportunities', desc: 'We promote from within and provide career advancement to help you grow professionally.', active: false },
+        { image:'/assets/careers-w-3.jpg',title: 'Global Exposure', desc: 'Work on international campaigns and enhance your skills with global experiences.', active: false },
+        { image:'/assets/careers-w-4.jpg',title: 'Gazetted and Paid Leaves', desc: 'Enjoy gazetted holidays and paid leaves to maintain a healthy work-life balance.', active: false },
 
     ]);
 
@@ -31,12 +30,12 @@ export default function WhyWorkWithUs() {
                 </h3>
                 {points.map((point, index) => (
                     <div 
-                        className="inline-flex mb-3 cursor-pointer" 
+                        className="grid grid-cols-[7%,90%] mb-3 cursor-pointer" 
                         key={index} 
                         onMouseEnter={() => changeActive(index)}
                     >
                         {
-                            point.active ? <TbPointFilled className = 'text-gray-100 w-[50px] h-[25px]' />:<TbPoint className = 'text-gray-100 w-[50px] h-[25px]' />
+                            point.active ? <TbPointFilled className = 'text-gray-100 w-[50px] h-[25px] mt-1' />:<TbPoint className = 'text-gray-100 w-[50px] h-[25px] mt-1' />
                         }
                         <h3 className="text-md lg:text-lg text-gray-100">
                             <span className="font-semibold text-orange-500 tracking-wide">

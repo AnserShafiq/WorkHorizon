@@ -18,7 +18,7 @@ const Step: React.FC<StepProps> = ({ image, title, stepNo, desc }) => {
                 <Image className="w-[250px] h-[250px] object-center object-cover rounded-full transition-all ease-in-out duration-500 hover:scale-[1.05]" src={image} alt={`Work Horizon's Step#${stepNo} - ${title}`} width={1000} height={1000}/>
             </div>
             <h3 className="text-2xl lg:text-3xl font-bold text-sky-900 tracking-wide capitalize mb-2">{stepNo}<span className="text-3xl lg:text-4xl font-bold text-orange-500">.</span> {title}</h3>
-            <p className='text-md lg:text-lg capitalize tracking-wide'>{desc}</p>
+            <p className='text-md lg:text-lg tracking-wide'>{desc}</p>
         </div>
     );
 }

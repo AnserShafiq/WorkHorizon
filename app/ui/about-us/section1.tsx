@@ -30,10 +30,10 @@ export default function PageIntro(){
                 <div className='flex flex-col justify-center mt-6 lg:mt-0 lg:pr-8' data-aos='fade-up'>
                     <h3 className="text-md 2xl:text-lg leading-1 uppercase tracking-wider font-bold text-orange-500">Who we are?</h3>
                     <h2 className="text-3xl 2xl:text-4xl capitalize text-sky-900 font-bold mb-3">Empowering Careers and Driving Business Success Globally</h2>
-                    <p className="text-md lg:text-lg 2xl:text-xl capitalize font-normal tracking-wide mb-5">
+                    <p className="text-md lg:text-lg 2xl:text-xl font-normal tracking-wide mb-5">
                         <span className="text-orange-500 font-semibold uppercase">Work Horizon</span> is a dynamic and versatile organization, established with a commitment to excellence and global outreach. With a strong presence in the North American market, we provide industry-leading call center solutions across multiple sectors, including sales, administration, HR, and finance. Our extensive operations empower professionals to build successful careers while supporting businesses in achieving operational excellence.
                     </p>
-                    <p className="text-md lg:text-lg 2xl:text-xl capitalize font-normal tracking-wide mb-2 lg:mb-5">
+                    <p className="text-md lg:text-lg 2xl:text-xl font-normal tracking-wide mb-2 lg:mb-5">
                         With a mission to bridge the gap between talent and opportunity, Work Horizon offers an environment where innovation thrives, and careers flourish. Whether you are looking to advance in your field or explore new career paths, we are here to guide and support your journey toward success.
                     </p>
                     <Link href={'/careers'} className="text-md lg:text-lg text-orange-500 hover:text-sky-900 font-semibold inline-flex items-center gap-4 mt-3 2xl:mt-6 w-fit border hover:border border-x-transparent border-t-transparent hover:border-sky-900 hover:rounded-xl border-b-sky-900 pl-2 pr-1 hover:hover:py-2 sticky transition-auto ease-in-out duration-200 hover:scale-[1.1]">Explore Careers</Link>

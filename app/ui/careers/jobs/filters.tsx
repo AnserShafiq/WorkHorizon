@@ -44,7 +44,7 @@ export default function JobFilters() {
       </div>
       <div className='w-full'>
         <select value={workType} className='w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm' onChange={(e) => handleFilterChange(e.target.value, 'W')}>
-          <option value="">All</option>
+          <option value="">Job Type</option>
           <option value="On-site">On-site</option>
           <option value="Remote">Remote</option>
         </select>

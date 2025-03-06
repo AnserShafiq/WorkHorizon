@@ -6,12 +6,12 @@ export default function CareerOpportunities() {
     const Oppos = [
         {
             icon: '/assets/icons/home/salesandmarketing.png',
-            head: 'Sales and marketing',
+            head: 'Sales & Marketing',
             desc: 'Be part of a high-performing sales and marketing team, helping us drive revenue and growth. We offer opportunities for professionals with strong communication and negotiation skills to thrive in a competitive environment.',
             link: '/',
         },{
             icon: '/assets/icons/home/customersupport.png',
-            head: 'Digital marketing & I.T',
+            head: 'Digital Marketing & I.T.',
             desc: 'Deliver exceptional I.T services and digital marketing excellence. Join our team to assist us in providing top-tier digital marketing and information technology facilities.',
             link: '/',
         },{

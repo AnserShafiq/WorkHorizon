@@ -31,7 +31,7 @@ export default function Values(){
         <div className='container w-[88%] lg:w-full flex flex-col items-center mb-10 lg:m-auto' >
             <div className='shadow-lg shadow-gray-300 rounded-2xl px-3 lg:px-8 w-full py-10 lg:py-14 bg-gray-300' data-aos='fade-up'>
                 <h3 className='text-3xl lg:text-5xl font-bold text-sky-900 uppercase lg:leading-tight mb-3 '>Values That Shape Success</h3>
-                <p className="text-lg lg:text-2xl capitalize">Work Horizon believes that embedding core values across an organization fuels collaboration, productivity, and long-term growth.</p>
+                <p className="text-lg lg:text-2xl">Work Horizon believes that embedding core values across an organization fuels collaboration, productivity, and long-term growth.</p>
             </div>
             <div className='py-10 lg:py-14 flex flex-col flex-wrap 2xl:flex-nowrap lg:flex-row lg:justify-center gap-10' data-aos='fade-up'>
                 {

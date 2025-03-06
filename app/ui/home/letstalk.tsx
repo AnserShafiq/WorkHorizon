@@ -1,6 +1,6 @@
 'use client'
 import { countries } from "@/app/lib/countries";
-import { MailIcon, PhoneCall } from "lucide-react";
+import { MailIcon, MapPin, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -37,32 +37,39 @@ export default function LetsTalk(){
                 <div className=" py-10 lg:py-20">
                     <h3 className="text-sm lg:text-lg text-gray-300 font-normal border-b border-orange-500 w-fit capitalize leading-1"> Achieve success with Work Horizon</h3>
                     <h3 className='text-3xl lg:text-5xl font-bold text-gray-100 capitalize tracking-wider lg:leading-tight my-3'>{`Let's Talk`}</h3>
-                    <h4 className="text-md lg:text-lg capitalize text-gray-300">Work horizon empowers you to unlock new opportunities and embrace innovation.</h4>
-                    <div className="flex mt-10 lg:mt-24">
-                        <PhoneCall className="w-10 lg:w-[3.3rem] h-auto text-orange-500"/>
+                    <h4 className="text-md lg:text-lg text-gray-300">Work horizon empowers you to unlock new opportunities and embrace innovation.</h4>
+                    <div className="flex mt-10">
+                        <PhoneCall className="w-10 lg:w-[3.0rem] h-auto text-orange-500"/>
                         <div className="flex flex-col ml-2 py-0 pl-2 border-l border-gray-500">
                             <h4 className="text-md text-gray-300">For Inquiries</h4>
                             <Link className="text-lg xl:text-xl text-gray-100" href={'tel:+923206460085'}>92 (320) 646 0085</Link>
                         </div>
                     </div>
                     <div className="flex mt-6">
-                        <MailIcon className="w-10 lg:w-[3.3rem] h-auto text-orange-500"/>
+                        <MailIcon className="w-10 lg:w-[3.0rem] h-auto text-orange-500"/>
                         <div className="flex flex-col ml-2 py-0 pl-2 border-l border-gray-500">
                             <h4 className="text-md text-gray-300">To Mail</h4>
                             <Link className="text-lg xl:text-xl text-gray-100" href={'mailto:hr@workhorizon.pk'}>hr@workhorizon.pk</Link>
                         </div>
                     </div>
-                    <div className="flex flex-col mt-10 lg:mt-20">
+                    <div className="flex mt-6">
+                        <MapPin className="w-10 lg:w-[3.0rem] h-auto text-orange-500"/>
+                        <div className="flex flex-col ml-2 py-0 pl-2 border-l border-gray-500">
+                            <h4 className="text-md text-gray-300">Location</h4>
+                            <Link className="text-lg xl:text-xl text-gray-100" href={'https://maps.app.goo.gl/8wxyANfpWtUkDN878'}>Sunny Plaza, Eden City, DHA Phase 8, Lahore, PK.</Link>
+                        </div>
+                    </div>
+                    <div className="flex flex-col mt-10">
                         <h4 className="text-lg capitalize text-gray-100 tracking-wider">Social just you connected us!</h4>
                         <div className="flex justify-start mt-3 gap-4">
-                            <Link className="text-sm text-gray-300 flex flex-col items-center gap-1" href={'/'}><FaFacebook className="w-6 h-auto" /> Facebook</Link>
-                            <Link className="text-sm text-gray-300 flex flex-col items-center gap-1" href={'/'}><FaLinkedin className="w-6 h-auto" /> LinkedIn</Link>
-                            <Link className="text-sm text-gray-300 flex flex-col items-center gap-1" href={'/'}><FaInstagram className="w-6 h-auto" /> Instagram</Link>
+                            <Link className="text-sm text-gray-300 flex flex-col items-center gap-1" href={'https://www.facebook.com/people/Work-Horizon/61573683541545/'}><FaFacebook className="w-6 h-auto" /> Facebook</Link>
+                            <Link className="text-sm text-gray-300 flex flex-col items-center gap-1" href={'https://www.linkedin.com/in/work-horizon-a954b4353'}><FaLinkedin className="w-6 h-auto" /> LinkedIn</Link>
+                            <Link className="text-sm text-gray-300 flex flex-col items-center gap-1" href={'https://www.instagram.com/work.horizon/#'}><FaInstagram className="w-6 h-auto" /> Instagram</Link>
                         </div>
                     </div>
                 </div>
                 <div className='relative lg:-top-28 rounded-xl px-6 lg:px-10 py-8 lg:py-16 lg:ml-6 xl:ml-16 bg-gray-300'>
-                    <h2 className="text-xl lg:text-2xl xl:text-3xl tracking-wide font-semibold border-b border-gray-400 pb-4">{`Chat with us`}</h2>
+                    <h2 className="text-xl lg:text-2xl xl:text-3xl tracking-wide font-semibold border-b border-gray-400 pb-4">{`Chat With Us...`}</h2>
                     <form onSubmit={handleSubmission} className="flex flex-wrap justify-between mt-6">
                         <div className="w-[48%] flex flex-col gap-1 mt-4">
                             <label className='text-md xl:text-md font-[500] tracking-wide'>First Name <span className="text-red-500">*</span></label>
@@ -72,28 +79,24 @@ export default function LetsTalk(){
                             <label className='text-md xl:text-md font-[500] tracking-wide'>Last Name <span className="text-red-500">*</span></label>
                             <input type="text" className="border pl-2 py-2 rounded-xl w-full bg-gray-200 cursor-pointer" name="lastname" id='lastname' placeholder="Last name" required/>
                         </div>
-                        <div className="w-full 2xl:w-[48%] flex flex-col gap-1 mt-4">
+                        <div className="w-full flex flex-col gap-1 mt-4">
                             <label className='text-md xl:text-md font-[500] tracking-wide'>Contact Number <span className="text-red-500">*</span></label>
-                            <div className='grid grid-cols-[22%,78%]'>
+                            <div className='grid grid-cols-[18%,82%]'>
                                 <select className="border pl-2 rounded-l-xl bg-gray-200 cursor-pointer" name="country" id='country' value={selectCountry} onChange={handleCountry} required>
                                     <option value=''></option>
                                     {
                                         countries.map((country, index) => 
-                                            <option value={country.code} key={index}> {selectCountry === country.code ? null : country.name} {country.flag}</option>
+                                            <option value={country.code} key={index}> {selectCountry === country.code ? null : country.name} {country.flag} {country.code}</option>
                                         )
                                     }
                                 </select>
                                 <input required className="bg-gray-200 py-2 px-1 rounded-r-xl" type='tel' name="contact" id='contact' value={contactNumber} onChange={(e) => handleContactNumber(e.target.value)} placeholder="Contact number"/>
                             </div>
                         </div>
-                        <div className="w-full 2xl:w-[48%] flex flex-col gap-1 mt-4">
+                        <div className="w-full flex flex-col gap-1 mt-4">
                             <label className='text-md xl:text-md font-[500] tracking-wide'>Email <span className="text-red-500">*</span></label>
                             <input type="email" className="border pl-2 py-2 rounded-xl w-full bg-gray-200 cursor-pointer" name="email" id='email' placeholder="Email" required/>
                         </div>
-                        {/* <div className="w-full flex flex-col gap-1 mt-4">
-                            <label className='text-md xl:text-md font-[500] tracking-wide'>Subject <span className="text-red-500">*</span></label>
-                            <input type="text" className="border pl-2 py-2 rounded-xl w-full bg-gray-200 cursor-pointer" name="subject" id='subject' placeholder="Conversation's subject" required/>
-                        </div> */}
                         <div className="w-full flex flex-col gap-1 mt-4">
                             <label className='text-md xl:text-md font-[500] tracking-wide'>Message <span className="text-red-500">*</span></label>
                             <textarea rows={4} className="border pl-2 py-2 rounded-xl w-full bg-gray-200 cursor-pointer" name="message" id='message' placeholder="Message..." required/>

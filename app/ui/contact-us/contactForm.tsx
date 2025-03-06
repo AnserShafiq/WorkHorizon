@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function ContactForm(){
     const [contactReason, setContactReason] = useState<string>('');
     const contactOptions = [
-        'Option one', 'Option two', 'Option three'
+        'For general query', 'Getting services information', 'Getting job options'
     ]
     console.log('Reasons of contacting us=> ', contactReason)
     return(
@@ -21,7 +21,7 @@ export default function ContactForm(){
                         <div className='flex flex-col mb-2'>
                             <label className="text-md lg:text-lg font-[500] tracking-wide mb-1">{`I'm contacting for:`}</label>
                             <select className="bg-gray-100 px-2 py-1 lg:px-4 lg:py-2 border-2 border-gray-200 rounded-lg" name='reason' id='reason' onChange={(e) => setContactReason(e.target.value)} required>
-                                <option className="text-gray-400" defaultChecked>Select the contact option</option>
+                                <option className="text-gray-400" value={''}>Select the contact option</option>
                                 {
                                     contactOptions.map((option, idx) => 
                                         <option value={option} key={idx}>{option}</option>

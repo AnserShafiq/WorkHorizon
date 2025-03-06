@@ -82,7 +82,7 @@ export default function HomeHead(){
                     <p className="text-md lg:text-xl font-normal tracking-wide">Join us on a journey of <span className='font-semibold italic text-orange-500'>Excellence</span>, where <span className='font-semibold italic text-orange-500'>Expertise</span> meets opportunity, & <span className='font-semibold italic text-orange-500'>Innovation</span> drives success. 
                         With a commitment to Professionalism & Customer Satisfaction, we provide Top-Tier Sales, Administration, HR, & Accounting 
                         services to help <span className="font-semibold uppercase text-orange-500">BUSINESSES THRIVE</span>.</p>
-                    <p className="text-md lg:text-xl capitalize font-normal mt-3 tracking-wide">We operate on a global scale, serving clients across multiple industries & regions, ensuring seamless business solutions worldwide.</p>
+                    <p className="text-md lg:text-xl font-normal mt-3 tracking-wide">We operate on a global scale, serving clients across multiple industries & regions, ensuring seamless business solutions worldwide.</p>
                 </div>
             </div>
             <div className="w-full 2xl:w-full relative mx-auto">
