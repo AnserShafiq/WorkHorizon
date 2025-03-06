@@ -1,8 +1,14 @@
+'use client'
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react";
 
 export default function Vision_Mission(){
-    
+    const [width, setWidth] = useState<string|number>('');
+    useEffect(() => {
+        const check = window.innerWidth
+        setWidth(check)
+    })
     const content = [
         {
             image:'/assets/about-vision.jpg',
@@ -14,8 +20,10 @@ export default function Vision_Mission(){
             description: 'To empower businesses of all sizes by delivering seamless, reliable, and high-performing call center services in sales, administration, HR, and accounting. Our mission is to enhance operational efficiency, drive sustainable growth, and ensure superior customer satisfaction through technology-driven solutions, expert workforce management, and a commitment to excellence.',
         }
     ]
+
     return(
         <div className='container w-[88%] lg:w-full' id='next'>
+            <h2 className="text-gray-800">Width: {width}</h2>
             <div className='flex flex-row flex-wrap justify-between'>
                 {
                     content.map((target, idx) => 
