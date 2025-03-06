@@ -8,22 +8,22 @@ export default function CareerOpportunities() {
             icon: '/assets/icons/home/salesandmarketing.png',
             head: 'Sales & Marketing',
             desc: 'Be part of a high-performing sales and marketing team, helping us drive revenue and growth. We offer opportunities for professionals with strong communication and negotiation skills to thrive in a competitive environment.',
-            link: '/',
+            link: '/careers/jobs?department=Sales+%26+marketing',
         },{
             icon: '/assets/icons/home/customersupport.png',
             head: 'Digital Marketing & I.T.',
             desc: 'Deliver exceptional I.T services and digital marketing excellence. Join our team to assist us in providing top-tier digital marketing and information technology facilities.',
-            link: '/',
+            link: '/careers/jobs?department=Digital+marketing+%26+I.T',
         },{
             icon: '/assets/icons/home/humanresources.png',
             head: 'Human Resources & Recruitment',
             desc: 'Play a crucial role in talent acquisition and people management. Help us build strong teams by recruiting, training, and retaining top talent.',
-            link: '/',
+            link: '/careers/jobs?department=Human+resources+%26+Recruitment',
         },{
             icon: '/assets/icons/home/financeandaccounting.png',
             head: 'Finance & Accounting',
             desc: 'Support us in managing their financial operations with precision and accuracy. Work in a fast-paced environment, ensuring compliance and strategic financial planning.',
-            link: '/',
+            link: '/careers/jobs?department=Finance+%26+Accounting',
         },
     ]
     return (
@@ -38,7 +38,7 @@ export default function CareerOpportunities() {
                     <p className="text-md lg:text-lg 2xl:text-xl text-gray-100 font-normal tracking-wide mt-8 xl:mt-10 2xl:mt-16" >
                         Take the next step in your career with work horizon and become part of a dynamic team. We offer endless opportunities for growth, empowering you to build a successful and rewarding future.
                     </p>
-                    <Link className="text-orange-500 hover:text-gray-100 hover:bg-orange-600 hover:border-orange-600 text-md xl:text-lg font-semibold tracking-wide rounded-xl border-2 border-orange-500 px-5 py-2 mt-8 w-fit" href={'/career'}>Opportunities</Link> 
+                    <Link className="text-orange-500 hover:text-gray-100 hover:bg-orange-600 hover:border-orange-600 text-md xl:text-lg font-semibold tracking-wide rounded-xl border-2 border-orange-500 px-5 py-2 mt-8 w-fit" href={'/careers/jobs'}>Opportunities</Link> 
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 2xl:gap-8 px-6 lg:pl-3 2xl:pl-8">
                     {
