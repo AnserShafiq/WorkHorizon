@@ -19,9 +19,12 @@ export default function JobsHead(){
     },[pathname])
     return(
         <div className='bg-neutral-100 w-full shadow-md shadow-gray-200'>
-            <div className='container w-[88%] lg:w-[65%] flex border pt-6'>
+            <div className='container w-[88%] lg:w-[65%] flex pt-6'>
                     <Link href={'/'} className="text-gray-500 font-semibold text-sm underline">Home</Link>
-                    <ArrowRight className="w-4 h-auto text-gray-500 ml-6"/>
+                    <ArrowRight className="w-4 h-auto text-gray-500 mx-3"/>
+                    <Link href={'/careers'} className="text-gray-500 font-semibold text-sm underline">Careers</Link>
+                    <ArrowRight className="w-4 h-auto text-gray-500 mx-3"/>
+                    <Link href={'/careers/jobs'} className="text-orange-500 font-semibold text-sm underline">Jobs</Link>
                 </div>
             <div className='container w-[88%] flex flex-col bg-neutral-100 items-center justify-center lg:w-full py-10 lg:pt-8 lg:pb-12'>
                 

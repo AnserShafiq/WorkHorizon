@@ -25,11 +25,13 @@ export default function AboutSection () {
                     <span className='text-sky-900 font-[600] uppercase text-2xl lg:text-3xl mb-1'>We believe in a customer-first approach,</span><br className='hidden 2xl:block'/> ensuring that every solution we deliver is tailored to meet the unique needs of our clients. With a strong commitment to innovation, efficiency, and excellence, Work Horizon continues to expand horizons for businesses and professionals alike.
                     </p>
                     <p className="text-md lg:text-xl font-normal tracking-wide mt-6">Operating globally, we support businesses across various industries, enabling them to scale efficiently and enhance their reach in international markets.</p>
-                    <button onClick={() => setChildBtns(true)} className={`${childBtns ? 'hidden':''} text-md lg:text-lg text-orange-500 hover:text-sky-900 font-semibold inline-flex items-center gap-4 mt-6 w-fit border hover:border border-x-transparent border-t-transparent hover:border-sky-900 hover:rounded-xl border-b-sky-900 pl-2 pr-1 hover:hover:py-2 sticky transition-auto ease-in-out duration-200 hover:scale-[1.1]`}>Connect With Us <ArrowRight className="w-5"/></button>
-                    <div className={`${childBtns? 'flex': 'hidden'} w-full gap-4`}>
-                        <Link href='/contact-us' className="relative text-md lg:text-lg text-sky-900 font-semibold inline-flex items-center gap-4 mt-6 w-fit border border-sky-900 rounded-xl px-3 py-1 transition-auto ease-in-out duration-200 py-1 hover:scale-[1.05]">Get Facility Details</Link>
-                        <Link href='/careers/jobs' className="relative text-md lg:text-lg text-gray-100 font-semibold inline-flex items-center gap-4 mt-6 w-fit border hover:border border-transparent hover:border-sky-900 rounded-xl bg-sky-900 px-3 py-1  transition-auto ease-in-out duration-200 hover:scale-[1.1]">To Explore Jobs</Link>
-                    </div>
+                    <div className="grid gap-5 grid-cols-[35%,65%] items-start mt-6">
+                        <button onClick={() => setChildBtns(!childBtns)} className={`relative text-md lg:text-lg text-orange-500 hover:text-sky-900 font-semibold inline-flex items-center gap-4 w-fit border hover:border border-x-transparent border-t-transparent hover:border-sky-900 hover:rounded-xl border-b-sky-900 pl-2 pr-1 hover:hover:py-2 sticky transition-auto ease-in-out duration-200 hover:scale-[1.1]`}>Connect With Us <ArrowRight className="w-5"/></button>
+                        <div className={` transition-all ease-in-out duration-500 relative ${childBtns? 'flex': 'hidden'} flex-col w-full`}>
+                            <Link href='/contact-us' className="relative text-md lg:text-lg text-sky-900 font-semibold inline-flex items-center gap-4 w-fit border border-sky-900 rounded-xl px-3 py-1 transition-auto ease-in-out duration-200 py-1 hover:scale-[1.05]">Get Facility Details</Link>
+                            <Link href='/careers/jobs' className="relative text-md lg:text-lg text-gray-100 font-semibold inline-flex items-center gap-4 mt-4 w-fit border hover:border border-transparent hover:border-sky-900 rounded-xl bg-sky-900 px-3 py-1  transition-auto ease-in-out duration-200 hover:scale-[1.1]">To Explore Jobs</Link>
+                        </div>
+                    </div>                    
                 </div>
             </div>
         </div>
