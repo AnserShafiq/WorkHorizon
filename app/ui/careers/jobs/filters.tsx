@@ -32,7 +32,7 @@ export default function JobFilters() {
   };
 
   return (
-    <div className="container w-[88%] lg:w-[65%] grid grid-cols-3 gap-5 mt-4">
+    <div className="container w-[88%] lg:w-[77%] 2xl:w-[70%]  grid grid-cols-3 gap-5 mt-4">
       <div className='w-full'>
         <select value={department} className='w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm' onChange={(e) => handleFilterChange(e.target.value, 'D')}>
           <option value="">Department</option>

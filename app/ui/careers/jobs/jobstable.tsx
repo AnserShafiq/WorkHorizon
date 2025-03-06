@@ -17,7 +17,7 @@ export default function JobsTable({ query }: JobsTableProps) {
     );
 
     return (
-        <div className="container w-[88%] lg:w-[65%] min-h-[80vh] py-14">
+        <div className="container w-[88%] lg:w-[77%] 2xl:w-[70%] min-h-[80vh] py-14">
             <table className="w-full">
                 {/* Table Header */}
                 <thead>

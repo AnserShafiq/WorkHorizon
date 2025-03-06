@@ -5,7 +5,7 @@ type SetActiveSection = (section: string) => void
 export default function JobDescription({jobid,setActiveSection}:{jobid:string, setActiveSection: SetActiveSection}) {
         const matchedJobs = JobOptions.filter((job) => job.jobid === jobid);
     return(
-        <div className="container w-[88%] lg:w-[50%] mx-auto py-10">
+        <div className="container w-[88%] lg:w-[77%] 2xl:w-[70%] mx-auto py-10">
         {matchedJobs.length > 0 ? (
             matchedJobs.map((job, index) => (
             <div key={index} className="flex flex-col">

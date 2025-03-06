@@ -20,7 +20,7 @@ export default function JobsHead(){
     },[pathname])
     return(
         <div className='bg-neutral-100 w-full shadow-md shadow-gray-200'>
-            <div className={`container w-[88%] lg:w-[65%] flex pt-6 ${singleJob ? 'hidden':''}`}>
+            <div className={`container w-[88%] lg:w-[77%] 2xl:w-[70%] flex pt-6 ${singleJob ? 'hidden':''}`}>
                     <Link href={'/'} className="text-gray-500 font-semibold text-sm underline">Home</Link>
                     <ArrowRight className="w-4 h-auto text-gray-500 mx-3"/>
                     <Link href={'/careers'} className="text-gray-500 font-semibold text-sm underline">Careers</Link>
