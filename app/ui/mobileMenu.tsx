@@ -30,10 +30,10 @@ export default function MobileMenu() {
             ) : (
                 <div className="w-full h-screen fixed top-0 left-0 z-40 bg-black/50">
                     {/* Close Icon */}
-                    <X className="absolute w-6 h-auto text-white top-4 right-5 z-50 cursor-pointer" onClick={() => setOpenMenu(false)} />
+                    <X className="absolute w-5 h-auto text-white top-4 right-5 z-50 cursor-pointer" onClick={() => setOpenMenu(false)} />
 
                     {/* Sidebar */}
-                    <div className={`w-[88%] grid grid-rows-3 gap-5 h-screen bg-sidemenu-bg px-5 py-10 fixed top-0 left-0 transform transition-transform ease-in-out duration-[0.7s] ${openMenu ? 'translate-x-0':'-translate-x-full'} `}>
+                    <div className={`w-[88%] flex flex-col justify-between gap-5 h-screen bg-sidemenu-bg px-5 py-10 fixed top-0 left-0 transform transition-transform ease-in-out duration-[0.7s] ${openMenu ? 'translate-x-0':'-translate-x-full'} `}>
                         <Image src={'/assets/mobile-logo-2.png'} alt='Work horizon mobile logo' width={200} height={100} className='w-[11rem] h-auto' />
                         <div className='flex flex-col pr-8'>
                             {
@@ -45,29 +45,29 @@ export default function MobileMenu() {
                         <div className='flex flex-col'>
                             <div className='grid grid-cols-[20%,80%]  mb-3 items-center'>
                                 <div className='border-2 border-sky-900 flex p-3 w-fit rounded-[50%] justify-center'>
-                                <PhoneCall className='w-6 h-auto text-sky-900'/>
+                                <PhoneCall className='w-5 h-auto text-sky-900'/>
                                 </div>
                                 <div className='flex flex-col pl-1'>
-                                    <h3 className='text-lg font-semibold tracking-wide text-gray-700'>Phone</h3>
-                                    <h3 className='text-lg font-semibold tracking-wide text-sky-900'>92 000 0000000</h3>
+                                    <h3 className='text-md font-semibold tracking-wide text-gray-700'>Phone</h3>
+                                    <Link href='tel:+923206460085' className='text-md font-semibold tracking-wide text-sky-900'>92 320 6460085</Link>
                                 </div>
                             </div>
                             <div className='grid grid-cols-[20%,80%] mb-3 items-center'>
                                 <div className='border-2 border-sky-900 flex p-3 w-fit rounded-[50%] justify-center'>
-                                <MailIcon className='w-6 h-auto text-sky-900'/>
+                                <MailIcon className='w-5 h-auto text-sky-900'/>
                                 </div>
                                 <div className='flex flex-col pl-1'>
-                                    <h3 className='text-lg font-semibold tracking-wide text-gray-700'>Email Us</h3>
-                                    <h3 className='text-lg font-semibold tracking-wide text-sky-900'>info@workhorizon.pk</h3>
+                                    <h3 className='text-md font-semibold tracking-wide text-gray-700'>Email Us</h3>
+                                    <Link href='mailto:hr@workhorizon.pk' className='text-md font-semibold tracking-wide text-sky-900'>hr@workhorizon.pk</Link>
                                 </div>
                             </div>
-                            <div className='grid grid-cols-[20%,80%] items-center'>
-                                <div className='border-2 border-sky-900 flex p-3 w-fit rounded-[50%] justify-center'>
-                                <MapPin className='w-6 h-auto text-sky-900'/>
+                            <div className='grid grid-cols-[20%,80%] items-start'>
+                                <div className='border-2 border-sky-900 flex p-3 mt-1 w-fit rounded-[50%] justify-center'>
+                                <MapPin className='w-5 h-auto text-sky-900'/>
                                 </div>
                                 <div className='flex flex-col pl-1'>
-                                    <h3 className='text-lg font-semibold tracking-wide text-gray-700'>Our Office</h3>
-                                    <h3 className='text-lg font-semibold tracking-wide text-sky-900'>DHA Phase 8, Lahore, Pakistan</h3>
+                                    <h3 className='text-md font-semibold tracking-wide text-gray-700'>Our Office</h3>
+                                    <h3 className='text-md font-semibold tracking-wide text-sky-900'>Sunny Plaza, Eden City, DHA Phase 8, Lahore,PK.</h3>
                                 </div>
                             </div>
                         </div>
