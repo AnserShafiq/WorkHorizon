@@ -3,13 +3,14 @@ import { Grip, MailIcon, MapPin, PhoneCall, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import DropDown from './dropdown';
 
 export default function MobileMenu() {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const menu = [
         { link: '/', name: 'Home', active: false },
         { link: '/about-us', name: 'About Us', active: false },
-        { link: '/careers', name: 'Careers', active: false },
+        { link: '/careers', name: 'Careers', active: false, dropdown:[{name:'Careers road map', link: '/careers'}, {name: 'Explore jobs', link: '/careers/jobs'}] },
         { link: '/contact-us', name: 'Contact Us', active: false },
     ]
     useEffect(() => {
@@ -34,12 +35,17 @@ export default function MobileMenu() {
 
                     {/* Sidebar */}
                     <div className={`w-[88%] h-auto min-h-[100vh] bg-sidemenu-bg px-5 fixed top-0 left-0 transform transition-transform ease-in-out duration-[0.7s] ${openMenu ? 'translate-x-0':'-translate-x-full'} `}>
-                        <div className='flex flex-col justify-between h-[90vh] my-[3vh]'>
-                        <Image src={'/assets/mobile-logo-2.png'} alt='Work horizon mobile logo' width={200} height={100} className='w-[11rem] h-auto' />
+                        <div className='grid grid-rows-[30%,45%,20%] h-[90vh] my-[3vh]'>
+                        <div className=''>
+                            <Image src={'/assets/mobile-logo-2.png'} alt='Work horizon mobile logo' width={200} height={100} className='w-[11rem] h-auto' />
+                        </div>
                         <div className='flex flex-col pr-8'>
                             {
                                 menu.map((item, idx) => 
-                                    <Link href={item.link} key={idx} className='text-xl text-sky-900 font-semibold border-b border-gray-100 mb-3' onClick={() => setOpenMenu(!openMenu)}>{item.name}</Link>
+                                    item.dropdown ? 
+                                <DropDown mainMenu={item} key={idx}/>
+                                :
+                                <Link href={item.link} key={idx} className='text-xl text-sky-900 font-semibold border-b border-gray-100 mb-3' onClick={() => setOpenMenu(!openMenu)}>{item.name}</Link>   
                                 )
                             }
                         </div>
