@@ -39,21 +39,21 @@ export default function LetsTalk(){
                     <h3 className='text-3xl lg:text-5xl font-bold text-gray-100 capitalize tracking-wider lg:leading-tight my-3'>{`Let's Talk`}</h3>
                     <h4 className="text-md lg:text-lg text-gray-300">Work horizon empowers you to unlock new opportunities and embrace innovation.</h4>
                     <div className="flex mt-10">
-                        <PhoneCall className="w-10 lg:w-[3.0rem] h-auto text-orange-500"/>
+                        <PhoneCall className="!w-10 min-w-10 lg:w-[3.0rem] h-auto text-orange-500"/>
                         <div className="flex flex-col ml-2 py-0 pl-2 border-l border-gray-500">
                             <h4 className="text-md text-gray-300">For Inquiries</h4>
                             <Link className="text-lg xl:text-xl text-gray-100" href={'tel:+923206460085'}>92 (320) 646 0085</Link>
                         </div>
                     </div>
                     <div className="flex mt-6">
-                        <MailIcon className="w-10 lg:w-[3.0rem] h-auto text-orange-500"/>
+                        <MailIcon className="!w-10 min-w-10 lg:w-[3.0rem] h-auto text-orange-500"/>
                         <div className="flex flex-col ml-2 py-0 pl-2 border-l border-gray-500">
                             <h4 className="text-md text-gray-300">To Mail</h4>
                             <Link className="text-lg xl:text-xl text-gray-100" href={'mailto:hr@workhorizon.pk'}>hr@workhorizon.pk</Link>
                         </div>
                     </div>
                     <div className="flex mt-6">
-                        <MapPin className="w-10 lg:w-[3.0rem] h-auto text-orange-500"/>
+                        <MapPin className="!w-10 min-w-10 lg:w-[3.0rem] h-auto text-orange-500"/>
                         <div className="flex flex-col ml-2 py-0 pl-2 border-l border-gray-500">
                             <h4 className="text-md text-gray-300">Location</h4>
                             <Link className="text-lg xl:text-xl text-gray-100" href={'https://maps.app.goo.gl/8wxyANfpWtUkDN878'}>Sunny Plaza, Eden City, DHA Phase 8, Lahore, PK.</Link>
