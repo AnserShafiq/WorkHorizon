@@ -34,18 +34,18 @@ export default function MobileMenu() {
 
                     {/* Sidebar */}
                     <div className={`w-[88%] flex flex-col justify-around h-screen bg-sidemenu-bg px-5 fixed top-0 left-0 transform transition-transform ease-in-out duration-[0.7s] ${openMenu ? 'translate-x-0':'-translate-x-full'} `}>
-                        <Image src={'/assets/mobile-logo-2.png'} alt='Work horizon mobile logo' width={200} height={100} className='w-[11rem] h-auto' />
-                        <div className='flex flex-col pr-8'>
+                        <Image src={'/assets/mobile-logo-2.png'} alt='Work horizon mobile logo' width={200} height={100} className='w-[11rem] h-auto border border-black' />
+                        <div className='flex flex-col pr-8 border border-black'>
                             {
                                 menu.map((item, idx) => 
-                                    <Link href={item.link} key={idx} className='text-xl text-sky-900 font-semibold border-b border-gray-100 mb-5' onClick={() => setOpenMenu(!openMenu)}>{item.name}</Link>
+                                    <Link href={item.link} key={idx} className='text-xl text-sky-900 font-semibold border-b border-gray-100 mb-3' onClick={() => setOpenMenu(!openMenu)}>{item.name}</Link>
                                 )
                             }
                         </div>
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col border border-black'>
                             <div className='grid grid-cols-[20%,80%]  mb-3 items-center'>
                                 <div className='border-2 border-sky-900 flex p-3 w-fit rounded-[50%] justify-center'>
-                                <PhoneCall className='w-5 h-auto text-sky-900'/>
+                                    <PhoneCall className='w-5 h-auto text-sky-900'/>
                                 </div>
                                 <div className='flex flex-col pl-1'>
                                     <h3 className='text-md font-semibold tracking-wide text-gray-700'>Phone</h3>
@@ -54,7 +54,7 @@ export default function MobileMenu() {
                             </div>
                             <div className='grid grid-cols-[20%,80%] mb-3 items-center'>
                                 <div className='border-2 border-sky-900 flex p-3 w-fit rounded-[50%] justify-center'>
-                                <MailIcon className='w-5 h-auto text-sky-900'/>
+                                    <MailIcon className='w-5 h-auto text-sky-900'/>
                                 </div>
                                 <div className='flex flex-col pl-1'>
                                     <h3 className='text-md font-semibold tracking-wide text-gray-700'>Email Us</h3>
@@ -63,7 +63,7 @@ export default function MobileMenu() {
                             </div>
                             <div className='grid grid-cols-[20%,80%] items-start'>
                                 <div className='border-2 border-sky-900 flex p-3 mt-1 w-fit rounded-[50%] justify-center'>
-                                <MapPin className='w-5 h-auto text-sky-900'/>
+                                    <MapPin className='w-5 h-auto text-sky-900'/>
                                 </div>
                                 <div className='flex flex-col pl-1'>
                                     <h3 className='text-md font-semibold tracking-wide text-gray-700'>Our Office</h3>
