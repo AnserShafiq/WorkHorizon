@@ -7,7 +7,7 @@ export const JobOptions = [
         salary: '85,000PKR to 90,000PKR',
         timing: 'Monday to Friday, 5pm to 2am',
         worktype: 'On-site',
-        department: 'Digital marketing & I.T',
+        department: 'Digital marketing & I.T.',
         jobtype: 'p',
         positions:'3',
         description: [

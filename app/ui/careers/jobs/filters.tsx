@@ -32,9 +32,9 @@ export default function JobFilters() {
   };
 
   return (
-    <div className="container w-[88%] lg:w-[77%] 2xl:w-[70%]  grid grid-cols-3 gap-5 mt-4">
+    <div className="container w-[88%] lg:w-[77%] 2xl:w-[70%]  grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-5 mt-4">
       <div className='w-full'>
-        <select value={department} className='w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm' onChange={(e) => handleFilterChange(e.target.value, 'D')}>
+        <select value={department} className='w-full px-2 lg:px-3 py-2 border border-gray-300 rounded-xl shadow-sm' onChange={(e) => handleFilterChange(e.target.value, 'D')}>
           <option value="">Department</option>
           <option value="Sales & marketing">Sales & marketing</option>
           <option value="Digital marketing & I.T">Digital marketing & I.T</option>
@@ -42,7 +42,7 @@ export default function JobFilters() {
           <option value="Finance & Accounting">Finance & Accounting</option>
         </select>
       </div>
-      <div className='w-full'>
+      <div className='hidden lg:flex w-full'>
         <select value={workType} className='w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm' onChange={(e) => handleFilterChange(e.target.value, 'W')}>
           <option value="">Job Type</option>
           <option value="On-site">On-site</option>
@@ -50,7 +50,7 @@ export default function JobFilters() {
         </select>
       </div>
       <div className='w-full'>
-        <select value={jobType} className='w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm' onChange={(e) => handleFilterChange(e.target.value, 'J')}>
+        <select value={jobType} className='w-full px-2 lg:px-3 py-2 border border-gray-300 rounded-xl shadow-sm' onChange={(e) => handleFilterChange(e.target.value, 'J')}>
           <option value="">Contract Type</option>
           <option value="P">Permanent</option>
           <option value="C">Contractual</option>
