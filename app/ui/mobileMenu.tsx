@@ -33,7 +33,8 @@ export default function MobileMenu() {
                     <X className="absolute w-5 h-auto text-white top-4 right-5 z-50 cursor-pointer" onClick={() => setOpenMenu(false)} />
 
                     {/* Sidebar */}
-                    <div className={`w-[88%] flex flex-col justify-around h-auto min-h-[100vh] bg-sidemenu-bg px-5 fixed top-0 left-0 transform transition-transform ease-in-out duration-[0.7s] ${openMenu ? 'translate-x-0':'-translate-x-full'} `}>
+                    <div className={`w-[88%] h-auto min-h-[100vh] bg-sidemenu-bg px-5 fixed top-0 left-0 transform transition-transform ease-in-out duration-[0.7s] ${openMenu ? 'translate-x-0':'-translate-x-full'} `}>
+                        <div className='flex flex-col justify-between h-[96vh] my-[2vh]'>
                         <Image src={'/assets/mobile-logo-2.png'} alt='Work horizon mobile logo' width={200} height={100} className='w-[11rem] h-auto border border-black' />
                         <div className='flex flex-col pr-8 border border-black'>
                             {
@@ -70,6 +71,8 @@ export default function MobileMenu() {
                                     <h3 className='text-md font-semibold tracking-wide text-sky-900'>Sunny Plaza, Eden City, DHA Phase 8, Lahore,PK.</h3>
                                 </div>
                             </div>
+                        </div>
+
                         </div>
                     </div>
                 </div>
