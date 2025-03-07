@@ -42,7 +42,7 @@ export default function DropDown({ mainMenu }: DropDownProps) {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className={`relative md:absolute top-0 -left-0 bg-[#00000011] md:bg-dullWhite sh md:shadow-lg md:border md:border-gray-300 md:rounded-lg mb-3 md:w-[300px] z-50 ${isOpen ? 'block':'hidden'}`}>
+        <div className={`relative md:absolute top-0 -left-0 bg-[#00000011] md:bg-dullWhite shadow-md md:shadow-lg md:border md:border-gray-300 md:rounded-lg mb-3 md:w-[300px] z-50 ${isOpen ? 'block':'hidden'}`}>
           {subMenu.map((item, index) => (
             <Link
               href={item.link}
