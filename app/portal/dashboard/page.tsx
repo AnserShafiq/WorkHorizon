@@ -13,12 +13,12 @@ export default function Dashboard() {
         }
         fetchUser();
     },[])
-    console.log('User =>', user);
+    // console.log('User =>', user);
 
     return (
-        <div className="p-6 max-w-4xl mx-auto">
+        <div className="p-6 max-w-5xl mx-auto">
             <h1 className="text-2xl font-bold mb-4">Welcome to Dashboard, {user?.name}</h1>
-            <JobPostingForm />
+            
             <div className="flex justify-between items-center">
                 <p className="text-gray-600">You are successfully logged in.</p>
                 

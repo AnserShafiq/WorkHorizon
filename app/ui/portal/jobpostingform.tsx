@@ -8,7 +8,7 @@ interface JobFormData {
     timing: string;
     worktype: string;
     department: string;
-    jobtype: string;
+    contract: string;
     positions: string;
     description: string;
     skills: string;
@@ -29,19 +29,37 @@ interface FormErrors {
 
 export default function JobPostingForm() {
 
-    const handleSubmission = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmission = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
     
         const formData = new FormData(e.currentTarget);
-        
-        // Convert FormData to object for logging
-        const formObject: Record<string, string> = {};
-        formData.forEach((value, key) => {
-            formObject[key] = value.toString();
+
+        const formObject:JobFormData = {
+            status: 'new',
+            title: formData.get('title')?.toString() || '',
+            salary: formData.get('salary')?.toString() || '',
+            timing: formData.get('timing')?.toString() || '',
+            worktype: formData.get('worktype')?.toString() || '',
+            department: formData.get('department')?.toString() || '',
+            contract: '',
+            positions: formData.get('positions')?.toString() || '',
+            description: formData.get('description')?.toString() || '',
+            skills: formData.get('skills')?.toString() || '',
+            compensations: formData.get('compensations')?.toString() || '',
+            qualifications: formData.get('qualifications')?.toString() || '',
+            whatyouwillgain: formData.get('gains')?.toString() || '',
+        }
+        const response = await fetch('/api/getAdmin/newJob', {
+            method: 'POST',
+            headers:{
+                'Content-type': 'application/json',
+            },
+            credentials:'include',
+            body: JSON.stringify(formObject),
         });
-    
-        console.log("Form Data:", formObject);
+        console.log("Form Data:", formObject, 'Response:', response);
     };
+    
     const [description, setDescription] = useState("");
     // eslint-disable-next-line
     const handleDescriptionChange = (e:any) => {
@@ -69,8 +87,9 @@ export default function JobPostingForm() {
     };
 
     return(
+    <div className='p-6 max-w-5xl mx-auto'>
     <div className='container mx-auto py-10'>
-        <h2>Fill out the form to add a new job.</h2>
+        <h2 className="text-lg lg:text-xl text-sky-900 font-semibold tracking-wide mb-2">Fill out the form to add a new job.</h2>
         <form onSubmit={handleSubmission}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex flex-col border border-gray-300 p-2">
@@ -79,7 +98,7 @@ export default function JobPostingForm() {
                 </div>
                 <div className="flex flex-col border border-gray-300 p-2">
                     <label>Salary Range:</label>
-                    <input type="text" name='company' id='company' placeholder="e.g.., 50,000PKR to 65,000PKR"/>
+                    <input type="text" name='salary' id='salary' placeholder="e.g.., 50,000PKR to 65,000PKR"/>
                 </div>
                 <div className="flex flex-col border border-gray-300 p-2">
                     <label>Timing: </label>
@@ -90,7 +109,7 @@ export default function JobPostingForm() {
                 </div>
                 <div className="flex flex-col border border-gray-300 p-2">
                     <label>Department: </label>
-                    <select name='timing' id='timing'>
+                    <select name='department' id='department'>
                         <option value={''}>Select department</option>
                         <option value={'Sales & Marketing'}>Sales & Marketing</option>
                         <option value={'Digital Marketing & I.T.'}>Digital Marketing & I.T.</option>
@@ -99,12 +118,25 @@ export default function JobPostingForm() {
                     </select>
                 </div>
                 <div className="flex flex-col border border-gray-300 p-2">
-                    <label>Salary Range</label>
-                    <input type="text" name='salary' id='salary' placeholder="e.g., $50,000 to $70,000"/>
+                    <label>Work Type: </label>
+                    <select name='worktype' id='worktype'>
+                        <option value={''}>Select work type</option>
+                        <option value={'Full time'}>Full time</option>
+                        <option value={'Part time'}>Part time</option>
+                        <option value={'Remote'}>Remote</option>
+                    </select>
                 </div>
+                {/* <div className="flex flex-col border border-gray-300 p-2">
+                    <label>Contract Type: </label>
+                    <select name='contract' id='contract'>
+                        <option value={''}>Select contract type</option>
+                        <option value={'Permanent'}>Permanent</option>
+                        <option value={'Contract based'}>Contract based</option>
+                    </select>
+                </div> */}
                 <div className="flex flex-col border border-gray-300 p-2">
                     <label>Positions: </label>
-                    <select name='timing' id='timing'>
+                    <select name='positions' id='positions'>
                         <option value={''}>Select positions</option>
                         <option value={'1'}>1</option>
                         <option value={'2'}>2</option>
@@ -116,109 +148,106 @@ export default function JobPostingForm() {
                         <option value={'Multiple'}>Multiple</option>
                     </select>
                 </div>
-                <div className="flex flex-col border border-gray-300 p-2">
+                <div className="flex flex-col border border-gray-300 p-2 min-h-[200px] max-h-[200px]">
                     <label>Job Description: (Enter each point on a new line)</label>
                     <textarea 
-                        className="bg-gray-200 p-2" 
+                        className="bg-gray-200 p-2 h-full" 
                         id="description" 
                         name="description" 
-                        rows={4}
                         value={description}
                         onChange={handleDescriptionChange}
                         placeholder="Enter job responsibilities, each on a new line"
                     />
                 </div>
-                <div className="flex flex-col border border-gray-300 p-2">
+                <div className="flex flex-col border border-gray-300 p-2 min-h-[200px] max-h-[200px]">
                     <label>Description's Preview:</label>
-                    <ul className="list-disc pl-5 bg-gray-100 p-2">
+                    <ul className="list-disc pl-5 bg-gray-100 p-2 overflow-auto">
                         {description.split("\n").map((line, index) => (
                             line.trim() && <li key={index}>{line}</li>
                         ))}
                     </ul>
                 </div>
-                <div className="flex flex-col border border-gray-300 p-2">
+                <div className="flex flex-col border border-gray-300 p-2  min-h-[200px] max-h-[200px]">
                     <label>Skills Required: (Enter each point on a new line)</label>
                     <textarea 
-                        className="bg-gray-200 p-2" 
+                        className="bg-gray-200 p-2 min-h-[150px] h-auto" 
                         id="skills" 
                         name="skills" 
-                        rows={4}
                         value={skills}
                         onChange={handleSkillsChange}
                         placeholder="Enter required skills, each on a new line"
                     />
                 </div>
-                <div className="flex flex-col border border-gray-300 p-2">
+                <div className="flex flex-col border border-gray-300 p-2 min-h-[200px] max-h-[200px]">
                     <label>Skills Preview:</label>
-                    <ul className="list-disc pl-5 bg-gray-100 p-2">
+                    <ul className="list-disc pl-5 bg-gray-100 p-2 overflow-auto">
                         {skills.split("\n").map((line, index) => (
                             line.trim() && <li key={index}>{line}</li>
                         ))}
                     </ul>
                 </div>
-                <div className="flex flex-col border border-gray-300 p-2">
+                <div className="flex flex-col border border-gray-300 p-2 min-h-[200px] max-h-[200px]">
                     <label>Compensations (Enter each point on a new line)</label>
                     <textarea 
-                        className="bg-gray-200 p-2" 
+                        className="bg-gray-200 p-2 h-full" 
                         id="compensations" 
                         name="compensations" 
-                        rows={4}
                         value={compensations}
                         onChange={handleCompensationsChange}
                         placeholder="Enter compensations, each on a new line"
                     />
                 </div>
-                <div className="flex flex-col border border-gray-300 p-2">
+                <div className="flex flex-col border max-h-[200px] border-gray-300 p-2">
                     <label>Compensations Preview:</label>
-                    <ul className="list-disc pl-5 bg-gray-100 p-2">
+                    <ul className="list-disc pl-5 bg-gray-100 p-2 overflow-auto">
                         {compensations.split("\n").map((line, index) => (
                             line.trim() && <li key={index}>{line}</li>
                         ))}
                     </ul>
                 </div>
-                <div className="flex flex-col border border-gray-300 p-2">
+                <div className="flex flex-col border border-gray-300 p-2 min-h-[200px] max-h-[200px]">
                     <label>Qualifications (Enter each point on a new line)</label>
                     <textarea 
-                        className="bg-gray-200 p-2" 
+                        className="bg-gray-200 p-2 h-full" 
                         id="qualifications" 
                         name="qualifications" 
-                        rows={4}
                         value={qualifications}
                         onChange={handleQualificationsChange}
                         placeholder="Enter compensations, each on a new line"
                     />
                 </div>
-                <div className="flex flex-col border border-gray-300 p-2">
+                <div className="flex flex-col border border-gray-300 p-2 min-h-[200px] max-h-[200px]">
                     <label>Qualifications Preview:</label>
-                    <ul className="list-disc pl-5 bg-gray-100 p-2">
+                    <ul className="list-disc pl-5 bg-gray-100 p-2 overflow-auto">
                         {qualifications.split("\n").map((line, index) => (
                             line.trim() && <li key={index}>{line}</li>
                         ))}
                     </ul>
                 </div>
-                <div className="flex flex-col border border-gray-300 p-2">
+                <div className="flex flex-col border border-gray-300 p-2 min-h-[200px] max-h-[200px]">
                     <label>Applicant Will Gain (Enter each point on a new line)</label>
                     <textarea 
-                        className="bg-gray-200 p-2" 
+                        className="bg-gray-200 p-2 h-full" 
                         id="gains" 
-                        name="gains" 
-                        rows={4}
+                        name="gains"
                         value={gains}
                         onChange={handleGainsChange}
                         placeholder="Enter what applicant will gain, each on a new line"
                     />
                 </div>
-                <div className="flex flex-col border border-gray-300 p-2">
+                <div className="flex flex-col border border-gray-300 p-2 min-h-[200px] max-h-[200px]">
                     <label>Applicant Will Gain Preview:</label>
-                    <ul className="list-disc pl-5 bg-gray-100 p-2">
+                    <ul className="list-disc pl-5 bg-gray-100 p-2 overflow-auto">
                         {gains.split("\n").map((line, index) => (
                             line.trim() && <li key={index}>{line}</li>
                         ))}
                     </ul>
                 </div>
+
             </div>
             <button type='submit' className="bg-blue-500 text-white p-2 mt-2">Submit</button>
         </form>
+    </div>
     </div>
     )
 }

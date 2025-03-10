@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation"; // Import Next.js pathname hook
 import '../globals.css'
 import MobileMenu from "./mobileMenu";
-import { signOut } from "next-auth/react";
 import DropDown from "./dropdown";
+import PortalHeader from "./portal/portal-header";
 
 export default function MainHeader() {
     const pathname = usePathname(); // Get current path
@@ -65,7 +65,7 @@ export default function MainHeader() {
 
     return (
         <div className={`${hideHeader ? 'hidden':""} w-full bg-headerBackground py-3 shadow-sm shadow-gray-300 sticky top-0 z-50 transition-transform ease-in-out duration-500 transform ${headerDisplay ? 'translate-y-0' : '-translate-y-full'}`}>
-            <div className="flex justify-between px-0 lg:grid lg:grid-cols-[20%,60%,20%] container">
+            <div className={`flex justify-between px-0 lg:grid ${adminMenu ? 'lg:grid-cols-[20%,10%,70%]':'lg:grid-cols-[20%,60%,20%]'} container`}>
                 <div className="flex">
                     <Link className="block" href={'/'}>
                         <Image src={'/assets/Logo.png'} className="w-[13rem] lg:w-[15rem] h-auto" alt='Work Horizon' width={300} height={200} />
@@ -85,19 +85,14 @@ export default function MainHeader() {
                                 {Item.name} </Link>
                             
                         ):(
-                            <h3>Admin Menu</h3>
+                            null
                         )
                     }
                 </div>
                 <div className="hidden lg:flex items-center justify-end">
                     {
                         adminMenu ? 
-                            <button 
-                                onClick={() => signOut({callbackUrl: '/portal'})} 
-                                className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded transition-colors"
-                                >
-                                Sign Out
-                                </button>
+                            <PortalHeader />
                         :
                             <Link href={'tel:+923206460085'} className="relative text-md font-semibold text-orange-500 border-2 border-orange-500 transition-all ease-in-out duration-500 hover:scale-[1.05] hover:-top-[2px]  px-5 py-1 rounded-xl">
                                 +92 320 6460085

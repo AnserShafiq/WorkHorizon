@@ -32,7 +32,7 @@ export default function DropDown({ mainMenu }: DropDownProps) {
     onMouseLeave={() => setIsOpen(false)}
     >
       {/* Main Menu Link */}
-      <Link href={mainMenu.link} className={`w-full relative text-xl !hidden md:!flex items-center justify-center font-semibold tracking-wide transitive-underline ${isOpen ? 'transitive-underline' : ''} ${mainMenu.active ? "text-[#F7801E]" : "text-sky-900"} hover:text-sky-800`}>
+      <Link href={mainMenu.link} className={`w-full relative text-xl !hidden md:!flex items-center justify-center font-semibold tracking-wide transitive-underline ${isOpen ? 'transitive-underline' : ''} hover:text-sky-800 ${mainMenu.active ? "text-[#F7801E]" : "text-sky-900"}`}>
         {mainMenu.name} <ChevronDown className={`w-5 h-5 ml-2 mt-1 stroke-[2.5px] ${isOpen ? 'rotate-180 md:rotate-0': 'rotate-0'}`}/>
       </Link>
 
@@ -42,7 +42,7 @@ export default function DropDown({ mainMenu }: DropDownProps) {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className={`relative md:absolute top-0 -left-0 bg-[#00000011] md:bg-dullWhite shadow-md md:shadow-lg md:border md:border-gray-300 md:rounded-lg mb-3 md:w-[300px] z-50 ${isOpen ? 'block':'hidden'}`}>
+        <div className={`relative md:absolute top-0 md:top-7 -left-0 bg-[#00000011] md:bg-dullWhite shadow-md md:shadow-lg md:border md:border-gray-300 md:rounded-lg mb-3 md:w-[300px] z-50 ${isOpen ? 'block':'hidden'}`}>
           {subMenu.map((item, index) => (
             <Link
               href={item.link}

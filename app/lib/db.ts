@@ -24,6 +24,7 @@ export async function createConnection() {
 export async function executeQuery(query: string, params: any[] = []) {
     const db = await createConnection();
     try {
+        // console.log('Params from DB: ', params)
         const [results] = await db.query(query, params);
         return results;
     } catch (error) {

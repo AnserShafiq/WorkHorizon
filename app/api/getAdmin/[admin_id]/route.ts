@@ -5,7 +5,7 @@ export async function GET(request: NextRequest, context: any) {
   try {
     const { admin_id } = await context.params; // No need to explicitly define the type
 
-    console.log('Admin ID =>', admin_id);
+    // console.log('Admin ID =>', admin_id);
 
     const admin = await executeQuery(`SELECT * FROM USERS WHERE ID = ?`, [admin_id]);
 

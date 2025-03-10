@@ -1,7 +1,9 @@
 'use client'
+import { JobFormData } from "@/app/lib/elements";
 import { JobOptions } from "@/app/lib/joboptions";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 interface JobsTableProps {
     query: string;
@@ -9,12 +11,31 @@ interface JobsTableProps {
 
 export default function JobsTable({ query }: JobsTableProps) {
     // Filter jobs based on the query
-    const toDisplay = JobOptions.filter((job) => 
-        job.title.toLowerCase().includes(query.toLowerCase()) || 
-        job.worktype.toLowerCase().includes(query.toLowerCase()) ||
-        job.jobtype.toLowerCase().includes(query.toLowerCase()) ||
-        job.department.toLowerCase().includes(query.toLowerCase())
-    );
+    // const toDisplay = JobOptions.filter((job) => 
+    //     job.title.toLowerCase().includes(query.toLowerCase()) || 
+    //     job.worktype.toLowerCase().includes(query.toLowerCase()) ||
+    //     job.jobtype.toLowerCase().includes(query.toLowerCase()) ||
+    //     job.department.toLowerCase().includes(query.toLowerCase())
+    // );
+
+    const [toDisplay, setToDisplay] = useState<JobFormData[]>([])
+
+    useEffect(() => {
+        const jobsList = async () => {
+            const data = await fetch('/api/getJobs');
+            const List = await data.json();
+            setToDisplay(List);
+        };
+    
+        // Delay the fetch by 4000 milliseconds (4 seconds)
+        const timeoutId = setTimeout(() => {
+            jobsList();
+        }, 3000);
+    
+        // Cleanup function to clear the timeout
+        return () => clearTimeout(timeoutId);
+    }, []); // Empty dependency array
+    
 
     const router = useRouter()
 
@@ -66,11 +87,12 @@ export default function JobsTable({ query }: JobsTableProps) {
                                 </td>
                                 <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md">
                                 <span className="font-semibold mr-2 inline-flex lg:hidden">Contract Type: </span>
-                                    {job.jobtype.toLowerCase() === "p"
+                                    {/* {job.jobtype.toLowerCase() === "p"
                                         ? "Permanent"
                                         : job.jobtype.toLowerCase() === "c"
                                         ? "Contractual"
-                                        : ""}
+                                        : ""} */}
+                                        Permanent
                                 </td>
                             </tr>
                         ))
