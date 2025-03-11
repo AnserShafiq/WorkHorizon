@@ -8,6 +8,10 @@ import { useEffect, useState } from "react"
 export default function PortalHeader(){
     const Menu = [
         {
+            name: 'Dashboard',
+            link: '/portal/dashboard',
+            active:false,
+        },{
             name: 'Add New Job',
             link: '/portal/dashboard/new-job-addition',
             active:false,

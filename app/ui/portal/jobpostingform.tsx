@@ -6,6 +6,7 @@ interface JobFormData {
     title: string;
     salary: string;
     timing: string;
+    intro: string;
     worktype: string;
     department: string;
     contract: string;
@@ -15,6 +16,7 @@ interface JobFormData {
     compensations: string;
     qualifications: string;
     whatyouwillgain:string;
+    jointagline: string;
 }
 
 interface FormErrors {
@@ -35,19 +37,21 @@ export default function JobPostingForm() {
         const formData = new FormData(e.currentTarget);
 
         const formObject:JobFormData = {
-            status: 'new',
+            status: 'active',
             title: formData.get('title')?.toString() || '',
             salary: formData.get('salary')?.toString() || '',
             timing: formData.get('timing')?.toString() || '',
+            intro: formData.get('introduction')?.toString() || '',
             worktype: formData.get('worktype')?.toString() || '',
             department: formData.get('department')?.toString() || '',
-            contract: '',
+            contract: formData.get('contract')?.toString() || '',
             positions: formData.get('positions')?.toString() || '',
             description: formData.get('description')?.toString() || '',
             skills: formData.get('skills')?.toString() || '',
             compensations: formData.get('compensations')?.toString() || '',
             qualifications: formData.get('qualifications')?.toString() || '',
             whatyouwillgain: formData.get('gains')?.toString() || '',
+            jointagline: formData.get('jointagline')?.toString() || '',
         }
         const response = await fetch('/api/getAdmin/newJob', {
             method: 'POST',
@@ -92,24 +96,24 @@ export default function JobPostingForm() {
         <h2 className="text-lg lg:text-xl text-sky-900 font-semibold tracking-wide mb-2">Fill out the form to add a new job.</h2>
         <form onSubmit={handleSubmission}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex flex-col border border-gray-300 p-2">
+                <div className="col-span-2 flex flex-col border border-gray-300 p-2">
                     <label>Job Title:</label>
-                    <input type="text" name='title' className='' id='title' placeholder="Enter job title"/>
+                    <input type="text" name='title' className='bg-gray-200 p-2' id='title' placeholder="Enter job title"/>
                 </div>
                 <div className="flex flex-col border border-gray-300 p-2">
                     <label>Salary Range:</label>
-                    <input type="text" name='salary' id='salary' placeholder="e.g.., 50,000PKR to 65,000PKR"/>
+                    <input type="text" name='salary' id='salary' className="bg-gray-200 p-2" placeholder="e.g.., 50,000PKR to 65,000PKR"/>
                 </div>
                 <div className="flex flex-col border border-gray-300 p-2">
                     <label>Timing: </label>
-                    <select name='timing' id='timing'>
+                    <select name='timing' className="bg-gray-200 p-2" id='timing'>
                         <option value={''}>Select job timing</option>
                         <option value={'Monday to Friday, 5:00pm to 2:00am'}>Monday to Friday, 5:00pm to 2:00am</option>
                     </select>
                 </div>
                 <div className="flex flex-col border border-gray-300 p-2">
                     <label>Department: </label>
-                    <select name='department' id='department'>
+                    <select name='department' className="bg-gray-200 p-2" id='department'>
                         <option value={''}>Select department</option>
                         <option value={'Sales & Marketing'}>Sales & Marketing</option>
                         <option value={'Digital Marketing & I.T.'}>Digital Marketing & I.T.</option>
@@ -119,24 +123,24 @@ export default function JobPostingForm() {
                 </div>
                 <div className="flex flex-col border border-gray-300 p-2">
                     <label>Work Type: </label>
-                    <select name='worktype' id='worktype'>
+                    <select name='worktype' className="bg-gray-200 p-2" id='worktype'>
                         <option value={''}>Select work type</option>
                         <option value={'Full time'}>Full time</option>
                         <option value={'Part time'}>Part time</option>
                         <option value={'Remote'}>Remote</option>
                     </select>
                 </div>
-                {/* <div className="flex flex-col border border-gray-300 p-2">
+                <div className="flex flex-col border border-gray-300 p-2">
                     <label>Contract Type: </label>
-                    <select name='contract' id='contract'>
+                    <select name='contract' className="bg-gray-200 p-2" id='contract'>
                         <option value={''}>Select contract type</option>
                         <option value={'Permanent'}>Permanent</option>
                         <option value={'Contract based'}>Contract based</option>
                     </select>
-                </div> */}
+                </div>
                 <div className="flex flex-col border border-gray-300 p-2">
                     <label>Positions: </label>
-                    <select name='positions' id='positions'>
+                    <select name='positions' className="bg-gray-200 p-2" id='positions'>
                         <option value={''}>Select positions</option>
                         <option value={'1'}>1</option>
                         <option value={'2'}>2</option>
@@ -147,6 +151,16 @@ export default function JobPostingForm() {
                         <option value={'7'}>7</option>
                         <option value={'Multiple'}>Multiple</option>
                     </select>
+                </div>
+                <div className="col-span-2 flex flex-col border border-gray-300 p-2">
+                <label>Job introduction: (Optional)</label>
+                    <textarea 
+                        className="bg-gray-200 p-2 h-full" 
+                        id="introduction" 
+                        name="introduction" 
+                        rows={4}
+                        placeholder="Enter introductory speech"
+                    />
                 </div>
                 <div className="flex flex-col border border-gray-300 p-2 min-h-[200px] max-h-[200px]">
                     <label>Job Description: (Enter each point on a new line)</label>
@@ -243,7 +257,16 @@ export default function JobPostingForm() {
                         ))}
                     </ul>
                 </div>
-
+                <div className="col-span-2 flex flex-col border border-gray-300 p-2">
+                <label>Join Invite: (Optional)</label>
+                    <textarea 
+                        className="bg-gray-200 p-2 h-full" 
+                        id="jointagline" 
+                        name="jointagline" 
+                        rows={3}
+                        placeholder="Enter join invite"
+                    />
+                </div>
             </div>
             <button type='submit' className="bg-blue-500 text-white p-2 mt-2">Submit</button>
         </form>

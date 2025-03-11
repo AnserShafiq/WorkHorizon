@@ -5,7 +5,7 @@ export async function POST(request: NextRequest){
     try {
         const id = await request.json()
         console.log('Job Id from route: ', id);
-        const job = await executeQuery('SELECT * FROM Jobs WHERE jobid=?',[id]);
+        const job = await executeQuery('SELECT * FROM jobs WHERE jobid=?',[id]);
         return NextResponse.json(job)
     } catch (error) {
         console.log('Invalid job id, job not found: ', error)

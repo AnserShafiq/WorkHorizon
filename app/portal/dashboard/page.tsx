@@ -1,5 +1,4 @@
 'use client'
-import JobPostingForm from '@/app/ui/portal/jobpostingform';
 import { signOut } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 

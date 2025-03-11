@@ -35,15 +35,17 @@ export const authConfig: NextAuthConfig = {
             return token;
         },
         authorized({ auth, request: { nextUrl } }) {
-            // console.log('In auth.config')
+
             const isLoggedIn = auth?.user;
-            // console.log('isLoggedIn from auth.config => ', isLoggedIn)
-            const isOnDashboard = nextUrl.pathname.startsWith('/portal/dashboard');
+
+            const isOnPortal = nextUrl.pathname === '/portal'
+
+            const isOnDashboard = nextUrl.pathname === '/portal/dashboard'
             if (isOnDashboard) {
               if (isLoggedIn) return true;
               return false; // Redirect unauthenticated users to the login page
             }
-            if (isLoggedIn) {
+            if (isLoggedIn && isOnPortal) {
               return Response.redirect(new URL('/portal/dashboard', nextUrl));
             }
             return true;

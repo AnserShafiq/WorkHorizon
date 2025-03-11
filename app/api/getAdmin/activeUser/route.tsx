@@ -3,8 +3,12 @@ import { auth } from "@/auth";
 import { NextResponse } from "next/server";
 
 export async function GET(){
-    const session =  await auth()
-    const user = session?.user;
-    console.log('Active User =>', user);
-    return NextResponse.json(user);
+    try{
+        const session =  await auth()
+        const user = session?.user;
+        console.log('Active User =>', user);
+        return NextResponse.json(user);
+    } catch {
+        return NextResponse.json(null);
+    }
 }

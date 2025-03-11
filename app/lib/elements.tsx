@@ -1,11 +1,12 @@
 
 
 export interface JobFormData {
-    jobid: string | number;
+    jobid: string | number | undefined;
     status: string;
     title: string;
     salary: string;
     timing: string;
+    intro: string;
     worktype: string;
     department: string;
     contract: string;
@@ -15,4 +16,6 @@ export interface JobFormData {
     compensations: string;
     qualifications: string;
     whatyouwillgain:string;
+    jointagline: string;
+    updated_at: string;
 }

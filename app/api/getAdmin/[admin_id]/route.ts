@@ -7,7 +7,7 @@ export async function GET(request: NextRequest, context: any) {
 
     // console.log('Admin ID =>', admin_id);
 
-    const admin = await executeQuery(`SELECT * FROM USERS WHERE ID = ?`, [admin_id]);
+    const admin = await executeQuery(`SELECT * FROM users WHERE ID = ?`, [admin_id]);
 
     if (!admin) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });

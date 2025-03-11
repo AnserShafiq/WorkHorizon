@@ -6,7 +6,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(){
     try {
-        const Jobs = await executeQuery('SELECT * FROM Jobs')
+        const Jobs = await executeQuery('SELECT * FROM jobs ORDER BY updated_at, jobid DESC')
         return NextResponse.json(Jobs)
     } catch (error) {
         console.log('Unable to read jobs from DB: ', error)

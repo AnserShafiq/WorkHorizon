@@ -30,7 +30,6 @@ export default function MainHeader() {
         setLastScroll(window.scrollY)
     }
 
-
     useEffect(() => {
         if(pathname.includes('/jobs')){
             setHideHeader(true)

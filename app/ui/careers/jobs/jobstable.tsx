@@ -11,20 +11,13 @@ interface JobsTableProps {
 
 export default function JobsTable({ query }: JobsTableProps) {
     // Filter jobs based on the query
-    // const toDisplay = JobOptions.filter((job) => 
-    //     job.title.toLowerCase().includes(query.toLowerCase()) || 
-    //     job.worktype.toLowerCase().includes(query.toLowerCase()) ||
-    //     job.jobtype.toLowerCase().includes(query.toLowerCase()) ||
-    //     job.department.toLowerCase().includes(query.toLowerCase())
-    // );
-
-    const [toDisplay, setToDisplay] = useState<JobFormData[]>([])
+    const [jobsList, setJobsList] = useState<JobFormData[]>([])
 
     useEffect(() => {
         const jobsList = async () => {
             const data = await fetch('/api/getJobs');
             const List = await data.json();
-            setToDisplay(List);
+            setJobsList(List);
         };
     
         // Delay the fetch by 4000 milliseconds (4 seconds)
@@ -36,6 +29,12 @@ export default function JobsTable({ query }: JobsTableProps) {
         return () => clearTimeout(timeoutId);
     }, []); // Empty dependency array
     
+    const toDisplay = jobsList.filter((job) => 
+        job.title.toLowerCase().includes(query.toLowerCase()) || 
+        job.worktype.toLowerCase().includes(query.toLowerCase()) ||
+        job.contract.toLowerCase().includes(query.toLowerCase()) ||
+        job.department.toLowerCase().includes(query.toLowerCase())
+    );
 
     const router = useRouter()
 
@@ -87,12 +86,7 @@ export default function JobsTable({ query }: JobsTableProps) {
                                 </td>
                                 <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md">
                                 <span className="font-semibold mr-2 inline-flex lg:hidden">Contract Type: </span>
-                                    {/* {job.jobtype.toLowerCase() === "p"
-                                        ? "Permanent"
-                                        : job.jobtype.toLowerCase() === "c"
-                                        ? "Contractual"
-                                        : ""} */}
-                                        Permanent
+                                    {job.contract}
                                 </td>
                             </tr>
                         ))
