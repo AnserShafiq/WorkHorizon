@@ -10,7 +10,7 @@ export async function POST(request: NextRequest){
 
     try {
         await executeQuery(
-            'INSERT INTO jobs(STATUS, TITLE, SALARY, TIMING, INTRO, WORKTYPE, DEPARTMENT, JOBTYPE, POSITIONS, DESCRIPTION, SKILLS, COMPENSATIONS, QUALIFICATIONS, WHATYOUWILLGAIN, JOINTAGLINE, CREATED_AT, UPDATED_AT) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())',
+            'INSERT INTO jobs(STATUS, TITLE, SALARY, TIMING, INTRO, WORKTYPE, DEPARTMENT, CONTRACT, POSITIONS, DESCRIPTION, SKILLS, COMPENSATIONS, QUALIFICATIONS, WHATYOUWILLGAIN, JOINTAGLINE, CREATED_AT, UPDATED_AT) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())',
             [formData.status, formData.title,formData.salary, formData.timing,formData.intro, formData.worktype, formData.department, formData.contract, formData.positions, formData.description, formData.skills, formData.compensations, formData.qualifications, formData.whatyouwillgain, formData.jointagline]
         )
         return NextResponse.json({message: 'Done'},{status: 200})

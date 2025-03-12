@@ -4,7 +4,6 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(request: NextRequest){
     try {
         const id = await request.json()
-        console.log('Job Id from route: ', id);
         const job = await executeQuery('SELECT * FROM jobs WHERE jobid=?',[id]);
         return NextResponse.json(job)
     } catch (error) {

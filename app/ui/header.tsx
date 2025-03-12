@@ -31,7 +31,7 @@ export default function MainHeader() {
     }
 
     useEffect(() => {
-        if(pathname.includes('/jobs')){
+        if(pathname.includes('/jobs') && !pathname.includes('/jobs-list')){
             setHideHeader(true)
         }else{
             setHideHeader(false)

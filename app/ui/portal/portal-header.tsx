@@ -17,11 +17,11 @@ export default function PortalHeader(){
             active:false,
         },{
             name: 'Jobs List',
-            link: '',
+            link: '/portal/dashboard/jobs-list',
             active:false,
         },{
             name: 'All Applicants',
-            link: '',
+            link: '/portal/dashboard/applicants',
             active:false,
         },
     ]

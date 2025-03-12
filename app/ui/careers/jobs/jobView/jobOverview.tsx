@@ -30,7 +30,6 @@ export default function JobOverview({jobid}:{jobid:number}){
                 }
 
                 const matchedJob: JobFormData[] = await response.json();
-                console.log('From Job page: ', matchedJob);
                 setJob(matchedJob[0]); // Set the job data in state
             } catch (error) {
                 console.error('Error fetching job details:', error);
@@ -38,10 +37,10 @@ export default function JobOverview({jobid}:{jobid:number}){
         };
 
         fetchJobDetails();
-    }, [jobid]); // Fetch job details when jobid changes
+    }, [jobid]); 
 
     if (!job) {
-        return <Loading />; // Show a loading state while fetching data
+        return <Loading />;
     }
 
     console.log('Job Overview.tsx: ', job)

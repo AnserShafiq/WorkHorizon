@@ -1,7 +1,7 @@
 
 
 export interface JobFormData {
-    jobid: string | number | undefined;
+    jobid: string | number | any;
     status: string;
     title: string;
     salary: string;
