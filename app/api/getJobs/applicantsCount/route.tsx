@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-
+// eslint-disable-next-line
 export async function GET(request: NextRequest, context: any) {
     // const token = request.cookies.get('jodid')
     console.log('In get')

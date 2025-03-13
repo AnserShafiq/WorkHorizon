@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 
 interface JobFormData {
     status: string;
@@ -18,17 +18,6 @@ interface JobFormData {
     whatyouwillgain:string;
     jointagline: string;
 }
-
-interface FormErrors {
-    title?: string;
-    company?: string;
-    location?: string;
-    salary?: string;
-    description?: string;
-    requirements?: string;
-    benefits?: string;
-}
-
 export default function JobPostingForm() {
 
     const handleSubmission = async (e: React.FormEvent<HTMLFormElement>) => {

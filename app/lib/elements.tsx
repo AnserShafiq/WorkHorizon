@@ -1,6 +1,7 @@
 
 
 export interface JobFormData {
+    //eslint-disable-next-line
     jobid: string | number | any;
     status: string;
     title: string;

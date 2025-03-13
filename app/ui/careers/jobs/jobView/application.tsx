@@ -30,6 +30,7 @@ export default function JobApplication({JobDetails}: {JobDetails: JobFormData}){
 
   return (
     <div>
+        <h3> Application for Job: {JobDetails.title}</h3>
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleUpload}>Upload</button>
       {uploadUrl && (
