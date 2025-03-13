@@ -163,7 +163,7 @@ export default function JobPostingForm() {
                     />
                 </div>
                 <div className="flex flex-col border border-gray-300 p-2 min-h-[200px] max-h-[200px]">
-                    <label>Description's Preview:</label>
+                    <label>Descriptions Preview:</label>
                     <ul className="list-disc pl-5 bg-gray-100 p-2 overflow-auto">
                         {description.split("\n").map((line, index) => (
                             line.trim() && <li key={index}>{line}</li>
