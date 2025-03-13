@@ -5,6 +5,7 @@ import JobDescription from "./description";
 import SingleJobHead from "./innerPageHead";
 import { JobFormData } from "@/app/lib/elements";
 import Loading from "@/app/loading";
+import JobApplication from "./application";
 
 type SetActiveSection = (section: string) => void
 
@@ -43,15 +44,14 @@ export default function JobOverview({jobid}:{jobid:number}){
         return <Loading />;
     }
 
-    console.log('Job Overview.tsx: ', job)
+    // console.log('Job Overview.tsx: ', job)
     return(
         <>
             <SingleJobHead job={job} activeSection={activeSection} setActiveSection={setActiveSection as SetActiveSection} />
             {
                 activeSection === 'overview' ? 
                 <JobDescription JobDetails={job} setActiveSection={setActiveSection}/>
-                // <h3>{job.title}</h3>
-                :<h3>Application Page</h3>
+                :<JobApplication JobDetails={job} />
             }
         </>
     )
