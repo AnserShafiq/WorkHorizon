@@ -3,6 +3,7 @@ import { JobFormData } from "@/app/lib/elements";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { TailSpin } from "react-loader-spinner";
 
 interface JobsTableProps {
     query: string;
@@ -11,12 +12,14 @@ interface JobsTableProps {
 export default function JobsTable({ query }: JobsTableProps) {
     // Filter jobs based on the query
     const [jobsList, setJobsList] = useState<JobFormData[]>([])
+    const [loading, setLoading] = useState<boolean>(true)
 
     useEffect(() => {
         const jobsList = async () => {
             const data = await fetch('/api/getJobs');
             const List = await data.json();
             setJobsList(List);
+            setLoading(false)
         };
     
         // Delay the fetch by 4000 milliseconds (4 seconds)
@@ -63,39 +66,48 @@ export default function JobsTable({ query }: JobsTableProps) {
 
                 {/* Table Body */}
                 <tbody className="">
-                    {toDisplay.length > 0 ? (
-                        toDisplay.map((job, index) => (
-                            <tr key={index} onClick={() => router.push(`/careers/jobs/${job.jobid}`)} className="cursor-pointer grid grid-cols-1 lg:grid-cols-[27%,25%,16%,16%,16%] items-center w-full border-b border-gray-300 hover:bg-gray-100 py-2">
-                                <td className="px-4 py-1 lg:py-3 font-semibold capitalize text-sky-900 text-lg lg:text-lg">
-                                    <Link href={`/careers/jobs/${job.jobid}`} className="hover:underline">
-                                        {job.title}
-                                    </Link>
-                                </td>
-                                <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md">
-                                    <span className="font-semibold mr-2 inline-flex lg:hidden">Department: </span>
-                                    {job.department}
-                                </td>
-                                <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md">
-                                <span className="font-semibold mr-2 inline-flex lg:hidden">Job Type: </span>
-                                    {job.worktype}
-                                </td>
-                                <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md capitalize">
-                                    <span className="font-semibold mr-2 inline-flex lg:hidden">Positions: </span>
-                                    {job.positions}
-                                </td>
-                                <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md">
-                                <span className="font-semibold mr-2 inline-flex lg:hidden">Contract Type: </span>
-                                    {job.contract}
+                    {
+                        loading ? 
+                        <tr>
+                        <td className="col-span-full min-h-[50vh] flex flex-col gap-2 items-center justify-center">
+                            <TailSpin visible={true} height={50} width={50} color='#0C4A6E' ariaLabel='tail-spin-loading' radius={1}/>
+                            <h3 className='text-md text-orange-500 font-semibold tracking-wide text-center'>Loading..</h3>
+                        </td>
+                        </tr>
+                        :
+                        toDisplay.length > 0 ? (
+                            toDisplay.map((job, index) => (
+                                <tr key={index} onClick={() => router.push(`/careers/jobs/${job.jobid}`)} className="cursor-pointer grid grid-cols-1 lg:grid-cols-[27%,25%,16%,16%,16%] items-center w-full border-b border-gray-300 hover:bg-gray-100 py-2">
+                                    <td className="px-4 py-1 lg:py-3 font-semibold capitalize text-sky-900 text-lg lg:text-lg">
+                                        <Link href={`/careers/jobs/${job.jobid}`} className="hover:underline">
+                                            {job.title}
+                                        </Link>
+                                    </td>
+                                    <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md">
+                                        <span className="font-semibold mr-2 inline-flex lg:hidden">Department: </span>
+                                        {job.department}
+                                    </td>
+                                    <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md">
+                                    <span className="font-semibold mr-2 inline-flex lg:hidden">Job Type: </span>
+                                        {job.worktype}
+                                    </td>
+                                    <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md capitalize">
+                                        <span className="font-semibold mr-2 inline-flex lg:hidden">Positions: </span>
+                                        {job.positions}
+                                    </td>
+                                    <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md">
+                                    <span className="font-semibold mr-2 inline-flex lg:hidden">Contract Type: </span>
+                                        {job.contract}
+                                    </td>
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan={4} className="text-start lg:text-center py-5 text-lg text-gray-500">
+                                    No jobs found matching your search.
                                 </td>
                             </tr>
-                        ))
-                    ) : (
-                        <tr>
-                            <td colSpan={4} className="text-start lg:text-center py-5 text-lg text-gray-500">
-                                No jobs found matching your search.
-                            </td>
-                        </tr>
-                    )}
+                        )}
                 </tbody>
             </table>
         </div>

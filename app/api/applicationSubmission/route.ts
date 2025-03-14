@@ -1,3 +1,4 @@
+import { executeQuery } from "@/app/lib/db";
 import { google } from "googleapis";
 import { NextRequest, NextResponse } from "next/server";
 import { Readable } from "stream";
@@ -15,6 +16,7 @@ const drive = google.drive({ version: "v3", auth });
 export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
+    // console.log('Api: ', formData)
     const file = formData.get("file") as File;
 
     if (!file) return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
@@ -40,7 +42,11 @@ export async function POST(req: NextRequest) {
     });
     const fileUrl = `https://drive.google.com/uc?id=${fileId}`;
 
-    return NextResponse.json({ success: true, url: fileUrl });
+    await executeQuery(
+      'INSERT INTO jobapplications(jobid, jobtitle, firstname, lastname, email, contactnumber, address, experience, joiningdate, summary, resumelink) VALUES(?,?,?,?,?,?,?,?,?,?,?)',
+      [formData.get('jobid'),formData.get('jobtitle'),formData.get('firstname'),formData.get('lastname'),formData.get('email'),`${formData.get('country')}-${formData.get('contact')}`,formData.get('address'),formData.get('experience'),formData.get('joining'),formData.get('summary'),fileUrl])
+
+    return NextResponse.json({ success: true, status:200 });
   } catch (error) {
     return NextResponse.json({ error: error }, { status: 500 });
   }
