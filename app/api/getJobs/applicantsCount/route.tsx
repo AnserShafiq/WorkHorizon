@@ -1,14 +1,20 @@
+import { executeQuery } from '@/app/lib/db';
 import { NextRequest, NextResponse } from 'next/server';
-// eslint-disable-next-line
-export async function GET(request: NextRequest, context: any) {
-    // const token = request.cookies.get('jodid')
-    console.log('In get')
-    const jobid = await context.params; // Extract jobid correctly
-    console.log('For applicants count: ', jobid);
 
+// eslint-disable-next-line
+export async function POST(request: NextRequest) {
+    const {jobid} = await request.json(); 
+    console.log('For applicants count: ', jobid);
     if (!jobid) {
         return NextResponse.json({ message: 'Job ID is required' }, { status: 400 });
     }
-
-    return NextResponse.json({ message: 'Successful', jobid }, { status: 200 });
+    try{
+        const response:any = await executeQuery('SELECT applications FROM applicationsCount WHERE jobid = ?', [jobid])
+        const applicantCount = response[0].applications
+        return NextResponse.json({ count: applicantCount }, { status: 200 }); 
+    }
+    catch(error){
+        console.log('Unable to get count, ',error)
+        return NextResponse.json({ message: 'Unable to get count' }, { status: 404 }); 
+    }
 }

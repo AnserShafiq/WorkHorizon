@@ -77,9 +77,9 @@ export default function JobsTable({ query }: JobsTableProps) {
                         :
                         toDisplay.length > 0 ? (
                             toDisplay.map((job, index) => (
-                                <tr key={index} onClick={() => router.push(`/careers/jobs/${job.jobid}`)} className="cursor-pointer grid grid-cols-1 lg:grid-cols-[27%,25%,16%,16%,16%] items-center w-full border-b border-gray-300 hover:bg-gray-100 py-2">
+                                <tr key={index} onClick={() => router.push(`/careers/jobs/whjob_${job.jobid}`)} className="cursor-pointer grid grid-cols-1 lg:grid-cols-[27%,25%,16%,16%,16%] items-center w-full border-b border-gray-300 hover:bg-gray-100 py-2">
                                     <td className="px-4 py-1 lg:py-3 font-semibold capitalize text-sky-900 text-lg lg:text-lg">
-                                        <Link href={`/careers/jobs/${job.jobid}`} className="hover:underline">
+                                        <Link href={`/careers/jobs/whjob_${job.jobid}`} className="hover:underline">
                                             {job.title}
                                         </Link>
                                     </td>

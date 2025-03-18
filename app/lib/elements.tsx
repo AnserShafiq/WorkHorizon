@@ -18,7 +18,7 @@ export interface JobFormData {
     qualifications: string;
     whatyouwillgain:string;
     jointagline: string;
-    updated_at: string;
+    updated_at: string | null;
 }
 
 

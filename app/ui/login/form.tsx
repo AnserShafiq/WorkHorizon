@@ -30,13 +30,13 @@ export default function LoginForm() {
             <Image src={'/assets/login-anime.png'} className="2xl:w-[70%] h-auto mb-12" width={3000} height={1000} alt="Work Horizon - Login page" />
             <h2 className='text-2xl lg:text-3xl font-semibold capitalize text-sky-900 border-b border-orange-500 px-1 pb-1'>{`Welcome to Work Horizon's Portal`}</h2>
             <form onSubmit={formAction} className="flex flex-col border border-gray-300 rounded-lg mt-6 shadow-md p-6 w-[40%]">
-                <label className="text-lg lg:text-xl font-[500] mb-1">User Id:</label>
+                <label className="text-lg lg:text-xl font-[500] mb-1">Email Id:</label>
                 <input
                     className="bg-gray-200 px-3 py-1 rounded-lg shadow-md"
                     type="text"
-                    name="admin_id"
-                    id="admin_id"
-                    placeholder="Enter your admin ID"
+                    name="admin_email"
+                    id="admin_email"
+                    placeholder="Enter your email"
                 />
                 
                 <label className="text-lg lg:text-xl font-[500] mb-1 mt-4">Password:</label>

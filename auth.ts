@@ -3,9 +3,9 @@ import Credentials from "next-auth/providers/credentials";
 import { z } from "zod";
 import { authConfig } from "./auth.config";
 
-async function getAdmin(admin_id: string) {
+async function getAdmin(admin_email: string) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getAdmin/${admin_id}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getAdmin/${admin_email}`);
     if (!response.ok) {
       throw new Error(`API error: ${response.status}`);
     }
@@ -23,12 +23,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     Credentials({
       credentials: {
-        admin_id: { type: 'string' },
+        admin_email: { type: 'string' },
         password: { type: 'password' },
       },
       async authorize(credentials) {
         const credentialsFromLoginForm = z.object({
-          admin_id: z.string(),
+          admin_email: z.string(),
           password: z.string(),
         }).safeParse(credentials);
       
@@ -36,27 +36,27 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           throw new Error("Invalid input format");
         }
       
-        const { admin_id, password } = credentialsFromLoginForm.data;
+        const { admin_email, password } = credentialsFromLoginForm.data;
         // console.log("Attempting login with admin ID:", admin_id);
       
         try {
-          let user = await getAdmin(admin_id);
+          let user = await getAdmin(admin_email);
         //   console.log("User from DB:", user);
       
           if (!user) {
             throw new Error("User not found");
           }
       
-          if (password !== user.PASSWORD) {
+          if (password !== user.password) {
             console.log("Invalid password");
             throw new Error("Invalid password");
           }
       
           return {
             status: "success",
-            id: user.ID,
-            name: user.NAME,
-            email:user.EMAIL,
+            id: user.id,
+            name: user.name,
+            email:user.email,
           };
           
         } catch (error) {

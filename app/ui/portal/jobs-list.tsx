@@ -2,56 +2,100 @@
 import { JobFormData } from "@/app/lib/elements";
 import Link from "next/link";
 import { useEffect, useState } from "react"
-import {TailSpin} from 'react-loader-spinner'
+import { TailSpin } from 'react-loader-spinner'
 
-export default function JobsList(){
+interface Applicants {
+    jobid: string,
+    count: number,
+}
+
+export default function JobsList() {
     const [loading, setLoading] = useState<boolean>(true);
-    const [jobsList, setJobsList] = useState<JobFormData[]>([])
+    const [countLoading, setCountLoading] = useState<boolean>(true);
+    const [jobsList, setJobsList] = useState<JobFormData[]>([]);
+    const [applicants, setApplicants] = useState<Applicants[]>([]);
 
     useEffect(() => {
-        const jobsList = async () => {
-            const data = await fetch('/api/getJobs');
-            const List = await data.json();
-            console.log('List of jobs: ', List)
-            setJobsList(List);
-            setLoading(false)
+        const fetchJobs = async () => {
+            try {
+                const response = await fetch('/api/getJobs');
+                const jobList = await response.json();
+                setJobsList(jobList);
+            } catch (error) {
+                console.error("Error fetching jobs:", error);
+            } finally {
+                setLoading(false);
+            }
         };
-    
-        const timeoutId = setTimeout(() => {
-            jobsList();
-        }, 3000);
-    
-        return () => clearTimeout(timeoutId);
-    }, []); 
-    
 
-    return(
+        fetchJobs();
+    }, []);
+
+    useEffect(() => {
+        if (jobsList.length === 0) return;
+
+        const fetchCounts = async () => {
+            const counts: Applicants[] = await Promise.all(
+                jobsList.map(async (job) => {
+                    try {
+                        const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/applicantscount`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ jobid: job.jobid })
+                        });
+
+                        if (resp.ok) {
+                            const { count } = await resp.json();
+                            return { jobid: job.jobid, count };
+                        } else {
+                            console.error(`Error fetching count for job ${job.jobid}`);
+                            return { jobid: job.jobid, count: 0 };
+                        }
+                    } catch (error) {
+                        console.error(`Error fetching applicant count for ${job.jobid}:`, error);
+                        return { jobid: job.jobid, count: 0 };
+                    }
+                })
+            );
+
+            setApplicants(counts);
+            setCountLoading(false);
+        };
+
+        fetchCounts();
+
+    }, [jobsList]);
+
+    const getApplicantsCount = (jobid: string) => {
+        return applicants.find(app => app.jobid === jobid)?.count ?? 0;
+    }
+
+    return (
         <div className='container w-[88%] lg:w-[77%] 2xl:w-[70%] lg:min-h-[80vh] pt-8 pb-14 lg:py-14'>
             <h3>Jobs List</h3>
             <table className='w-full'>
-                <thead className=''>
-                    <tr className='bg-gray-100 rounded-t-xl grid grid-cols-[30%,30%,20%,20%] w-full'>
+                <thead>
+                    <tr className='bg-gray-100 rounded-t-xl grid grid-cols-[30%,25%,15%,10%,20%] w-full'>
                         <th className="border rounded-tl-xl px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">Job title</th>
                         <th className="border px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">Department</th>
                         <th className="border px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">Applicants</th>
-                        <th className="border rounded-tr-xl px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">Status</th>
+                        <th className="border px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">Status</th>
+                        <th className="border rounded-tr-xl px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">-</th>
                     </tr>
                 </thead>
-                <tbody className="">
-                    {
-                        loading ? 
+                <tbody>
+                    {loading ? (
                         <tr>
-                        <td className="col-span-full min-h-[50vh] flex flex-col gap-2 items-center justify-center">
-                            <TailSpin visible={true} height={50} width={50} color='#0C4A6E' ariaLabel='tail-spin-loading' radius={1}/>
-                            <h3 className='text-md text-orange-500 font-semibold tracking-wide text-center'>Loading..</h3>
-                        </td>
+                            <td className="col-span-full min-h-[50vh] flex flex-col gap-2 items-center justify-center">
+                                <TailSpin visible={true} height={50} width={50} color='#0C4A6E' ariaLabel='tail-spin-loading' radius={1} />
+                                <h3 className='text-md text-orange-500 font-semibold tracking-wide text-center'>Loading..</h3>
+                            </td>
                         </tr>
-                        : 
-                        
-                        jobsList.map((job, index) => 
-                        <tr key={index} onClick={() => window.location.href = `/portal/dashboard/jobs-list/WHJOB_${job.jobid}`} className="cursor-pointer grid grid-cols-1 lg:grid-cols-[30%,30%,20%,20%] items-center w-full border-b border-gray-300 hover:bg-gray-100 py-2">
-                            <td className="px-4 py-1 lg:py-3 font-semibold capitalize text-sky-900 text-lg lg:text-lg">
-                                    <Link href={`/careers/jobs/${job.jobid}`} className="hover:underline">
+                    ) : (
+                        jobsList.map((job) =>
+                            <tr key={job.jobid} onClick={() => window.location.href = `/portal/dashboard/jobs-list/whjob_${job.jobid}`} className="cursor-pointer grid grid-cols-1 lg:grid-cols-[30%,25%,15%,10%,20%] items-center w-full border-b border-gray-300 hover:bg-gray-100 py-2">
+                                <td className="px-4 py-1 lg:py-3 font-semibold capitalize text-sky-900 text-lg lg:text-lg">
+                                    <Link href={`/portal/dashboard/jobs-list/whjob_${job.jobid}`} className="hover:underline">
                                         {job.title}
                                     </Link>
                                 </td>
@@ -59,17 +103,33 @@ export default function JobsList(){
                                     <span className="font-semibold mr-2 inline-flex lg:hidden">Department: </span>
                                     {job.department}
                                 </td>
-                                <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md">
-                                <span className="font-semibold mr-2 inline-flex lg:hidden">Applicants: </span>
-                                    1
+                                <td className="px-4 py-1 lg:py-3 text-start lg:justify-center lg:flex  lg:text-center text-md">
+                                    <span className="font-semibold mr-2 inline-flex lg:hidden">Applicants: </span>
+                                    {
+                                        countLoading ? 
+                                        <TailSpin visible={true} height={20} width={20} color='#0C4A6E' ariaLabel='tail-spin-loading' radius={1} />
+                                        : 
+                                        getApplicantsCount(job.jobid)
+                                    }
                                 </td>
                                 <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md capitalize">
                                     <span className="font-semibold mr-2 inline-flex lg:hidden">Status: </span>
                                     {job.status}
                                 </td>
-                        </tr>
+                                <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md capitalize grid grid-cols-3">
+                                    <span className="font-semibold mr-2 inline-flex lg:hidden">Status: </span>
+                                    <Link className='border-b border-sky-900 w-fit mx-auto my-1 text-sky-900 hover:text-orange-500' href={`/portal/dashboard/jobs-list/whjob_${job.jobid}/edit`}>Edit</Link>
+                                    <Link className='border-b border-sky-900 w-fit mx-auto my-1 text-sky-900 hover:text-orange-500' href={`/portal/dashboard/jobs-list/whjob_${job.jobid}/edit`}>De-active</Link>
+                                    <button className='border-b border-sky-900 w-fit mx-auto my-1 text-sky-900 hover:text-orange-500' onClick={async() => {
+                                        const res = await fetch('/api/getAdmin/editJob', {
+                                            method: 'DELETE',
+                                            body: JSON.stringify(job.jobid),
+                                        })
+                                    }}>Delete</button>
+                                </td>
+                            </tr>
                         )
-                    }
+                    )}
                 </tbody>
             </table>
         </div>

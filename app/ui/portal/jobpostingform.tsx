@@ -18,6 +18,7 @@ interface JobFormData {
     whatyouwillgain:string;
     jointagline: string;
 }
+
 export default function JobPostingForm() {
 
     const handleSubmission = async (e: React.FormEvent<HTMLFormElement>) => {
