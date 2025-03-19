@@ -1,9 +1,10 @@
+import AllApplicants from "@/app/ui/portal/all-applicants";
 
 
 export default function Page(){
     return(
         <>
-            All Applicants
+            <AllApplicants />
         </>
     )
 }

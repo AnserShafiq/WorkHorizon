@@ -3,7 +3,6 @@ import { countries } from "@/app/lib/countries";
 import { JobFormData } from "@/app/lib/elements";
 import { ArrowLeft, Asterisk } from "lucide-react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import React, { useState } from "react";
 
 export default function JobApplication({JobDetails}: {JobDetails: JobFormData}){
@@ -57,8 +56,11 @@ export default function JobApplication({JobDetails}: {JobDetails: JobFormData}){
         method: 'POST',
         body: formData,
       })
-      setLoading(false)
-      setDone(true);
+      if(response.ok){
+        setLoading(false)
+        setDone(true);
+      }
+
     } catch (error) {
       console.log('Unable to submit form', error)
       setLoading(false);

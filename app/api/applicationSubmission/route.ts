@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
     const fileUrl = `https://drive.google.com/uc?id=${fileId}`;
 
     await executeQuery(
-      'INSERT INTO jobapplications(jobid, jobtitle, firstname, lastname, email, contactnumber, address, experience, joiningdate, summary, resumelink) VALUES(?,?,?,?,?,?,?,?,?,?,?)',
+      'INSERT INTO jobapplications(jobid, jobtitle, firstname, lastname, email, contactnumber, address, experience, joiningdate, summary, resumelink, submissiondate) VALUES(?,?,?,?,?,?,?,?,?,?,?,NOW())',
       [formData.get('jobid'),formData.get('jobtitle'),formData.get('firstname'),formData.get('lastname'),formData.get('email'),`${formData.get('country')}-${formData.get('contact')}`,formData.get('address'),formData.get('experience'),formData.get('joining'),formData.get('summary'),fileUrl])
 
     return NextResponse.json({ success: true, status:200 });

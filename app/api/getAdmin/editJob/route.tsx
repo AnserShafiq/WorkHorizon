@@ -20,7 +20,9 @@ export async function DELETE(request: NextRequest){
     try{
         const data = await request.json()
         console.log('Data from DELETE => ', data);
-        // await executeQuery(`DELETE FROM applicationsCount WHERE jobid=${data};DELETE FROM jobapplications WHERE jobid=${data};DELETE FROM jobs WHERE jobid=${data} `);
+        await executeQuery(`DELETE FROM applicationsCount WHERE jobid=${data};`);
+        await executeQuery(`DELETE FROM jobapplications WHERE jobid=${data};`);
+        await executeQuery(`DELETE FROM jobs WHERE jobid=${data};`)
         return NextResponse.json({message: 'Job got updated'}, {status: 200})
     }catch(error){
         console.log('Error in updating job, ',error);

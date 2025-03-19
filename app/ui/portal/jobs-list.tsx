@@ -70,9 +70,40 @@ export default function JobsList() {
         return applicants.find(app => app.jobid === jobid)?.count ?? 0;
     }
 
+
+    const handleStatusChangeCall = async (id: string, status: string) => {
+        const action = status === 'Active' ? 'Not active' : 'Active';
+
+        const res = await fetch('/api/getAdmin/setStatus', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+            body: JSON.stringify({ jobid: id, status: action })
+        });
+
+        if (res.ok) {
+            console.log('Status updated');
+            window.location.reload()
+        } else {
+            console.error('Failed to update status');
+        }
+    };
+
+    const handleDeleteCall = async(jobid: string) => {
+        const res = await fetch('/api/getAdmin/editJob', {
+            method: 'DELETE',
+            body: JSON.stringify(jobid),
+        })
+        if(res.status === 200){
+            window.location.reload();
+        }
+    }
+
     return (
         <div className='container w-[88%] lg:w-[77%] 2xl:w-[70%] lg:min-h-[80vh] pt-8 pb-14 lg:py-14'>
-            <h3>Jobs List</h3>
+            <h3 className="text-2xl lg:text-3xl font-semibold text-sky-900 border-b-2 px-1 mx-auto mb-5 border-orange-500 w-fit">Jobs List</h3>
             <table className='w-full'>
                 <thead>
                     <tr className='bg-gray-100 rounded-t-xl grid grid-cols-[30%,25%,15%,10%,20%] w-full'>
@@ -93,9 +124,9 @@ export default function JobsList() {
                         </tr>
                     ) : (
                         jobsList.map((job) =>
-                            <tr key={job.jobid} onClick={() => window.location.href = `/portal/dashboard/jobs-list/whjob_${job.jobid}`} className="cursor-pointer grid grid-cols-1 lg:grid-cols-[30%,25%,15%,10%,20%] items-center w-full border-b border-gray-300 hover:bg-gray-100 py-2">
+                            <tr key={job.jobid} className="grid grid-cols-1 lg:grid-cols-[30%,25%,15%,10%,20%] items-center w-full border-b border-gray-300 hover:bg-gray-100 py-2">
                                 <td className="px-4 py-1 lg:py-3 font-semibold capitalize text-sky-900 text-lg lg:text-lg">
-                                    <Link href={`/portal/dashboard/jobs-list/whjob_${job.jobid}`} className="hover:underline">
+                                    <Link href={`/portal/dashboard/jobs-list/whjob_${job.jobid}`} className="underline">
                                         {job.title}
                                     </Link>
                                 </td>
@@ -118,14 +149,9 @@ export default function JobsList() {
                                 </td>
                                 <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md capitalize grid grid-cols-3">
                                     <span className="font-semibold mr-2 inline-flex lg:hidden">Status: </span>
-                                    <Link className='border-b border-sky-900 w-fit mx-auto my-1 text-sky-900 hover:text-orange-500' href={`/portal/dashboard/jobs-list/whjob_${job.jobid}/edit`}>Edit</Link>
-                                    <Link className='border-b border-sky-900 w-fit mx-auto my-1 text-sky-900 hover:text-orange-500' href={`/portal/dashboard/jobs-list/whjob_${job.jobid}/edit`}>De-active</Link>
-                                    <button className='border-b border-sky-900 w-fit mx-auto my-1 text-sky-900 hover:text-orange-500' onClick={async() => {
-                                        const res = await fetch('/api/getAdmin/editJob', {
-                                            method: 'DELETE',
-                                            body: JSON.stringify(job.jobid),
-                                        })
-                                    }}>Delete</button>
+                                    <Link className='border-b border-sky-900 w-fit mx-auto my-1 text-sm text-sky-900 hover:text-orange-500' href={`/portal/dashboard/jobs-list/whjob_${job.jobid}/edit`}>Edit</Link>
+                                    <button className='border-b border-sky-900 w-fit mx-auto my-1 text-sm text-sky-900 hover:text-orange-500' onClick={() => handleStatusChangeCall(job.jobid, job.status)}>{job.status === 'Active' ? 'Deactivate':'Activate'}</button>
+                                    <button className='border-b border-sky-900 w-fit mx-auto my-1 text-sm text-sky-900 hover:text-orange-500' onClick={() => handleDeleteCall(job.jobid)}>Delete</button>
                                 </td>
                             </tr>
                         )
