@@ -1,9 +1,9 @@
 import { executeQuery } from "@/app/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest, {params} : {params: {id: string}}) {
-    const prop = await params;  // Correctly extracting dynamic route parameter
-    const id = prop.id;
+export async function GET(request: NextRequest, context : {params: {id: string}}) {
+    
+    const {id }= context.params;
     console.log('Applicant id:', id);
 
     if (!id) {
