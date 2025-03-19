@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { TailSpin } from 'react-loader-spinner'
 
 export default function AllApplicants() {
-    const [loading, setLoading] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(true);
     const [applicants, setApplicants] = useState<JobApplications[]>([]);
 
     useEffect(() => {
@@ -13,6 +13,7 @@ export default function AllApplicants() {
             const resp = await fetch('/api/getAllApplicants');
             const applications = await resp.json()
             setApplicants(applications)
+            setLoading(false)
         }
         getApplicants()
     },[])
