@@ -62,6 +62,7 @@ export default function EditJob({jobid}:{jobid: string | any}){
             whatyouwillgain: formData.get('gains')?.toString() || '',
             jointagline: formData.get('jointagline')?.toString() || '',
             updated_at:'',
+            applications: jobForm?.applications || 0,
         }
 
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getAdmin/editJob`,{
