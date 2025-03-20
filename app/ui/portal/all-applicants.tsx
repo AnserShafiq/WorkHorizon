@@ -10,7 +10,7 @@ export default function AllApplicants() {
 
     useEffect(() => {
         const getApplicants = async() => {
-            const resp = await fetch('/api/getAllApplicants');
+            const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getAllApplicants`);
             const applications = await resp.json()
             setApplicants(applications)
             setLoading(false)
@@ -20,7 +20,7 @@ export default function AllApplicants() {
 
 
     const handleDeleteCandidate = async(id: string) => {
-        const response = await fetch('/api/deleteApplicant',{
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/deleteApplicant`,{
             method:'DELETE',
             body: JSON.stringify(id)
         });

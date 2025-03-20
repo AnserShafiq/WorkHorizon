@@ -16,8 +16,7 @@ export default function JobOverview({jobid}:{jobid:number}){
     useEffect(() => {
         const fetchJobDetails = async () => {
             try {
-                const baseUrl = window.location.origin; // Get the base URL dynamically
-                const response = await fetch(`${baseUrl}/api/getJobs/jobDetails`, {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/jobDetails`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json',

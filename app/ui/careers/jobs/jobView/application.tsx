@@ -52,7 +52,7 @@ export default function JobApplication({JobDetails}: {JobDetails: JobFormData}){
       formData.append('jobid', JobDetails.jobid);
       formData.append('jobtitle', JobDetails.title);
       
-      const response = await fetch('/api/applicationSubmission', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/applicationSubmission`, {
         method: 'POST',
         body: formData,
       })

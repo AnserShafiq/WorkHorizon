@@ -43,7 +43,7 @@ export default function JobPostingForm() {
             whatyouwillgain: formData.get('gains')?.toString() || '',
             jointagline: formData.get('jointagline')?.toString() || '',
         }
-        const response = await fetch('/api/getAdmin/newJob', {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getAdmin/newJob`, {
             method: 'POST',
             headers:{
                 'Content-type': 'application/json',

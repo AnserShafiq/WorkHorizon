@@ -16,7 +16,7 @@ export default function JobsTable({ query }: JobsTableProps) {
 
     useEffect(() => {
         const jobsList = async () => {
-            const data = await fetch('/api/getJobs');
+            const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getJobs`);
             const List = await data.json();
             setJobsList(List);
             setLoading(false)

@@ -11,7 +11,7 @@ export default function EditJob({jobid}:{jobid: string | any}){
     useEffect(() => {
         const fetchJobDetails = async () => {
             try {
-                const response = await fetch(`/api/getJobs/jobDetails`, {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/jobDetails`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json',
@@ -64,7 +64,7 @@ export default function EditJob({jobid}:{jobid: string | any}){
             updated_at:'',
         }
 
-        const response = await fetch('/api/getAdmin/editJob',{
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getAdmin/editJob`,{
             method: 'POST',
             headers:{
                 'Content-Type':'application/json'

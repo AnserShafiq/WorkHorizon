@@ -18,7 +18,7 @@ export default function JobsList() {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const response = await fetch('/api/getJobs');
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getJobs`);
                 const jobList = await response.json();
                 setJobsList(jobList);
             } catch (error) {
@@ -38,7 +38,7 @@ export default function JobsList() {
             const counts: Applicants[] = await Promise.all(
                 jobsList.map(async (job) => {
                     try {
-                        const resp = await fetch(`/api/getJobs/applicantscount`, {
+                        const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/applicantscount`, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({ jobid: job.jobid })
@@ -74,7 +74,7 @@ export default function JobsList() {
     const handleStatusChangeCall = async (id: string, status: string) => {
         const action = status === 'Active' ? 'Not active' : 'Active';
 
-        const res = await fetch('/api/getAdmin/setStatus', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getAdmin/setStatus`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ export default function JobsList() {
     };
 
     const handleDeleteCall = async(jobid: string) => {
-        const res = await fetch('/api/getAdmin/editJob', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getAdmin/editJob`, {
             method: 'DELETE',
             body: JSON.stringify(jobid),
         })

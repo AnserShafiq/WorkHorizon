@@ -14,7 +14,7 @@ export default function ApplicantDetails({id}:{id:string | undefined}){
     useEffect(() => {
         const GetApplicant = async () => {
             try {
-                const resp = await fetch(`/api/getAllApplicants/getApplicant?id=${id}`);
+                const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getAllApplicants/getApplicant?id=${id}`);
                 const received = await resp.json();
                 // console.log(received);
                 setApplicant(received[0]) // Uncomment this when needed
