@@ -11,7 +11,7 @@ interface Applicants {
 
 export default function JobsList() {
     const [loading, setLoading] = useState<boolean>(true);
-    const [countLoading, setCountLoading] = useState<boolean>(true);
+    const [countLoading, setCountLoading] = useState<boolean>(false);
     const [jobsList, setJobsList] = useState<JobFormData[]>([]);
     const [applicants, setApplicants] = useState<Applicants[]>([]);
 
@@ -31,35 +31,35 @@ export default function JobsList() {
         fetchJobs();
     }, []);
 
-    useEffect(() => {
-        if (jobsList.length === 0) return;
+    // useEffect(() => {
+    //     if (jobsList.length === 0) return;
 
-        const fetchCounts = async () => {
-            const counts: Applicants[] = await Promise.all(
-                jobsList.map(async (job) => {
-                    try {
-                        const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/applicantscount?jobid=${job.jobid}`);
-                        if (resp.ok) {
-                            const { count } = await resp.json();
-                            return { jobid: job.jobid, count };
-                        } else {
-                            console.error(`Error fetching count for job ${job.jobid}`);
-                            return { jobid: job.jobid, count: 0 };
-                        }
-                    } catch (error) {
-                        console.error(`Error fetching applicant count for ${job.jobid}:`, error);
-                        return { jobid: job.jobid, count: 0 };
-                    }
-                })
-            );
+    //     const fetchCounts = async () => {
+    //         const counts: Applicants[] = await Promise.all(
+    //             jobsList.map(async (job) => {
+    //                 try {
+    //                     const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/applicantscount?jobid=${job.jobid}`);
+    //                     if (resp.ok) {
+    //                         const { count } = await resp.json();
+    //                         return { jobid: job.jobid, count };
+    //                     } else {
+    //                         console.error(`Error fetching count for job ${job.jobid}`);
+    //                         return { jobid: job.jobid, count: 0 };
+    //                     }
+    //                 } catch (error) {
+    //                     console.error(`Error fetching applicant count for ${job.jobid}:`, error);
+    //                     return { jobid: job.jobid, count: 0 };
+    //                 }
+    //             })
+    //         );
 
-            setApplicants(counts);
-            setCountLoading(false);
-        };
+    //         setApplicants(counts);
+    //         setCountLoading(false);
+    //     };
 
-        fetchCounts();
+    //     fetchCounts();
 
-    }, [jobsList]);
+    // }, [jobsList]);
 
     const getApplicantsCount = (jobid: string) => {
         return applicants.find(app => app.jobid === jobid)?.count ?? 0;
@@ -131,12 +131,13 @@ export default function JobsList() {
                                 </td>
                                 <td className="px-4 py-1 lg:py-3 text-start lg:justify-center lg:flex  lg:text-center text-md">
                                     <span className="font-semibold mr-2 inline-flex lg:hidden">Applicants: </span>
-                                    {
+                                    {job.applications}
+                                    {/* {
                                         countLoading ? 
                                         <TailSpin visible={true} height={20} width={20} color='#0C4A6E' ariaLabel='tail-spin-loading' radius={1} />
                                         : 
                                         getApplicantsCount(job.jobid)
-                                    }
+                                    } */}
                                 </td>
                                 <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md capitalize">
                                     <span className="font-semibold mr-2 inline-flex lg:hidden">Status: </span>

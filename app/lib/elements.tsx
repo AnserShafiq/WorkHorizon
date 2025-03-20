@@ -19,6 +19,7 @@ export interface JobFormData {
     whatyouwillgain:string;
     jointagline: string;
     updated_at: string | null;
+    applications: number ;
 }
 
 

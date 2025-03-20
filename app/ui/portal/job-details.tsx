@@ -8,7 +8,7 @@ import { TailSpin } from "react-loader-spinner";
 export default function JobDetails({jobid}:{jobid: string | number | undefined}){
     const [job, setJob] = useState<JobFormData|null>(null)
     const [count, setCount] = useState<number>(0);
-    const [loading, setLoading] = useState<boolean>(true);
+    const [loading, setLoading] = useState<boolean>(false);
     // For Getting Job's Details
     useEffect(() => {
         const fetchJobDetails = async () => {
@@ -33,36 +33,36 @@ export default function JobDetails({jobid}:{jobid: string | number | undefined})
             }
         };
 
-        const fetchCount = async () => {
-            try {
-                if (!jobid) {
-                    console.error("Job ID is missing!");
-                    return;
-                }
-        
-                const url = `${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/applicantscount?jobid=${jobid}`;
-                // console.log("Fetching count from:", url);
-                
-                const response = await fetch(url);
-                
-                if (!response.ok) {
-                    throw new Error(`API returned status ${response.status}`);
-                }
-                
-                const output = await response.json();
-                console.log("Fetched count:", output?.count);
-                setCount(output.count);
-                setLoading(false)
-            } catch (error) {
-                console.error("Unable to count applicants, Error:", error);
-            }
-        };
-        
-
         fetchJobDetails();
-        fetchCount();
 
     },[jobid])
+
+    // useEffect(() => {
+    //     const fetchCount = async () => {
+    //         try {
+    //             if (!jobid) {
+    //                 console.error("Job ID is missing!");
+    //                 return;
+    //             }
+        
+    //             const url = `${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/applicantscount?jobid=${jobid}`;
+    //             // console.log("Fetching count from:", url);
+                
+    //             const response = await fetch(url);
+                
+    //             if (!response.ok) {
+    //                 throw new Error(`API returned status ${response.status}`);
+    //             }
+                
+    //             const output = await response.json();
+    //             console.log("Fetched count:", output?.count);
+    //             setCount(output.count);
+    //         } catch (error) {
+    //             console.error("Unable to count applicants, Error:", error);
+    //         }
+    //     };
+    //     fetchCount();
+    // },[jobid])
 // eslint-disable-next-line
     const handleStatusChangeCall = async (id: string, status: any) => {
         const action = status === 'active' ? 'Not active' : 'Active';
@@ -109,7 +109,7 @@ export default function JobDetails({jobid}:{jobid: string | number | undefined})
                     <h3 className="text-md font-normal p-4 border ">{job?.title}</h3>
 
                     <h3 className="text-md font-normal p-4 border ">Total Applicants:</h3>
-                    <h3 className="text-md font-normal p-4 border ">{count}</h3>
+                    <h3 className="text-md font-normal p-4 border ">{job?.applications}</h3>
 
                     <h3 className="text-md font-normal p-4 border ">Salary range:</h3>
                     <h3 className="text-md font-normal p-4 border ">{job?.salary}</h3>
