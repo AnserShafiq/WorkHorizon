@@ -1,10 +1,10 @@
 import { executeQuery } from "@/app/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest, context : {params: {id: string}}) {
+export async function GET(request: NextRequest) {
     
-    const {id }= context.params;
-    console.log('Applicant id:', id);
+    const id = await request.nextUrl.searchParams.get('id');
+    console.log('From Out Applicant id: ', id);
 
     if (!id) {
         return NextResponse.json({ error: 'Missing ID parameter' }, { status: 400 });
