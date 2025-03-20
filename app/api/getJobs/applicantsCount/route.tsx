@@ -11,6 +11,7 @@ export async function GET(request: NextRequest) {
         console.log('GOing to read count for ', jobid)
         // eslint-disable-next-line
         const response:any = await executeQuery('SELECT applications FROM applicationsCount WHERE jobid = ?', [jobid])
+        console.log('From applicants count route: ', response);
         const applicantCount = response[0].applications
         return NextResponse.json({ count: applicantCount }, { status: 200 }); 
     }
