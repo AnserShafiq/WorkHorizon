@@ -8,6 +8,7 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ message: 'Job ID is required' }, { status: 400 });
     }
     try{
+        console.log('GOing to read count for ', jobid)
         // eslint-disable-next-line
         const response:any = await executeQuery('SELECT applications FROM applicationsCount WHERE jobid = ?', [jobid])
         const applicantCount = response[0].applications
