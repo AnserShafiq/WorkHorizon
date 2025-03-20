@@ -2,8 +2,8 @@ import { executeQuery } from '@/app/lib/db';
 import { NextRequest, NextResponse } from 'next/server';
 
 
-export async function POST(request: NextRequest) {
-    const {jobid} = await request.json(); 
+export async function GET(request: NextRequest) {
+    const jobid = request.nextUrl.searchParams.get('jobid'); 
     if (!jobid) {
         return NextResponse.json({ message: 'Job ID is required' }, { status: 400 });
     }

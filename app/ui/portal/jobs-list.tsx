@@ -38,12 +38,7 @@ export default function JobsList() {
             const counts: Applicants[] = await Promise.all(
                 jobsList.map(async (job) => {
                     try {
-                        const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/applicantscount`, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ jobid: job.jobid })
-                        });
-
+                        const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/applicantscount?jobid=${job.jobid}`);
                         if (resp.ok) {
                             const { count } = await resp.json();
                             return { jobid: job.jobid, count };

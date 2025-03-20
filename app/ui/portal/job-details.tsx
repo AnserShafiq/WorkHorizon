@@ -40,16 +40,10 @@ export default function JobDetails({jobid}:{jobid: string | number | undefined})
                     return;
                 }
         
-                const url = `${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/applicantscount`;
+                const url = `${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/applicantscount?jobid=${jobid}`;
                 // console.log("Fetching count from:", url);
                 
-                const response = await fetch(url,{
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({jobid})
-                });
+                const response = await fetch(url);
                 
                 if (!response.ok) {
                     throw new Error(`API returned status ${response.status}`);
