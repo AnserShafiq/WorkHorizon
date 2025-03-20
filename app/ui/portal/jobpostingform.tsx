@@ -27,7 +27,7 @@ export default function JobPostingForm() {
         const formData = new FormData(e.currentTarget);
 
         const formObject:JobFormData = {
-            status: 'active',
+            status: 'Active',
             title: formData.get('title')?.toString() || '',
             salary: formData.get('salary')?.toString() || '',
             timing: formData.get('timing')?.toString() || '',
@@ -51,7 +51,9 @@ export default function JobPostingForm() {
             credentials:'include',
             body: JSON.stringify(formObject),
         });
-        console.log("Form Data:", formObject, 'Response:', response);
+        if(response.ok){
+            window.location.reload();
+        }
     };
     
     const [description, setDescription] = useState("");

@@ -38,7 +38,7 @@ export default function JobsList() {
             const counts: Applicants[] = await Promise.all(
                 jobsList.map(async (job) => {
                     try {
-                        const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/applicantscount`, {
+                        const resp = await fetch(`/api/getJobs/applicantscount`, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({ jobid: job.jobid })
@@ -107,11 +107,11 @@ export default function JobsList() {
             <table className='w-full'>
                 <thead>
                     <tr className='bg-gray-100 rounded-t-xl grid grid-cols-[30%,25%,15%,10%,20%] w-full'>
-                        <th className="border rounded-tl-xl px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">Job title</th>
-                        <th className="border px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">Department</th>
-                        <th className="border px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">Applicants</th>
-                        <th className="border px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">Status</th>
-                        <th className="border rounded-tr-xl px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">-</th>
+                        <th className="border rounded-tl-xl px-4 py-5 text-lg capitalize tracking-wide">Job title</th>
+                        <th className="border px-4 py-5 text-lg capitalize tracking-wide">Department</th>
+                        <th className="border px-4 py-5 text-lg capitalize tracking-wide">Applicants</th>
+                        <th className="border px-4 py-5 text-lg capitalize tracking-wide">Status</th>
+                        <th className="border rounded-tr-xl px-4 py-5 text-lg capitalize tracking-wide">-</th>
                     </tr>
                 </thead>
                 <tbody>

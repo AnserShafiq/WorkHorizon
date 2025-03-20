@@ -36,11 +36,11 @@ export default function AllApplicants() {
             <table className='w-full'>
                 <thead>
                     <tr className='bg-gray-100 rounded-t-xl grid grid-cols-[20%,25%,25%,15%,15%] w-full'>
-                        <th className="border rounded-tl-xl px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">Applicant Name</th>
-                        <th className="border px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">Applied For</th>
-                        <th className="border px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">Contact Details</th>
-                        <th className="border px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">Experience</th>
-                        <th className="border rounded-tr-xl px-4 py-5 text-lg lg:text-lg capitalize tracking-wide">-</th>
+                        <th className="border rounded-tl-xl px-4 py-5 text-lg capitalize tracking-wide">Applicant Name</th>
+                        <th className="border px-4 py-5 text-lg capitalize tracking-wide">Applied For</th>
+                        <th className="border px-4 py-5 text-lg capitalize tracking-wide">Contact Details</th>
+                        <th className="border px-4 py-5 text-lg capitalize tracking-wide">Experience</th>
+                        <th className="border rounded-tr-xl px-4 py-5 text-lg capitalize tracking-wide">-</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,7 +54,7 @@ export default function AllApplicants() {
                     ) : (
                         applicants.map((app) =>
                             <tr key={app.id} className="grid grid-cols-1 lg:grid-cols-[20%,25%,25%,15%,15%] items-center w-full border-b border-gray-300 hover:bg-gray-100 py-2">
-                                <td className="px-4 py-1 lg:py-3 font-semibold capitalize text-start lg:text-center text-sky-900 text-lg lg:text-lg">
+                                <td className="px-4 py-1 lg:py-3 font-semibold capitalize text-start lg:text-center text-sky-900 text-lg">
                                     <Link href={`/portal/dashboard/applicants/wh_applicant_${app.id}`} className="underline">
                                         {`${app.firstname} ${app.lastname}`} 
                                     </Link>
