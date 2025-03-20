@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react"
 import { TailSpin } from 'react-loader-spinner'
 
-interface Applicants {
-    jobid: string,
-    count: number,
-}
+// interface Applicants {
+//     jobid: string,
+//     count: number,
+// }
 
 export default function JobsList() {
     const [loading, setLoading] = useState<boolean>(true);
