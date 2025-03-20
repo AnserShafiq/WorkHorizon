@@ -26,7 +26,7 @@ export default function LoginForm() {
     };
 
     return (
-        <div className="container w-[88%] lg:w-full min-h-[90vh] flex flex-col items-center justify-top pt-10">
+        <div className="container w-[88%] lg:w-full min-h-[90vh] flex flex-col items-center justify-top py-10">
             <Image src={'/assets/login-anime.png'} className="2xl:w-[70%] h-auto mb-12" width={3000} height={1000} alt="Work Horizon - Login page" />
             <h2 className='text-2xl lg:text-3xl font-semibold capitalize text-sky-900 border-b border-orange-500 px-1 pb-1'>{`Welcome to Work Horizon's Portal`}</h2>
             <form onSubmit={formAction} className="flex flex-col border border-gray-300 rounded-lg mt-6 shadow-md p-6 w-[40%]">

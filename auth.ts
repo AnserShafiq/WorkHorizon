@@ -10,7 +10,6 @@ async function getAdmin(admin_email: string) {
       throw new Error(`API error: ${response.status}`);
     }
     const [data] = await response.json();
-    console.log('Admin data:', data);
     return data;
   } catch (error) {
     console.error('Error fetching admin:', error);

@@ -1,5 +1,6 @@
 'use client'
 import { JobApplications } from "@/app/lib/elements";
+import { Asterisk } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react"
 import { TailSpin } from 'react-loader-spinner'
@@ -53,10 +54,10 @@ export default function AllApplicants() {
                         </tr>
                     ) : (
                         applicants.map((app) =>
-                            <tr key={app.id} className="grid grid-cols-1 lg:grid-cols-[20%,25%,25%,15%,15%] items-center w-full border-b border-gray-300 hover:bg-gray-100 py-2">
+                            <tr key={app.id} className={`grid grid-cols-1 lg:grid-cols-[20%,25%,25%,15%,15%] items-center w-full border-b border-gray-300 hover:shadow-md py-2 ${app.status === 'New' ? 'bg-gray-100': ''}`}>
                                 <td className="px-4 py-1 lg:py-3 font-semibold capitalize text-start lg:text-center text-sky-900 text-lg">
-                                    <Link href={`/portal/dashboard/applicants/wh_applicant_${app.id}`} className="underline">
-                                        {`${app.firstname} ${app.lastname}`} 
+                                    <Link href={`/portal/dashboard/applicants/wh_applicant_${app.id}`} className="underline mx-auto flex w-fit relative">
+                                        {app.status==='New' ? <Asterisk className="text-red-600 absolute -top-1 -right-2 w-3 h-auto" />:''} {`${app.firstname} ${app.lastname}`} 
                                     </Link>
                                 </td>
                                 <td className="px-4 py-1 lg:py-3 text-start lg:justify-center lg:flex  lg:text-center text-md">

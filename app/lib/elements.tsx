@@ -1,4 +1,13 @@
 
+export interface User{
+    name:string,
+    //eslint-disable-next-line
+    id: string | any,
+    email: string,
+    gender: string,
+    post: string
+}
+
 
 export interface JobFormData {
     //eslint-disable-next-line
@@ -38,5 +47,6 @@ export interface JobApplications{
     summary: string;
     resumelink: string;
     submissiondate:string;
+    status:string;
 }
 

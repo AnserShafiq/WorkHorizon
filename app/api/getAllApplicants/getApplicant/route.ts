@@ -11,6 +11,7 @@ export async function GET(request: NextRequest) {
     }
 
     try {
+        await executeQuery(`UPDATE jobapplications SET status='Checked' WHERE id =?`,[id])
         const data = await executeQuery('SELECT * FROM jobapplications WHERE id=?',[id])
         return NextResponse.json(data);
     } catch (error) {

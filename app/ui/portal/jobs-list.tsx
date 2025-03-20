@@ -91,7 +91,7 @@ export default function JobsList() {
             method: 'DELETE',
             body: JSON.stringify(jobid),
         })
-        if(res.status === 200){
+        if(res.ok){
             window.location.reload();
         }
     }
@@ -143,11 +143,11 @@ export default function JobsList() {
                                     <span className="font-semibold mr-2 inline-flex lg:hidden">Status: </span>
                                     {job.status}
                                 </td>
-                                <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md capitalize grid grid-cols-3">
+                                <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md capitalize flex items-center justify-center gap-4 ">
                                     <span className="font-semibold mr-2 inline-flex lg:hidden">Status: </span>
-                                    <Link className='border-b border-sky-900 w-fit mx-auto my-1 text-sm text-sky-900 hover:text-orange-500' href={`/portal/dashboard/jobs-list/whjob_${job.jobid}/edit`}>Edit</Link>
-                                    <button className='border-b border-sky-900 w-fit mx-auto my-1 text-sm text-sky-900 hover:text-orange-500' onClick={() => handleStatusChangeCall(job.jobid, job.status)}>{job.status === 'Active' ? 'Deactivate':'Activate'}</button>
-                                    <button className='border-b border-sky-900 w-fit mx-auto my-1 text-sm text-sky-900 hover:text-orange-500' onClick={() => handleDeleteCall(job.jobid)}>Delete</button>
+                                    <Link className='border-b border-sky-900 w-fit my-1 text-sm text-sky-900 hover:text-orange-500' href={`/portal/dashboard/jobs-list/whjob_${job.jobid}/edit`}>Edit</Link>
+                                    <button className='border-b border-sky-900 w-fit my-1 text-sm text-sky-900 hover:text-orange-500' onClick={() => handleStatusChangeCall(job.jobid, job.status)}>{job.status === 'Active' ? 'Deactivate':'Activate'}</button>
+                                    <button className='border-b border-sky-900 w-fit my-1 text-sm text-sky-900 hover:text-orange-500' onClick={() => handleDeleteCall(job.jobid)}>Delete</button>
                                 </td>
                             </tr>
                         )
