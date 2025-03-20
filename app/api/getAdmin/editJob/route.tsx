@@ -8,7 +8,7 @@ export async function POST(request: NextRequest){
         await executeQuery(`
             UPDATE jobs SET status=?, title=?, salary=?, timing=?, intro=?, worktype=?, department=?, contract=?, positions=?, description=?, skills=?, compensations=?, qualifications=?, whatyouwillgain=?, jointagline=?, updated_at=NOW(), applications=?
             WHERE jobid=?;
-            `,[data?.status, data.title, data.salary, data.timing, data.intro, data.worktype, data.department, data.contract, data.positions, data.description, data.skills, data.compensations, data.qualifications, data.whatyouwillgain, data.jointagline, data.jobid, data.applications]);
+            `,[data?.status, data.title, data.salary, data.timing, data.intro, data.worktype, data.department, data.contract, data.positions, data.description, data.skills, data.compensations, data.qualifications, data.whatyouwillgain, data.jointagline, data.applications, data.jobid]);
         return NextResponse.json({message: 'Job got updated'}, {status: 200})
     }catch(error){
         console.log('Error in updating job, ',error);
