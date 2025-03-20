@@ -11,9 +11,9 @@ interface Applicants {
 
 export default function JobsList() {
     const [loading, setLoading] = useState<boolean>(true);
-    const [countLoading, setCountLoading] = useState<boolean>(false);
+    // const [countLoading, setCountLoading] = useState<boolean>(false);
     const [jobsList, setJobsList] = useState<JobFormData[]>([]);
-    const [applicants, setApplicants] = useState<Applicants[]>([]);
+    // const [applicants, setApplicants] = useState<Applicants[]>([]);
 
     useEffect(() => {
         const fetchJobs = async () => {
@@ -61,9 +61,9 @@ export default function JobsList() {
 
     // }, [jobsList]);
 
-    const getApplicantsCount = (jobid: string) => {
-        return applicants.find(app => app.jobid === jobid)?.count ?? 0;
-    }
+    // const getApplicantsCount = (jobid: string) => {
+    //     return applicants.find(app => app.jobid === jobid)?.count ?? 0;
+    // }
 
 
     const handleStatusChangeCall = async (id: string, status: string) => {

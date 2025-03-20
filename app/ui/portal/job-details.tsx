@@ -7,8 +7,8 @@ import { TailSpin } from "react-loader-spinner";
 
 export default function JobDetails({jobid}:{jobid: string | number | undefined}){
     const [job, setJob] = useState<JobFormData|null>(null)
-    const [count, setCount] = useState<number>(0);
-    const [loading, setLoading] = useState<boolean>(false);
+    // const [count, setCount] = useState<number>(0);
+    const [loading, setLoading] = useState<boolean>(true);
     // For Getting Job's Details
     useEffect(() => {
         const fetchJobDetails = async () => {
@@ -34,7 +34,7 @@ export default function JobDetails({jobid}:{jobid: string | number | undefined})
         };
 
         fetchJobDetails();
-
+        setLoading(false)
     },[jobid])
 
     // useEffect(() => {
