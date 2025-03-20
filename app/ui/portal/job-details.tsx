@@ -13,7 +13,7 @@ export default function JobDetails({jobid}:{jobid: string | number | undefined})
     useEffect(() => {
         const fetchJobDetails = async () => {
             try {
-                const response = await fetch(`/api/getJobs/jobDetails`, {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/jobDetails`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json',
@@ -40,7 +40,7 @@ export default function JobDetails({jobid}:{jobid: string | number | undefined})
                     return;
                 }
         
-                const url = `/api/getJobs/applicantscount`;
+                const url = `${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/applicantscount`;
                 // console.log("Fetching count from:", url);
                 
                 const response = await fetch(url,{
@@ -73,7 +73,7 @@ export default function JobDetails({jobid}:{jobid: string | number | undefined})
     const handleStatusChangeCall = async (id: string, status: any) => {
         const action = status === 'active' ? 'Not active' : 'Active';
 
-        const res = await fetch('/api/getAdmin/setStatus', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getAdmin/setStatus`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ export default function JobDetails({jobid}:{jobid: string | number | undefined})
 
 
     const handleDeleteCall = async(jobid:string) => {
-        const res = await fetch('/api/getAdmin/editJob', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getAdmin/editJob`, {
             method: 'DELETE',
             body: JSON.stringify(jobid),
         })
