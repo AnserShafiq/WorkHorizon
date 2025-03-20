@@ -32,12 +32,13 @@ export default function JobsTable({ query }: JobsTableProps) {
     }, []); // Empty dependency array
     
     const toDisplay = jobsList.filter((job) => 
-        job.title.toLowerCase().includes(query.toLowerCase()) || 
-        job.worktype.toLowerCase().includes(query.toLowerCase()) ||
-        job.contract.toLowerCase().includes(query.toLowerCase()) ||
-        job.department.toLowerCase().includes(query.toLowerCase())
+        job.status.includes('Active') && (
+            job.title.toLowerCase().includes(query.toLowerCase()) || 
+            job.worktype.toLowerCase().includes(query.toLowerCase()) ||
+            job.contract.toLowerCase().includes(query.toLowerCase()) ||
+            job.department.toLowerCase().includes(query.toLowerCase())
+        )
     );
-
     const router = useRouter()
 
     return (
