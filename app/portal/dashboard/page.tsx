@@ -1,23 +1,14 @@
-'use client'
-import { User } from '@/app/lib/elements';
-import DashboardBody from '@/app/ui/portal/dashboard';
-import { useEffect, useState } from 'react';
+import { Metadata } from "next";
+import DashboardMainBody from "./body";
 
-export default function Dashboard() {
+export const metadata:Metadata = {
+    title: 'Welcome to dashboard - Work Horizon'
+}
 
-    const [user, setUser] = useState<User | null>(null);
-    useEffect(() => {
-        const fetchUser = async () => {
-            const resp = await fetch('/api/getAdmin/activeUser').then(res => res.json());
-            setUser(resp)
-        }
-        fetchUser();
-    },[])
-    // console.log('User =>', user);
-
-    return (
+export default function Dashboard(){
+    return(
         <>
-            <DashboardBody user={user}/>
+            <DashboardMainBody />
         </>
     )
 }

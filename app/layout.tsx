@@ -11,8 +11,8 @@ const notosans = Noto_Sans({
   subsets:['latin']
 })
 export const metadata: Metadata = {
-  title: "Work Horizon",
-  description: "Driving Sale, Expanding Horizons",
+  title: "Work Horizon - Driving Sale, Expanding Horizons",
+  description: "We operate on a global scale, serving clients across multiple industries & regions, ensuring seamless business solutions worldwide.",
 };
 
 export default function RootLayout({

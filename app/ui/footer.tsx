@@ -12,8 +12,8 @@ export default function Footer(){
     const careerItems=[
         { link: '/careers/jobs?department=Sales+%26+marketing', name: 'Sales & Marketing' },
         { link: '/careers/jobs?department=Digital+marketing+%26+I.T', name: 'Customer Support & Operations' },
-        { link: '/careers', name: 'HR & Recruiment' },
-        { link: '/contact-us', name: 'Finance & Accounting' },
+        { link: '/careers/jobs?department=Human+resources+%26+Recruitment', name: 'HR & Recruitment' },
+        { link: '/careers/jobs?department=Finance+%26+Accounting', name: 'Finance & Accounting' },
     ];
     return(
         <div className="block lg:mt-[500px]">

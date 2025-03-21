@@ -5,6 +5,7 @@ import { useState } from "react";
 
 
 export default function ContactForm(){
+    
     const [contactReason, setContactReason] = useState<string>('');
     const contactOptions = [
         'For general query', 'Getting services information', 'Getting job options'

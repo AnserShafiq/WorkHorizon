@@ -28,7 +28,7 @@ export default function ApplicantsView(){
                         newApplicants.map((app) => 
                             <div key={app.jobid} className="grid items-center border-b border-gray-200 text-lg mb-1 grid-cols-[13%,87%]">
                                 <h4 className="py-2 px-3 text-orange-500 "><ArrowRightSquare /> </h4>
-                                <Link href={`/portal/dashboard/jobs-list/whjob_${app.id}`} className="flex relative w-fit py-2 font-semibold hover:text-sky-900 hover:underline transition-all ease-in-out duration-300 hover:scale-[1.02] ">{`${app.firstname} ${app.lastname}`}{app.status === 'New' ? <Asterisk className="text-red-600 absolute -right-3 w-3 h-auto" /> : ''}</Link>
+                                <Link href={`/portal/dashboard/jobs-list/whjob_${app.id}`} className={`flex relative w-fit py-2 font-semibold ${app.status === 'New' ? 'text-sky-900':'' } hover:text-sky-900 hover:underline transition-all ease-in-out duration-300 hover:scale-[1.02] `}>{`${app.firstname} ${app.lastname}`}{app.status === 'New' ? <Asterisk className="text-red-600 absolute -right-3 w-3 h-auto" /> : ''}</Link>
                             </div>
                         )
                     }

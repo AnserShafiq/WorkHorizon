@@ -1,4 +1,16 @@
 import ApplicantDetails from "@/app/ui/portal/applicant-details";
+import { Metadata } from "next";
+
+
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+    const { id } = await params;
+    const numericPart = id ? id.split('_').pop() : ''
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getAllApplicants/getApplicant/nameOnly?id=${numericPart}`);
+    const applicantName = await response.json();
+    return {
+        title: `${applicantName[0].firstname} ${applicantName[0].lastname} - Applicant - Work Horizon`,
+    };
+}
 
 
 export default async function Page(props:{params: Promise<{id: string}>}){

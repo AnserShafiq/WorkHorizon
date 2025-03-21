@@ -1,5 +1,15 @@
 import EditJob from "@/app/ui/portal/jobeditingform";
+import { Metadata } from "next";
 
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+    const { jobid } = await params;
+    const numericPart = jobid ? jobid.split('_').pop() : ''
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/getSingleJobTitle?jobid=${numericPart}`);
+    const jobTitle = await response.json();
+    return {
+        title: `Edit - ${jobTitle[0].title} - Jobs List - Dashboard - Work Horizon`,
+    };
+}
 
 export default async function Page(
     props: {params: Promise<{jobid:string | number | undefined }>}
