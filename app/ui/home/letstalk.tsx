@@ -44,7 +44,7 @@ export default function LetsTalk(){
             message: formData.get('message')?.toString() || '',
             date: '',
         }
-        const response = await fetch('/api/messageSubmission',{
+        const response = await fetch('/api/message',{
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',

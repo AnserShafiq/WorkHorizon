@@ -2,6 +2,7 @@ import { User } from "@/app/lib/elements";
 import ActiveJobs from "./dashboardElements/activeJobs";
 import ApplicantsView from "./dashboardElements/applicantsView";
 import NewAgentCreation from "./dashboardElements/newAgentAddition";
+import MessagesList from "./dashboardElements/messagesList";
 
 
 export default function DashboardBody({user}:{user:User | null}){
@@ -13,6 +14,7 @@ export default function DashboardBody({user}:{user:User | null}){
                 <ActiveJobs />
                 <ApplicantsView />
             </div>
+            <MessagesList/>
             <NewAgentCreation />
         </div>
     )
