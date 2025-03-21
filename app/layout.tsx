@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     // <SessionProvider>
     <html lang="en">
-      <body className={`${notosans.variable} antialiased`}>
+      <body className={`${notosans.variable} antialiased`} cz-shortcut-listen='true'>
         <AOSProvider />
         <MainHeader />
         <div className="bg-white">

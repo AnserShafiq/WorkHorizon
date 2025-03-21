@@ -50,3 +50,15 @@ export interface JobApplications{
     status:string;
 }
 
+
+export interface Message{
+    id: string | null;
+    firstname: string,
+    lastname: string,
+    reason: string,
+    contactnumber: string,
+    country: string,
+    email: string,
+    message: string,
+    date: string,
+}

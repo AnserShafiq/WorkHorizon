@@ -1,12 +1,14 @@
 'use client'
 import { countries } from "@/app/lib/countries";
+import { Message } from "@/app/lib/elements";
 import { MailIcon, MapPin, PhoneCall } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function LetsTalk(){
     const [selectCountry, setSelectedCountry] = useState<string|undefined>('+92');
+    const [submit, setSubmit] = useState<boolean>(false);
     const [contactNumber, setContactNumber] = useState<string|undefined> ('');
     const handleCountry = (e:React.ChangeEvent<HTMLSelectElement>) => {
         e.preventDefault()
@@ -28,9 +30,44 @@ export default function LetsTalk(){
         setContactNumber(receivedEntry);
     };
     
-    const handleSubmission = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmission = async(e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        const formData = new FormData(e.currentTarget);
+        const Message:Message = {
+            id:null,
+            firstname: formData.get('firstname')?.toString() || '',
+            lastname: formData.get('lastname')?.toString() || '',
+            reason: 'none',
+            contactnumber: formData.get('contactnumber')?.toString() || '',
+            country: formData.get('country')?.toString() || '',
+            email: formData.get('email')?.toString() || '',
+            message: formData.get('message')?.toString() || '',
+            date: '',
+        }
+        const response = await fetch('/api/messageSubmission',{
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            credentials: 'include',
+            body: JSON.stringify(Message)
+        })
+        if(response.ok){
+            setSubmit(true)
+        }
     }
+
+    useEffect(() => {
+        if (submit) {
+            const timeout = setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+    
+            return () => clearTimeout(timeout);
+        }
+    }, [submit]);
+    
+
     return(
         <div className='w-full bg-special-blue py-10 lg:py-0 lg:mt-[13rem]'>
             <div className="container relative grid grid-cols-1 lg:grid-cols-[50%,50%]">
@@ -70,7 +107,11 @@ export default function LetsTalk(){
                 </div>
                 <div className='relative lg:-top-28 rounded-xl px-6 lg:px-10 py-8 lg:py-16 lg:ml-6 xl:ml-16 bg-gray-300'>
                     <h2 className="text-xl lg:text-2xl xl:text-3xl tracking-wide font-semibold border-b border-gray-400 pb-4">{`Chat With Us...`}</h2>
-                    <form onSubmit={handleSubmission} className="flex flex-wrap justify-between mt-6">
+                    {
+                        submit ? <div className='flex w-full mx-auto pt-10 h-full'>
+                            <h3 className="text-xl lg:text-4xl xl:text-3xl tracking-wide font-semibold text-sky-900 capitalize">Thank you for sending us a message, our management will reach you out shortly.</h3>
+                        </div> : 
+                        <form onSubmit={handleSubmission} className="flex flex-wrap justify-between mt-6">
                         <div className="w-[48%] flex flex-col gap-1 mt-4">
                             <label className='text-md xl:text-md font-[500] tracking-wide'>First Name <span className="text-red-500">*</span></label>
                             <input type="text" className="border pl-2 py-2 rounded-xl w-full bg-gray-200 cursor-pointer" name="firstname" id='firstname' placeholder="First name" required/>
@@ -90,7 +131,7 @@ export default function LetsTalk(){
                                         )
                                     }
                                 </select>
-                                <input required className="bg-gray-200 py-2 px-1 rounded-r-xl" type='tel' name="contact" id='contact' value={contactNumber} onChange={(e) => handleContactNumber(e.target.value)} placeholder="Contact number"/>
+                                <input required className="bg-gray-200 py-2 px-1 rounded-r-xl" type='tel' name="contactnumber" id='contactnumber' value={contactNumber} onChange={(e) => handleContactNumber(e.target.value)} placeholder="Contact number"/>
                             </div>
                         </div>
                         <div className="w-full flex flex-col gap-1 mt-4">
@@ -103,6 +144,7 @@ export default function LetsTalk(){
                         </div>
                         <button className="text-lg font-semibold px-6 py-2 mt-6 bg-sky-900 text-gray-100 tracking-wider rounded-xl transition ease-in-out duration-300 hover:scale-[1.075] hover:bg-transparent hover:text-sky-900 hover:border-2 hover:border-sky-900 " type='submit'>Submit</button>
                     </form>
+                    }
                 </div>
             </div>
         </div>
