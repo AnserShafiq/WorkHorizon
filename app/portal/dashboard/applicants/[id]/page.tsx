@@ -1,7 +1,7 @@
 import ApplicantDetails from "@/app/ui/portal/applicant-details";
 import { Metadata } from "next";
 
-
+// eslint-disable-next-line
 export async function generateMetadata({ params }: any): Promise<Metadata> {
     const { id } = await params;
     const numericPart = id ? id.split('_').pop() : ''

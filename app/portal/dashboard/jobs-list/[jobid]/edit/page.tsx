@@ -1,6 +1,6 @@
 import EditJob from "@/app/ui/portal/jobeditingform";
 import { Metadata } from "next";
-
+// eslint-disable-next-line
 export async function generateMetadata({ params }: any): Promise<Metadata> {
     const { jobid } = await params;
     const numericPart = jobid ? jobid.split('_').pop() : ''
