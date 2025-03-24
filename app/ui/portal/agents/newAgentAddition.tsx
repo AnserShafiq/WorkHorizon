@@ -2,7 +2,7 @@
 
 export default function NewAgentCreation(){
     return(
-       <div className="mx-14 mt-6 mb-10 border p-6 rounded-3xl shadow-xl shadow-gray-300 bg-gray-200">
+       <div className="mt-6 mb-10 border py-6 px-12 rounded-3xl shadow-xl shadow-gray-300 bg-gray-200">
             <h3 className='w-fit text-2xl mx-auto capitalize font-semibold text-sky-900 border-b border-orange-500 mb-4'>To add new agent</h3>
             <form className='grid grid-cols-3 gap-x-10 gap-y-3'>
                 <div className='flex flex-col'>

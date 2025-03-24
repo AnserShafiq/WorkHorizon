@@ -1,4 +1,4 @@
-import ApplicantDetails from "@/app/ui/portal/applicant-details";
+import ApplicantDetails from "@/app/ui/portal/applicants/applicant-details";
 import { Metadata } from "next";
 
 // eslint-disable-next-line

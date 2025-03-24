@@ -1,4 +1,4 @@
-import EditJob from "@/app/ui/portal/jobeditingform";
+import EditJob from "@/app/ui/portal/jobs/jobeditingform";
 import { Metadata } from "next";
 // eslint-disable-next-line
 export async function generateMetadata({ params }: any): Promise<Metadata> {

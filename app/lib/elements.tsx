@@ -61,4 +61,17 @@ export interface Message{
     email: string,
     message: string,
     date: string,
+    status: string
+}
+
+
+export interface Agent{
+    id: string,
+    name: string,
+    password: string,
+    gender: string,
+    email: string,
+    contact: string,
+    post: string,
+    created_on: string,
 }

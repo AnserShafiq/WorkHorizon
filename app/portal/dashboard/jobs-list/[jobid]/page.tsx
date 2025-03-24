@@ -1,4 +1,4 @@
-import JobDetails from "@/app/ui/portal/job-details";
+import JobDetails from "@/app/ui/portal/jobs/job-details";
 import { Metadata } from "next";
 
 // eslint-disable-next-line

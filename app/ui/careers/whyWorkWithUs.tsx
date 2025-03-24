@@ -30,12 +30,12 @@ export default function WhyWorkWithUs() {
                 </h3>
                 {points.map((point, index) => (
                     <div 
-                        className="grid grid-cols-[13%,87%] lg:grid-cols-[7%,90%] mb-3 cursor-pointer" 
+                        className="grid grid-cols-[10%,90%] mb-3 cursor-pointer" 
                         key={index} 
                         onMouseEnter={() => changeActive(index)}
                     >
                         {
-                            point.active ? <TbPointFilled className = 'text-gray-100 w-[50px] h-[25px] lg:mt-1' />:<TbPoint className = 'text-gray-100 w-[50px] h-[25px] lg:mt-1' />
+                            point.active ? <TbPointFilled className = 'text-gray-100 w-auto lg:w-[50px] lg:mx-auto h-[25px] lg:mt-1' />:<TbPoint className = 'text-gray-100 lg:mx-auto  w-auto lg:w-[50px] h-[25px] lg:mt-1' />
                         }
                         <h3 className="text-md lg:text-lg text-gray-100">
                             <span className="font-semibold text-orange-500 tracking-wide">
@@ -45,7 +45,7 @@ export default function WhyWorkWithUs() {
                     </div>
                 ))}
             </div>
-            <div className="h-[400px] lg:h-[600px]">
+            <div className="h-[400px] lg:h-full 2xl:h-[600px]">
                 <Image 
                     className="h-[400px] lg:h-full w-full object-center object-cover" 
                     src={`${points.find((point) => point.active)?.image}`} 

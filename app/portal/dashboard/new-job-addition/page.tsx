@@ -1,4 +1,4 @@
-import JobPostingForm from "@/app/ui/portal/jobpostingform";
+import JobPostingForm from "@/app/ui/portal/jobs/jobpostingform";
 import { Metadata } from "next";
 
 export const metadata:Metadata={

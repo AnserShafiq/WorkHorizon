@@ -1,4 +1,4 @@
-import JobsList from "@/app/ui/portal/jobs-list";
+import JobsList from "@/app/ui/portal/jobs/jobs-list";
 import { Metadata } from "next";
 
 export const metadata:Metadata={

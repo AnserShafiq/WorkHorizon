@@ -4,17 +4,19 @@ import { JobFormData } from "@/app/lib/elements"
 import { ArrowRightSquare } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react"
+import { TailSpin } from "react-loader-spinner";
 
 export default function ActiveJobs(){
 
     const [activeJobs, setActiveJobs] = useState<JobFormData[]>([]);
-
+    const [loading, setLoading] = useState<boolean>(true);
     useEffect(() => {
         const GetJobs = async() =>{ 
             const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/limit`)
             const Jobs = await resp.json()
             console.log('Jobs => ', Jobs)
             setActiveJobs(Jobs);
+            setLoading(false);
         } 
         GetJobs();
     },[])
@@ -25,10 +27,14 @@ export default function ActiveJobs(){
                 <h3 className="w-fit mx-auto mt-2 text-2xl font-semibold text-sky-900 border-b border-orange-500">Jobs Active</h3>
                 <div className='mx-4 mt-4 w-[88%] min-h-[250px]'>
                     {
+                        loading ? 
+                        <div className="w-full h-full flex flex-col justify-center items-center ">
+                            <TailSpin visible={true} height={50} width={50} color='#0C4A6E' ariaLabel='tail-spin-loading' radius={1} />
+                        </div>:
                         activeJobs.map((job) => 
                             <div key={job.jobid} className="grid items-center border-b border-gray-200 text-lg mb-1 grid-cols-[13%,87%]">
                                 <h4 className="py-2 px-3 text-orange-500 "><ArrowRightSquare /> </h4>
-                                <Link href={`/portal/dashboard/jobs-list/whjob_${job.jobid}`} className="py-2 font-semibold hover:text-sky-900 hover:underline transition-all ease-in-out duration-300 hover:scale-[1.02] ">{job.title}</Link>
+                                <Link href={`/portal/dashboard/jobs-list/whjob_${job.jobid}`} className="py-2 hover:text-sky-900 hover:underline transition-all ease-in-out duration-300 hover:scale-[1.02] ">{job.title}</Link>
                             </div>
                         )
                     }

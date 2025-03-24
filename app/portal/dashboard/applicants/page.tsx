@@ -1,4 +1,4 @@
-import AllApplicants from "@/app/ui/portal/all-applicants";
+import AllApplicants from "@/app/ui/portal/applicants/all-applicants";
 import { Metadata } from "next";
 
 export const metadata:Metadata = {

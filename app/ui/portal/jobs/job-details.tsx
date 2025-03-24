@@ -37,32 +37,7 @@ export default function JobDetails({jobid}:{jobid: string | number | undefined})
         setLoading(false)
     },[jobid])
 
-    // useEffect(() => {
-    //     const fetchCount = async () => {
-    //         try {
-    //             if (!jobid) {
-    //                 console.error("Job ID is missing!");
-    //                 return;
-    //             }
-        
-    //             const url = `${process.env.NEXT_PUBLIC_API_URL}/api/getJobs/applicantscount?jobid=${jobid}`;
-    //             // console.log("Fetching count from:", url);
-                
-    //             const response = await fetch(url);
-                
-    //             if (!response.ok) {
-    //                 throw new Error(`API returned status ${response.status}`);
-    //             }
-                
-    //             const output = await response.json();
-    //             console.log("Fetched count:", output?.count);
-    //             setCount(output.count);
-    //         } catch (error) {
-    //             console.error("Unable to count applicants, Error:", error);
-    //         }
-    //     };
-    //     fetchCount();
-    // },[jobid])
+
 // eslint-disable-next-line
     const handleStatusChangeCall = async (id: string, status: any) => {
         const action = status === 'active' ? 'Not active' : 'Active';

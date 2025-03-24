@@ -37,7 +37,7 @@ export default function LetsTalk(){
             id:null,
             firstname: formData.get('firstname')?.toString() || '',
             lastname: formData.get('lastname')?.toString() || '',
-            reason: 'none',
+            reason: 'General chat message',
             contactnumber: formData.get('contactnumber')?.toString() || '',
             country: formData.get('country')?.toString() || '',
             email: formData.get('email')?.toString() || '',
