@@ -4,12 +4,10 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import DropDown from "../dropdown"
-import { ThreeDots } from "react-loader-spinner"
 
 
 export default function PortalHeader(){
     const [allowAgents, setAllowAgents]=useState<boolean>(false)
-    const [headerLoading, setHeaderLoading] = useState<boolean>(true)
     const Menu = [
         {
             name: 'Dashboard',
