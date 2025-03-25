@@ -44,7 +44,7 @@ export default function Agents() {
                     <h3 className='text-md text-orange-500 font-semibold tracking-wide text-center'>Loading..</h3>                     
                 </div>
             ) : (
-                <AgentsPage /> 
+                <AgentsPage user={user}/> 
             )}
         </>
     );

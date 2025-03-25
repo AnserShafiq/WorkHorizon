@@ -17,7 +17,7 @@ export default function SingleMessage({id}:{id: string | undefined}){
             setLoading(false);
         }
         getMessage();
-    },[])
+    },[id])
 
     const handleDeleteMessage = async() => {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/message/deleteMessage`, {
