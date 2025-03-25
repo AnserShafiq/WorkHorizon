@@ -49,6 +49,7 @@ export default function ContactForm(){
                 email: formData.get('email')?.toString() || '',
                 message: formData.get('message')?.toString() || '',
                 date: '',
+                status: '',
             }
             const response = await fetch('/api/message',{
                 method: 'POST',
