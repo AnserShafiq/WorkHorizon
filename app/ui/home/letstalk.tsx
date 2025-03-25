@@ -43,6 +43,7 @@ export default function LetsTalk(){
             email: formData.get('email')?.toString() || '',
             message: formData.get('message')?.toString() || '',
             date: '',
+            status: '',
         }
         const response = await fetch('/api/message',{
             method: 'POST',
