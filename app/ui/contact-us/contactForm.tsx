@@ -78,7 +78,7 @@ export default function ContactForm(){
             <div className="grid lg:grid-cols-[70%,30%] w-full mb-10 py-10 lg:py-20 lg:mb-1">
                 <div className='block mb-8 lg:m-0'>
                     <h3 className="text-2xl xl:text-3xl font-bold tracking-wide text-sky-900 mb-3">Contact Us.</h3>
-                    <h4 className="text-md 2xl:text-xl font-semibold tracking-wide mb-3">For employment related queries, try to visit our <Link className="font-bold text-orange-500 capitalize" href={'/careers'}>Careers page.</Link></h4>
+                    <h4 className="text-md 2xl:text-xl font-semibold tracking-wide mb-3">For employment related queries, try to visit our <Link className="font-bold text-orange-500 capitalize" href={'/careers/jobs'}>Careers page.</Link></h4>
                     <h3 className="text-xl xl:text-2xl font-semibold tracking-wide text-sky-900 mb-3">{`Share your details. We'll get back to you, ASAP.`}</h3>
                     <form className="flex flex-col w-full lg:w-[75%] 2xl:w-[70%]" onSubmit={handleSubmission}>
                         <div className='flex flex-col mb-2'>

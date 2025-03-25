@@ -8,18 +8,35 @@ import React, { useState } from "react";
 export default function JobApplication({JobDetails}: {JobDetails: JobFormData}){
   const [file, setFile] = useState<File | null>(null);
   const [fileError, setFileError] = useState<boolean>(true);
+  const [fileTypeError, setFileTypeError] = useState<boolean>(false);
   const [countryCode, setCountryCode] = useState<string>('+92');
   const [contactNo, setContactNumber] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [done, setDone] = useState<boolean>(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) setFile(e.target.files[0]);
-    setFileError(true)
+    const allowedTypes = ['application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document' ,'text/plain', 'application/pdf'];
+    if (e.target.files && e.target.files.length > 0) {
+        const file = e.target.files[0];
+        if (allowedTypes.includes(file.type)) {
+            setFile(file);
+            setFileError(true);
+            setFileTypeError(false);
+        } else {
+            setFile(null);
+            setFileError(true)
+            setFileTypeError(true);
+            e.target.value = "";
+        }
+    }else{
+      setFileError(false);
+    }
   };
+
 
   const handleCountry = (e:React.ChangeEvent<HTMLSelectElement>) => {
     e.preventDefault()
+    
     setCountryCode(e.target?.value);
   }
   const handleContactNumber = (value: string): void => {
@@ -130,10 +147,13 @@ export default function JobApplication({JobDetails}: {JobDetails: JobFormData}){
             </div>
             {/* Resume */}
             <div className='col-span-2 flex flex-col border border-gray-300 p-2'>
-            <label className="font-semibold mb-1 flex">Resume <Asterisk className="w-3 h-auto text-red-800 ml-1 -mt-1"/></label>
-              <input type="file" name='resume' id='resume' onChange={handleFileChange} required/>
+            <label className="font-semibold mb-1 flex">Resume(.pdf, .doc, docx, .txt) <Asterisk className="w-3 h-auto text-red-800 ml-1 -mt-1"/></label>
+              <input type="file" name='resume' id='resume' accept=".pdf,.doc,.docx,.txt" onChange={handleFileChange} required />
               {
-                fileError ? null : <p>Please add your resume.</p>
+                fileError ? null : <p className="text-red-800 font-semibold">Please add your resume.</p>
+              }
+              {
+                fileTypeError ? <p className="text-red-800 font-semibold">Only .pdf, .doc, .docx or .txt file accepted.</p> : null
               }
             </div>
             

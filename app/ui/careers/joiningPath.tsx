@@ -60,7 +60,7 @@ export default function JoiningPath() {
                 ))}
             </div>
             <div className='w-full text-center'>
-                <h3 className="text-lg lg:text-xl font-[400] capitalize tracking-wide mt-6 lg:mt-3">Ready to roll-in? Explore the job options and <Link href={'/'} className="text-orange-500 border-b border-sky-900 pb-1 uppercase font-bold ">Apply !!!</Link></h3>
+                <h3 className="text-lg lg:text-xl font-[400] capitalize tracking-wide mt-6 lg:mt-3">Ready to roll-in? Explore the job options and <Link href={'/careers/jobs'} className="text-orange-500 border-b border-sky-900 pb-1 uppercase font-bold ">Apply !!!</Link></h3>
             </div>
         </div>
     );

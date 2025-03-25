@@ -26,7 +26,7 @@ export default function Vision_Mission(){
                             <div className='lg:px-4 xl:px-7 py-5 flex flex-col' data-aos='fade-up'>
                                 <h3 className="text-sky-900 font-bold capitalize border-b border-orange-500 w-fit text-2xl lg:text-3xl mb-3">{target.title}</h3>
                                 <p className="text-md 2xl:text-lg font-normal tracking-wide mb-5"> {target.description} </p>
-                                <Link className='text-md 2xl:text-lg text-gray-100 bg-sky-900 px-5 py-2 w-fit rounded-3xl transition-all ease-in-out duration-300 hover:scale-[1.05]' href={'/about-us'}>Apply Now</Link>
+                                <Link className='text-md 2xl:text-lg text-gray-100 bg-sky-900 px-5 py-2 w-fit rounded-3xl transition-all ease-in-out duration-300 hover:scale-[1.05]' href={'/careers/jobs'}>Apply Now</Link>
                             </div>
 
                         </div>
