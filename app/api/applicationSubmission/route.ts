@@ -15,8 +15,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   try {
-    // const formData = await req.formData();
-    // // console.log('Api: ', formData)
+    const formData = await req.formData();
+    console.log('Application Data: ', formData)
     // const file = formData.get("file") as File;
 
     // if (!file) return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
