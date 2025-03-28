@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(){
     try {
-        const messages = await executeQuery('SELECT * FROM messages ORDER BY date DESC LIMIT 5;')
+        const messages = await executeQuery(`SELECT * FROM messages WHERE status='New' ORDER BY date DESC LIMIT 5;`)
         return NextResponse.json(messages)
     } catch (error) {
         console.log('Unable to get latest messages, ',error)

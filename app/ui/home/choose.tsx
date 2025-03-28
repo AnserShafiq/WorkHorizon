@@ -26,10 +26,10 @@ export default function WhyChooseUs(){
         <div className="flex flex-col items-center my-8 lg:my-20 w-[92%] lg:w-full container">
             <h3 className="text-3xl lg:text-4xl capitalize text-sky-900 font-bold lg:mb-3" data-aos='fade-up'>Why Choose Us?</h3>
             <p className='text-md lg:text-xl font-normal tracking-wide text-center xl:mx-24 mb-6' data-aos='fade-up'>Driving Your Business Forward with Unmatched Expertise, Customized Strategies, a Strong Focus on Quality and Innovation, Scalable Solutions, and a Global Perspective to Help You Succeed</p>
-            <div className=" mx-8 lg:mx-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 justify-center xl:gap-10" data-aos='fade-up'>
+            <div className=" mx-8 lg:mx-0 grid lg:flex 2xl:grid grid-cols-1 md:grid-cols-2 lg:flex-wrap 2xl:grid-cols-5 gap-4 justify-center xl:gap-10" data-aos='fade-up'>
                 {
                     points.map((item, index) => 
-                        <div className="flex flex-row lg:flex-col items-center border text-start lg:text-center py-5 lg:py-10 rounded-2xl bg-dullWhite shadow-sm px-4 lg:px-3" key={index} data-aos='lg:fade-up'>
+                        <div className=" w-full lg:w-[30%] 2xl:w-full flex flex-row lg:flex-col items-center border text-start lg:text-center py-5 lg:py-10 rounded-2xl bg-dullWhite shadow-sm px-4 lg:px-3" key={index} data-aos='lg:fade-up'>
                             <Image className="w-[60px] lg:w-auto h-auto" src={item.icon} alt={`WH - ${item.point}`} width={110} height={110}/>
                             <h3 className="text-lg xl:text-xl capitalize font-[500] ml-3 lg:mt-3 text-sky-900">{item.point}</h3>
                         </div>

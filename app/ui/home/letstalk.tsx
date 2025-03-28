@@ -1,6 +1,7 @@
 'use client'
 import { countries } from "@/app/lib/countries";
 import { Message } from "@/app/lib/elements";
+
 import { MailIcon, MapPin, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -45,17 +46,34 @@ export default function LetsTalk(){
             date: '',
             status: '',
         }
-        const response = await fetch('/api/message',{
+        const response = await fetch('/api/message', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
             },
             credentials: 'include',
             body: JSON.stringify(Message)
-        })
-        if(response.ok){
-            setSubmit(true)
+        });
+        
+        if (response.ok) {
+            const response2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/message/sendEmail`, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                credentials: 'include',
+                body: JSON.stringify(Message)
+            });
+        
+            if (response2.ok) {
+                setSubmit(true);
+            } else {
+                console.error('Email sending failed');
+            }
+        } else {
+            console.error('Message saving failed');
         }
+        
     }
 
     useEffect(() => {
@@ -123,7 +141,7 @@ export default function LetsTalk(){
                         </div>
                         <div className="w-full flex flex-col gap-1 mt-4">
                             <label className='text-md xl:text-md font-[500] tracking-wide'>Contact Number <span className="text-red-500">*</span></label>
-                            <div className='grid grid-cols-[18%,82%]'>
+                            <div className='grid lg:grid-cols-[20%,80%] 2xl:grid-cols-[18%,82%]'>
                                 <select className="border pl-2 rounded-l-xl bg-gray-200 cursor-pointer" name="country" id='country' value={selectCountry} onChange={handleCountry} required>
                                     <option value=''></option>
                                     {

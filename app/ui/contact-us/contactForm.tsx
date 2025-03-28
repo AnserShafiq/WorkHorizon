@@ -10,7 +10,7 @@ export default function ContactForm(){
         const [selectCountry, setSelectedCountry] = useState<string|undefined>('+92');
         const [submit, setSubmit] = useState<boolean>(false);
         const [contactNumber, setContactNumber] = useState<string|undefined> ('');
-        const [contactReason, setContactReason] = useState<string>('');
+        // const [contactReason, setContactReason] = useState<string>('');
         const handleCountry = (e:React.ChangeEvent<HTMLSelectElement>) => {
             e.preventDefault()
             setSelectedCountry(e.target?.value);
@@ -35,7 +35,6 @@ export default function ContactForm(){
     const contactOptions = [
         'For general query', 'Getting services information', 'Getting job options'
     ]
-    console.log('Reasons of contacting us=> ', contactReason)
      const handleSubmission = async(e: React.FormEvent<HTMLFormElement>) => {
             e.preventDefault()
             const formData = new FormData(e.currentTarget);
@@ -59,9 +58,22 @@ export default function ContactForm(){
                 credentials: 'include',
                 body: JSON.stringify(Message)
             })
+
+            // const response2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/message/sendEmail`,{
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-type': 'application/json',
+            //     },
+            //     credentials: 'include',
+            //     body: JSON.stringify(Message)
+            // })
+            
             if(response.ok){
                 setSubmit(true)
             }
+            // if(response.ok && response2.ok){
+            //     setSubmit(true)
+            // }
         }
         useEffect(() => {
                 if (submit) {
@@ -75,7 +87,7 @@ export default function ContactForm(){
     
     return(
         <div className='container w-[88%] lg:w-full min-h-[92vh] flex items-center'>
-            <div className="grid lg:grid-cols-[70%,30%] w-full mb-10 py-10 lg:py-20 lg:mb-1">
+            <div className="grid grid-cols-1 lg:grid-cols-[70%,30%] w-full mb-10 py-10 lg:py-20 lg:mb-1">
                 <div className='block mb-8 lg:m-0'>
                     <h3 className="text-2xl xl:text-3xl font-bold tracking-wide text-sky-900 mb-3">Contact Us.</h3>
                     <h4 className="text-md 2xl:text-xl font-semibold tracking-wide mb-3">For employment related queries, try to visit our <Link className="font-bold text-orange-500 capitalize" href={'/careers/jobs'}>Careers page.</Link></h4>
@@ -83,7 +95,7 @@ export default function ContactForm(){
                     <form className="flex flex-col w-full lg:w-[75%] 2xl:w-[70%]" onSubmit={handleSubmission}>
                         <div className='flex flex-col mb-2'>
                             <label className="text-md lg:text-lg font-[500] tracking-wide mb-1">{`I'm contacting for:`}</label>
-                            <select className="bg-gray-100 px-2 py-1 lg:px-4 lg:py-2 border-2 border-gray-200 rounded-lg" name='reason' id='reason' onChange={(e) => setContactReason(e.target.value)} required>
+                            <select className="bg-gray-100 px-2 py-1 lg:px-4 lg:py-2 border-2 border-gray-200 rounded-lg" name='reason' id='reason' required>
                                 <option className="text-gray-400" value={''}>Select the contact option</option>
                                 {
                                     contactOptions.map((option, idx) => 

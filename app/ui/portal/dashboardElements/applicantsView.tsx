@@ -25,7 +25,7 @@ export default function ApplicantsView(){
         <div className='w-[85%] my-4 bg-gray-200 rounded-3xl p-8 mx-auto shadow-xl shadow-gray-300'>
             <div className='bg-gray-100 h-full flex flex-col items-center rounded-3xl py-3 relative'>  
                 <h3 className="w-fit mx-auto mt-2 text-2xl font-semibold text-sky-900 border-b border-orange-500">Latest Applicants </h3>
-                <div className='mx-4 mt-4 w-[88%] min-h-[250px]'>
+                <div className='mx-4 mt-4 w-[88%] min-h-[200px] max-h-[200px] 2xl:max-h-[250px] 2xl:min-h-[250px]'>
                     {
 
                         loading ? 

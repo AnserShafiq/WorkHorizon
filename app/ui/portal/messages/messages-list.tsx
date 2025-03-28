@@ -41,6 +41,7 @@ export default function MessagesList(){
                             </td>
                         </tr>
                     ) : (
+                        messages.length> 0 ?
                         messages?.map((message) => 
                             <tr className='grid grid-cols-1 lg:grid-cols-[25%,25%,50%] items-center w-full border-b border-gray-300 hover:bg-gray-100 py-2' key={message.id}>
                                 <td className="px-4 py-1 lg:py-3 font-semibold capitalize text-start lg:text-center text-sky-900 text-lg lg:text-lg">
@@ -59,7 +60,10 @@ export default function MessagesList(){
                                     <Link className="text-sky-900 font-semibold text-sm border-b border-orange-500 w-fit mx-auto" href={`/portal/dashboard/contact-messages/cm-wh-${message.id}`}>View</Link>
                                 </td>
                             </tr>
-                        )
+                        ):
+                        <div className='flex flex-col items-center justify-center mt-16 w-full'>
+                            <h2 className="text-lg lg:text-xl text-gray-400 font-semibold capitalize text-center">No message</h2>
+                        </div>  
                 )}
                 </tbody>
             </table>

@@ -53,6 +53,7 @@ export default function AllApplicants() {
                             </td>
                         </tr>
                     ) : (
+                        applicants.length > 0 ?
                         applicants.map((app) =>
                             <tr key={app.id} className={`grid grid-cols-1 lg:grid-cols-[20%,25%,25%,15%,15%] items-center w-full border-b border-gray-300 hover:shadow-md py-2 ${app.status === 'New' ? 'bg-gray-100': ''}`}>
                                 <td className="px-4 py-1 lg:py-3 font-semibold capitalize text-start lg:text-center text-sky-900 text-lg">
@@ -77,7 +78,10 @@ export default function AllApplicants() {
                                     <button className='border-b border-sky-900 w-fit my-1 text-sm text-sky-900 hover:text-orange-500' onClick={() => handleDeleteCandidate(app.id)} >Delete</button>
                                 </td>
                             </tr>
-                        )
+                        ) :
+                        <div className='flex flex-col items-center justify-center mt-16 w-full'>
+                            <h2 className="text-lg lg:text-xl text-gray-400 font-semibold capitalize text-center">No job applicant</h2>
+                        </div>  
                     )}
                 </tbody>
             </table>

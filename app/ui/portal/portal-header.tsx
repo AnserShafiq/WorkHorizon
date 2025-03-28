@@ -69,11 +69,11 @@ export default function PortalHeader(){
 
                     {
                         Menu.map((item, index) => 
-                            item.dropdown ? <DropDown mainMenu={item} key={index} /> : <Link href={item.link} key={index} className={`relative text-xl font-semibold tracking-wide transitive-underline ${item.active ? 'text-[#F7801E]' : 'text-sky-900'} hover:text-sky-800`} >{item.name}</Link>
+                            item.dropdown ? <DropDown mainMenu={item} key={index} /> : <Link href={item.link} key={index} className={`relative text-lg 2xl:text-xl font-semibold tracking-wide transitive-underline ${item.active ? 'text-[#F7801E]' : 'text-sky-900'} hover:text-sky-800`} >{item.name}</Link>
                         )
                     }
                     {
-                        allowAgents ? <Link href={'/portal/dashboard/agents'} className={`relative text-xl font-semibold tracking-wide transitive-underline text-sky-900 hover:text-sky-800`} >Agents</Link> : null
+                        allowAgents ? <Link href={'/portal/dashboard/agents'} className={`relative text-lg 2xl:text-xl font-semibold tracking-wide transitive-underline text-sky-900 hover:text-sky-800`} >Agents</Link> : null
                     }
                 
                     <button 

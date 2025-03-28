@@ -26,6 +26,8 @@ export default function AgentsPage({ user }: { user: User | null }) {
             if (user?.post === 'admin') {
                 setSortedAgents(agents);
             } else if (user?.post === 'Pak HR') {
+                setSortedAgents(agents.filter(agent => agent.post !== 'admin'));
+            }else if (user?.post === 'Head HR') {
                 setSortedAgents(agents.filter(agent => agent.post !== 'admin' && agent.post !== 'Pak HR'));
             }
         };
@@ -70,7 +72,7 @@ export default function AgentsPage({ user }: { user: User | null }) {
     return (
         <div className="container w-[88%] lg:w-full min-h-[90vh] py-10 flex flex-col justify-center">
             <h3 className="text-2xl lg:text-3xl font-semibold text-sky-900 border-b-2 px-1 mx-auto mb-5 border-orange-500 w-fit">All Agents</h3>
-            <div className='h-[45vh] w-full'>
+            <div className='lg:h-[500px] overflow-auto 2xl:h-[45vh] w-full'>
                 <table className='w-full'>
                     <thead>
                         <tr className='bg-gray-100 rounded-t-xl grid grid-cols-[15%,15%,15%,15%,15%,15%,10%] w-full'>
@@ -126,15 +128,15 @@ export default function AgentsPage({ user }: { user: User | null }) {
                                                 </>
                                             ) : (
                                                 <>
-                                                    <td className="px-4 py-1 lg:py-3 font-semibold capitalize text-start lg:text-center text-sky-900 text-lg lg:text-lg">
+                                                    <td className="px-4 py-1 lg:py-3 font-semibold capitalize text-start lg:text-center text-sky-900 text-lg lg:text-lg break-words">
                                                         <Link href={`/portal/dashboard/contact-messages/cm-wh-${agent.id}`} className="underline">
                                                             {agent.name}
                                                         </Link>
                                                     </td>
-                                                    <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md">{agent.post}</td>
-                                                    <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md">{agent.email}</td>
-                                                    <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md">{agent.password}</td>
-                                                    <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md">{agent.contact}</td>
+                                                    <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md capitalize">{agent.post}</td>
+                                                    <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md break-words">{agent.email}</td>
+                                                    <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md break-words">{agent.password}</td>
+                                                    <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md break-words">{agent.contact}</td>
                                                     <td className="px-4 py-1 lg:py-3 text-start lg:text-center text-md capitalize">{agent.gender}</td>
                                                     <td className="px-4 py-1 flex items-center justify-center gap-2">
                                                         <button className="text-blue-600 font-semibold text-sm border-b border-blue-500 w-fit mx-auto" onClick={() => handleEdit(agent)}>Edit</button>

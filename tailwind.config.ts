@@ -19,7 +19,7 @@ export default {
 
       },backgroundImage:{
         'transparent-bg-one': 'linear-gradient(0deg, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.35) 30%);',
-        'blue-white': 'linear-gradient(to right,rgb(7, 44, 67) 43.5%, #ffffff 43.5% );',
+        'blue-white': 'linear-gradient(to right,rgb(7, 44, 67) 44.5%, #ffffff 44.5% );',
         'blue-white-two': 'linear-gradient(to bottom, #072c43 25%, #ffffff 25% );',
         'blue-white-three': 'linear-gradient(to bottom, #072c43 25%, #ffffff 25% );',
         'half-light-blue': 'linear-gradient(to bottom,rgb(7, 44, 67) 50%, #ffffff 50% );',

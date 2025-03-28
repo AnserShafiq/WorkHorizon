@@ -32,7 +32,7 @@ export default function Footer(){
                             <div className="flex flex-col">
                                 {
                                     menuItems.map((item,index) => 
-                                        <Link className="text-md flex items-center xl:text-lg text-gray-600 tracking-wide mb-2 border-b border-transparent w-fit pb-1 leading-tight transition ease-in-out duration-300 hover:scale-(1.05) hover:translate-x-1 hover:text-sky-900 hover:border-orange-500" href={item.link} key={index}><ArrowRight className="mr-2 w-4"/> {item.name}</Link>
+                                        <Link className="text-md flex items-center 2xl:text-lg text-gray-600 tracking-wide mb-2 border-b border-transparent w-fit pb-1 leading-tight transition ease-in-out duration-300 hover:scale-(1.05) hover:translate-x-1 hover:text-sky-900 hover:border-orange-500" href={item.link} key={index}><ArrowRight className="mr-2 w-4"/> {item.name}</Link>
                                     )
                                 }
                             </div>
@@ -42,7 +42,7 @@ export default function Footer(){
                             <div className="flex flex-col">
                                 {
                                     careerItems.map((item,index) => 
-                                        <Link className="text-md flex items-center xl:text-lg text-gray-600 tracking-wide mb-2 border-b border-transparent w-fit pb-1 leading-tight transition ease-in-out duration-300 hover:scale-(1.05) hover:translate-x-1 hover:text-sky-900 hover:border-orange-500" href={item.link} key={index}><ArrowRight className="mr-2 w-4"/> {item.name}</Link>
+                                        <Link className="text-md flex items-center 2xl:text-lg text-gray-600 tracking-wide mb-2 border-b border-transparent w-fit pb-1 leading-tight transition ease-in-out duration-300 hover:scale-(1.05) hover:translate-x-1 hover:text-sky-900 hover:border-orange-500" href={item.link} key={index}><ArrowRight className="mr-2 w-4"/> {item.name}</Link>
                                     )
                                 }
                             </div>
